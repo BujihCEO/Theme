@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="moments.css">
+    <link rel="stylesheet" type="text/css" href="{{ 'moments.css' | asset_url }}">
     <title>Document</title>
 </head>
 <body>
@@ -65,8 +65,8 @@
         </div>
     </div>
 </body>
-<script src="potrace.js"></script>
-<script src="print.js"></script>
-<script src="moments.js"></script>
+<script src="{{ 'potrace.js' | asset_url }}"></script>
+<script src="{{ 'print.js' | asset_url }}"></script>
+<script src="{{ 'moments.js' | asset_url }}"></script>
 <script></script>
 </html>

@@ -30,12 +30,12 @@
     position: absolute;
     width: 35%;
     aspect-ratio: 29/42;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     box-sizing: content-box;
 }
 
 .Preview.border {
-    border: 2px dashed red;
+    border: 1px dashed red;
 }
 
 .Preview.Zoom {

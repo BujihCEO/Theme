@@ -396,7 +396,6 @@ InputText_2.addEventListener('input', () => {
     }
 });
 
-const Tshirt = document.querySelector('.Tshirt');
 const Personalization = document.querySelector('.Personalization');
 
 function resize() {

@@ -1,15 +1,16 @@
 .headerWrap {
     width: 100%;
-    margin: 25px 0px 10px;
+    margin: 25px 0px 15px;
     display: flex;
-    justify-content: center;
+    justify-content: center;;
 }
 
 .headerTitlle{
-    font-size: 30px;
+    font-size: 25px;
+    line-height: 0;
     border-radius: 1em;
-    padding: 0px 25px;
-    box-shadow: 3px 3px 8px 0px black;
+    padding: 20px 30px;
+    box-shadow: 5px 5px 10px 0px black;
     color: white;
     background-color: black;
 }

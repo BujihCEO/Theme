@@ -86,13 +86,16 @@
     bottom: 75%;
     right: 15%;
     width: 60%;
-    font-size: calc(1.3vw * var(--resize));
+    font-size: calc(1.4vw * var(--resize));
+    line-height: 1;
+    letter-spacing: 0;
     font-family: Architype;
     text-transform: uppercase;
     text-align: center;
-    color: #031F5C;
+    color: #031f5c;
     padding: 0;
     margin: 0;
+    -webkit-user-select: none;
     user-select: none;
 }
 

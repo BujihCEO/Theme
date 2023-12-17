@@ -575,7 +575,7 @@
     width: 100%;
     font-size: 50px;
     font-weight: 700;
-    margin: 70px 0px 0px;
+    margin: 0;
 }
 
 .threshold-slider {
@@ -586,11 +586,10 @@ input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
     width: 95%;
-    height: 80px;
-    margin: 10px 0;
+    height: 40px;
     background-color: #ddd;
     border-radius: 40px;
-    margin: 0px;
+    margin: 0;
     z-index: 2;
 }
 
@@ -621,25 +620,14 @@ input[type="range"]::-webkit-slider-thumb {
 
 .Tittle {
     position: relative;
-    font-size: 50px;
-    font-family: sans-serif;
+    font-size: 30px;
     font-weight: 700;
-    background-color: black;
-    color: white;
-    padding: 15px 30px 10px;
-    margin: 0 0 0 0px;
+    background-color: #000;
+    color: #fff;
+    padding: 0px 30px;
+    margin: 0;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
-}
-
-input[type="text"] {
-    width: 80%;
-    font-size: 60px;
-    font-family: sans-serif;
-    font-weight: 700;
-    border: 6px solid black;
-    border-radius: 30px;
-    padding: 20px 30px;
 }
 
 .loadContainer {

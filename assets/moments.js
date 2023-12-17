@@ -3,8 +3,6 @@ let dst;
 let ctx;
 let Drag = false;
 let threshold = 1;
-const Tshirt = document.querySelector('.Tshirt');
-const Personalization = document.querySelector('.Personalization');
 const Preview = document.querySelector('.Preview');
 const imgInput = document.querySelector('.imgInput');
 const thresholdSlider = document.querySelector('.threshold-slider');
@@ -412,6 +410,9 @@ ImgSizeControl.addEventListener('touchstart', function (event) {
         });
     }
 });
+
+const Tshirt = document.querySelector('.Tshirt');
+const Personalization = document.querySelector('.Personalization');
 
 function resize() {
     var value1 = Tshirt.offsetWidth / window.innerWidth;

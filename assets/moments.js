@@ -409,6 +409,12 @@ ImgSizeControl.addEventListener('touchstart', function (event) {
 });
 
 const Tshirt = document.querySelector('.Tshirt');
-const InputText_1 = document.querySelector('.InputText_1');
-const InputText_2 = document.querySelector('.InputText_2');
+
+function resize() {
+    var value = Tshirt.offsetWidth / window.innerWidth;
+    Tshirt.style.setProperty('--resize', value);
+}
+resize();
+
+window.addEventListener('resize', resize);
 

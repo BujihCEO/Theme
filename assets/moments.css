@@ -498,7 +498,7 @@
     background-repeat: no-repeat;
     background-position: center;
     border: 0px solid black;
-    border-radius: 2em;
+    border-radius: 1em;
     overflow: hidden;
     box-shadow: 3px 5px 10px #000;
     transition: border 0.5s, transform 0.5s;

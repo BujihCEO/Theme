@@ -5,10 +5,6 @@
     justify-content: center;
 }
 
-.Scroll {
-    --resize: '';
-}
-
 .headerTitlle{
     font-size: 25px;
     line-height: 0;

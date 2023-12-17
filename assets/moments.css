@@ -379,12 +379,13 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    --resize: "";
+    font-size: calc(1vh * var(--resize));
     background-color: #0ff;
     background-image: url(Christmas.gif);
     padding: 6px 0 40px;
     border-bottom-left-radius: 2em;
     border-bottom-right-radius: 2em;
-    --resize: '';
 }
 
 .WRAPBTNOPTIONS {
@@ -410,8 +411,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 1.5em;
-    font-size: 2em;
+    height: 1.7em;
+    font-size: 3em;
     font-weight: 700;
     padding: 10px 20px;
     margin: 0 3px;
@@ -458,7 +459,7 @@
     aspect-ratio: 1/1;
     background-color: white;
     border: 0px solid black;
-    border-radius: 1em;
+    border-radius: 2em;
     overflow: hidden;
     box-shadow: 3px 5px 10px #000;
     transition: border 0.5s, transform 0.5s;
@@ -499,7 +500,7 @@
     background-repeat: no-repeat;
     background-position: center;
     border: 0px solid black;
-    border-radius: 1em;
+    border-radius: 2em;
     overflow: hidden;
     box-shadow: 3px 5px 10px #000;
     transition: border 0.5s, transform 0.5s;
@@ -544,7 +545,7 @@
     align-items: center;
     height: 2.5em;
     width: 95%;
-    font-size: 2em;
+    font-size: 3em;
     text-align: center;
     line-height: 1;
     font-weight: 700;
@@ -622,7 +623,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .Tittle {
     position: relative;
-    font-size: 2em;
+    font-size: 3em;
     font-weight: 700;
     line-height: 1;
     background-color: #000;

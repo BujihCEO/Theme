@@ -86,6 +86,7 @@
     bottom: 75%;
     right: 15%;
     width: 60%;
+    font-size: calc(1.3vw * var(--resize));
     font-family: Architype;
     text-transform: uppercase;
     text-align: center;
@@ -126,6 +127,7 @@
 .TextPreview_2 {
     height: 100%;
     position: relative;
+    font-size: calc(4.2vw * var(--resize));
     font-family: Architype;
     text-transform: uppercase;
     text-align: center;

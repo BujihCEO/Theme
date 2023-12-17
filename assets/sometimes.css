@@ -389,20 +389,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 120px;
+    height: 2.5em;
     width: 95%;
-    font-size: 50px;
-    font-family: sans-serif;
+    font-size: 3em;
+    text-align: center;
+    line-height: 1;
     font-weight: 700;
     background-color: #000;
     color: #fff;
     border: 6px solid #000;
     border-radius: 50px;
-    margin: 100px 0px 0px;
+    margin: 20px 0 0;
 }
 
 .ImgInputLabel > * {
-    margin: 0px 20px;
+    margin: 0 0 0 10px;
 }
 
 .ImgInputLabel div {
@@ -422,10 +423,8 @@
     align-items: center;
     height: 100px;
     width: 100%;
-    font-size: 50px;
-    font-family: sans-serif;
     font-weight: 700;
-    margin: 70px 0px 0px;
+    margin: 0;
 }
 
 .threshold-slider {

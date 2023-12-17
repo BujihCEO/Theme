@@ -414,8 +414,10 @@ ImgSizeControl.addEventListener('touchstart', function (event) {
 });
 
 function resize() {
-    var value = Tshirt.offsetWidth / window.innerWidth;
-     rootStyles.setPropertyValue('--resize', value);
+    var value1 = Tshirt.offsetWidth / window.innerWidth;
+    var value1 = Personalization.offsetWidth / window.innerWidth;
+    Tshirt.style.setPropertyValue('--resize', value);
+    Personalization.style.setPropertyValue('--resize', value);
 }
 resize();
 

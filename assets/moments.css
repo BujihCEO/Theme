@@ -5,6 +5,10 @@
     justify-content: center;
 }
 
+.Scroll {
+    --resize: '';
+}
+
 .headerTitlle{
     font-size: 25px;
     line-height: 0;
@@ -36,7 +40,6 @@
     background-position: center;
     margin: auto;
     overflow: hidden;
-    --resize: '';
 }
 
 .Tshirt.Zoom {

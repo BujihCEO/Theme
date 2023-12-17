@@ -1,9 +1,17 @@
 .headerWrap {
-  
+    width: 100%;
+    margin: 25px 0px 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .headerTitlle{
-  
+    font-size: 30px;
+    border-radius: 1em;
+    padding: 0px 25px;
+    box-shadow: 3px 3px 8px 0px black;
+    color: white;
+    background-color: black;
 }
 
 .Bg_Tshirt {

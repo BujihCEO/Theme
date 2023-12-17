@@ -36,6 +36,7 @@
     background-position: center;
     margin: auto;
     overflow: hidden;
+    --resize: '';
 }
 
 .Tshirt.Zoom {

@@ -539,6 +539,7 @@
 .ImgInputLabel {
     position: relative;
     display: flex;
+    justify-content: center;
     align-items: center;
     height: 80px;
     width: 95%;
@@ -554,7 +555,7 @@
 }
 
 .ImgInputLabel > * {
-    margin: 0px 20px;
+    margin: 0 0 0 10px;
 }
 
 .ImgInputLabel div {
@@ -623,9 +624,10 @@ input[type="range"]::-webkit-slider-thumb {
     position: relative;
     font-size: 30px;
     font-weight: 700;
+    line-height: 1;
     background-color: #000;
     color: #fff;
-    padding: 0px 30px;
+    padding: 0px 30px 5px;
     margin: 0;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;

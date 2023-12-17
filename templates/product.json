@@ -22,7 +22,7 @@
         "02eab79a-9a83-418d-81af-2aec90f1df9f": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% render 'moments' %}"
+            "custom_liquid": "{% if product.title contains 'momments' %}\n{% render 'moments' %}\n{% endif%}\n{% if product.title contains 'sometimes' %}\n{% render 'sometimes' %}\n{% endif%}"
           }
         },
         "quantity_selector": {

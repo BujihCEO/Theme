@@ -373,7 +373,6 @@ function FontResize() {
     TextPreview_2.style.fontSize = (4.2 * (Tshirt.offsetWidth / window.innerWidth)) + 'vw';
 }
 FontResize();
-window.addEventListener('resize', FontResize);
 
 const Pr_Wrap = document.querySelector('.Pr_Wrap');
 const barCode = document.querySelector('.barCode');
@@ -397,3 +396,15 @@ InputText_2.addEventListener('input', () => {
     }
 });
 
+const Tshirt = document.querySelector('.Tshirt');
+const Personalization = document.querySelector('.Personalization');
+
+function resize() {
+    var value1 = Tshirt.offsetWidth / window.innerWidth;
+    var value2 = Personalization.offsetWidth / window.innerWidth;
+    Tshirt.style.setProperty('--resize', value1);
+    Personalization.style.setProperty('--resize', value2);
+}
+resize();
+
+window.addEventListener('resize', resize, FontResize);

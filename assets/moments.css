@@ -422,10 +422,11 @@
 .TemplatesWrap {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 4%;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 6%;
     width: 70%;
-    margin: 40px 0px 4%;
+    margin: 40px 0 4%;
+    cursor: pointer;
 }
 
 .TempExm {

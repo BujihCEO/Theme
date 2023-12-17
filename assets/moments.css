@@ -648,8 +648,3 @@ input[type="text"] {
         transform: rotate(1turn);
     }
 }
-
-@font-face {
-    font-family: Architype;
-    src: url(Architype_Aubette_W90.ttf) format('truetype');
-}

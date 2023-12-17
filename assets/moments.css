@@ -248,7 +248,7 @@
     display: flex;
     height: 100%;
     overflow: hidden;
-    border: 2px solid red;
+    border: calc(0.1vh * var(--resize)) solid red;
     box-sizing: border-box;
 }
 

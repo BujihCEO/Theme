@@ -156,6 +156,7 @@ IconContainerAll.forEach((element, index) => {
                 sliderStyle();
                 DragOn();
             } else {
+                ImgPreview = null;
                 ImgOptions.classList.remove('selected');
                 ImgSelector.classList.remove('selected');
             }
@@ -164,12 +165,14 @@ IconContainerAll.forEach((element, index) => {
 });
 
 function DragOn() {
-    ImgSelector.style.width = ImgPreview.offsetWidth + 'px';
-    ImgSelector.style.height = ImgPreview.offsetHeight + 'px';
-    ImgSelector.style.left =  `${Pr_ImgWrap.offsetLeft + ImgContainer.offsetLeft + ImgPreviewWrap.offsetLeft - 2}px`;
-    ImgSelector.style.top = `${Pr_ImgWrap.offsetTop + ImgContainer.offsetTop + ImgPreviewWrap.offsetTop - 2}px`;
-    ImgSelector.classList.add('selected');
-    IconContainer.classList.add('onDrag');
+    if (ImgPreview) {
+        ImgSelector.style.width = ImgPreview.offsetWidth + 'px';
+        ImgSelector.style.height = ImgPreview.offsetHeight + 'px';
+        ImgSelector.style.left =  `${Pr_ImgWrap.offsetLeft + ImgContainer.offsetLeft + ImgPreviewWrap.offsetLeft - 2}px`;
+        ImgSelector.style.top = `${Pr_ImgWrap.offsetTop + ImgContainer.offsetTop + ImgPreviewWrap.offsetTop - 2}px`;
+        ImgSelector.classList.add('selected');
+        IconContainer.classList.add('onDrag');
+    }
 }
 
 function loadNewImage() {
@@ -417,4 +420,3 @@ function resize() {
 resize();
 
 window.addEventListener('resize', resize);
-

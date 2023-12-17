@@ -423,7 +423,7 @@
     position: relative;
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    grid-gap: 6%;
+    grid-gap: 8% 4%;
     width: 70%;
     margin: 40px 0 4%;
     cursor: pointer;

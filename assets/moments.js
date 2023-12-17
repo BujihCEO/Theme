@@ -3,6 +3,8 @@ let dst;
 let ctx;
 let Drag = false;
 let threshold = 1;
+const Tshirt = document.querySelector('.Tshirt');
+const Personalization = document.querySelector('.Personalization');
 const Preview = document.querySelector('.Preview');
 const imgInput = document.querySelector('.imgInput');
 const thresholdSlider = document.querySelector('.threshold-slider');
@@ -411,11 +413,9 @@ ImgSizeControl.addEventListener('touchstart', function (event) {
     }
 });
 
-const Tshirt = document.querySelector('.Tshirt');
-
 function resize() {
     var value = Tshirt.offsetWidth / window.innerWidth;
-    Tshirt.style.setProperty('--resize', value);
+     rootStyles.setPropertyValue('--resize', value);
 }
 resize();
 

@@ -648,7 +648,7 @@ input[type="range"]::-webkit-slider-thumb {
     justify-content: center;
 }
 
-.loading {
+.loadingEffect {
     position: sticky;
     top: calc(50% - 100px);
     animation: is-rotating 1s infinite;

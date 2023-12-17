@@ -415,9 +415,9 @@ ImgSizeControl.addEventListener('touchstart', function (event) {
 
 function resize() {
     var value1 = Tshirt.offsetWidth / window.innerWidth;
-    var value1 = Personalization.offsetWidth / window.innerWidth;
-    Tshirt.style.setPropertyValue('--resize', value);
-    Personalization.style.setPropertyValue('--resize', value);
+    var value2 = Personalization.offsetWidth / window.innerWidth;
+    Tshirt.style.setPropertyValue('--resize', value1);
+    Personalization.style.setPropertyValue('--resize', value2);
 }
 resize();
 

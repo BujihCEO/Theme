@@ -14,7 +14,7 @@
     width: 100%;
     max-width: 50vh;
     aspect-ratio: 1/1;
-    background-image: url(assents/Branco.png);
+    background-image: url(Branco.png);
     background-size: cover;
     background-position: center;
     margin: auto;
@@ -288,7 +288,7 @@
     height: 60px;
     width: 60px;
     background-color: white;
-    background-image: url(assents/Size.svg);
+    background-image: url(Size.svg);
     background-size: 90%;
     background-position: center;
     border: 2px solid;
@@ -333,11 +333,11 @@
 }
 
 .Zoom_Btn.In {
-    background-image: url(assents/Zoom-in.svg);
+    background-image: url(Zoom-in.svg);
 }
 
 .Zoom_Btn.Out {
-    background-image: url(assents/Zoom-out.svg);
+    background-image: url(Zoom-out.svg);
 }
 
 .Pr_Border {
@@ -348,7 +348,7 @@
     right: 1%;
     color: black;
     background-color: white;
-    background-image: url(assents/Border.svg);
+    background-image: url(Border.svg);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -362,7 +362,7 @@
     align-items: center;
     width: 100%;
     background-color: aqua;
-    background-image: url(https://usagif.com/wp-content/uploads/gif/snwflks-103.gif);
+    background-image: url(Christmas.gif);
     padding: 0px 0px 40px;
     border-bottom-left-radius: 60px;
     border-bottom-right-radius: 60px;
@@ -476,7 +476,7 @@
     width: 100%;
     height: 100%;
     background-color: white;
-    background-image: url(assents/Upload.svg);
+    background-image: url(Upload.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -543,7 +543,7 @@
 .ImgInputLabel div {
     height: 100%;
     aspect-ratio: 1/1;
-    background-image: url(assents/Upload.svg);
+    background-image: url(Upload.svg);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;

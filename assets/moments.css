@@ -481,7 +481,7 @@
     grid-template-rows: repeat(6,1fr);
     justify-items: center;
     grid-gap: 4%;
-    width: 60%;
+    width: 70%;
     aspect-ratio: 1 / 1;
 }
 

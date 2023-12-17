@@ -366,14 +366,6 @@ ImgSizeControl.addEventListener('touchstart', function (event) {
 const TextPreview = document.querySelector('.TextPreview');
 const TextPreview_2 = document.querySelector('.TextPreview_2');
 const Tshirt = document.querySelector('.Tshirt');
-
-
-function FontResize() {
-    TextPreview.style.fontSize = (1.3 * (Tshirt.offsetWidth / window.innerWidth)) + 'vw';
-    TextPreview_2.style.fontSize = (4.2 * (Tshirt.offsetWidth / window.innerWidth)) + 'vw';
-}
-FontResize();
-
 const Pr_Wrap = document.querySelector('.Pr_Wrap');
 const barCode = document.querySelector('.barCode');
 const InputText_1 = document.querySelector('.InputText_1');
@@ -406,4 +398,4 @@ function resize() {
 }
 resize();
 
-window.addEventListener('resize', resize, FontResize);
+window.addEventListener('resize', resize);

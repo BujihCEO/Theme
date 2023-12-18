@@ -22,7 +22,7 @@
         "02eab79a-9a83-418d-81af-2aec90f1df9f": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% if product.title contains 'Moments' %}\n{% render 'Moments' %}\n{% endif%}\n{% if product.title contains 'Sometimes' %}\n{% render 'Sometimes' %}\n{% endif%}\n{% if product.title contains 'Bootleg' %}\n{% render 'Bootleg' %}\n{% endif%}\n{% if product.title contains 'Bootleg' %}\n{% render 'Bootleg' %}\n{% endif%}"
+            "custom_liquid": "{% if product.title contains 'Moments' %}\n{% render 'Moments' %}\n{% endif%}\n\n{% if product.title contains 'Sometimes' %}\n{% render 'Sometimes' %}\n{% endif%}\n\n{% if product.title contains 'Bootleg' %}\n{% render 'Bootleg' %}\n{% endif%}\n\n{% if product.title contains 'Illusion' %}\n{% render 'illusion' %}\n{% endif%}"
           }
         },
         "quantity_selector": {

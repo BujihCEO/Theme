@@ -1131,18 +1131,18 @@ addTouchHoldListener(TextDown, TextMoveDown);
 //  TEXT FONT FAMILY
 
 const fontFamilyLinks = [
-    'Fonts/alfa-slab-one/AlfaSlabOne-Regular.ttf',
-    'Fonts/amos-normal-maisfontes.b214/amos-normal.ttf',
-    'Fonts/army_rust/ARMYRUST.ttf',
-    'Fonts/ataxia-brk/Ataxia.ttf',
-    'Fonts/bodoni-poster_Gw4Y3/BodoniPoster/BodoniPoster.otf',
-    'Fonts/cloister_black/CloisterBlack.ttf',
-    'Fonts/cooper-std-black-maisfontes.ed43/cooper-std-black.otf',
-    'Fonts/coverface-se-font/CoverfaceSeBold-Yw2O.ttf',
-    'Fonts/fusion-sans/PFFusionSansPro-Black-subset.otf',
-    'Fonts/revue-maisfontes.99f9/revue.otf',
-    'Fonts/soccer_league/SoccerLeague.ttf',
-    'Fonts/wanted_m54/WantedM54.ttf',
+    'Bootleg/Fonts/alfa-slab-one/AlfaSlabOne-Regular.ttf',
+    'Bootleg/Fonts/amos-normal-maisfontes.b214/amos-normal.ttf',
+    'Bootleg/Fonts/army_rust/ARMYRUST.ttf',
+    'Bootleg/Fonts/ataxia-brk/Ataxia.ttf',
+    'Bootleg/Fonts/bodoni-poster_Gw4Y3/BodoniPoster/BodoniPoster.otf',
+    'Bootleg/Fonts/cloister_black/CloisterBlack.ttf',
+    'Bootleg/Fonts/cooper-std-black-maisfontes.ed43/cooper-std-black.otf',
+    'Bootleg/Fonts/coverface-se-font/CoverfaceSeBold-Yw2O.ttf',
+    'Bootleg/Fonts/fusion-sans/PFFusionSansPro-Black-subset.otf',
+    'Bootleg/Fonts/revue-maisfontes.99f9/revue.otf',
+    'Bootleg/Fonts/soccer_league/SoccerLeague.ttf',
+    'Bootleg/Fonts/wanted_m54/WantedM54.ttf',
     //'Fonts/brush-script-std_EOAtM/BrushScriptStd/BrushScriptStdMedium/BrushScriptStdMedium.ttf',
     //'Fonts/choc-std-regular/ChocStdRegular/ChocStdRegular.otf',
     //'Fonts/detonate_brk/detonate.ttf',
@@ -1198,16 +1198,16 @@ FontFamilySelector.forEach((button, index) => {
 //  TEXT BACKGROUND
 
 const BackgroundTextLinks = [
-    'Background/Font-Textures/gggrain1.svg',
-    'Background/Font-Textures/gggrain2.svg',
-    'Background/Font-Textures/pattern.svg',
-    'Background/Font-Textures/subtle-prism.svg',
-    'Background/Font-Textures/1.jpg',
-    'Background/Font-Textures/2.jpg',
-    'Background/Font-Textures/3.jpg',
-    'Background/Font-Textures/4.jpg',
-    'Background/Font-Textures/5.jpg',
-    'Background/Font-Textures/6.jpg',
+    'Bootleg/Font-Textures/gggrain1.svg',
+    'Bootleg/Font-Textures/gggrain2.svg',
+    'Bootleg/Font-Textures/pattern.svg',
+    'Bootleg/Font-Textures/subtle-prism.svg',
+    'Bootleg/Font-Textures/1.jpg',
+    'Bootleg/Font-Textures/2.jpg',
+    'Bootleg/Font-Textures/3.jpg',
+    'Bootleg/Font-Textures/4.jpg',
+    'Bootleg/Font-Textures/5.jpg',
+    'Bootleg/Font-Textures/6.jpg',
 ]
 const BackgroundTextEffect = document.querySelector('.BackgroundTextEffect');
 
@@ -1299,12 +1299,12 @@ function updateBgColor() {
 //  BG MASK
 
 const maskLinks = [
-    'Background/Mask/Mask-1.svg',
-    'Background/Mask/Mask-2.svg',
-    'Background/Mask/Mask-3.svg',
-    'Background/Mask/Mask-4.svg',
-    'Background/Mask/Mask-5.svg',
-    'Background/Mask/Mask-6.svg',
+    'Bootleg/Mask/Mask-1.svg',
+    'Bootleg/Mask/Mask-2.svg',
+    'Bootleg/Mask/Mask-3.svg',
+    'Bootleg/Mask/Mask-4.svg',
+    'Bootleg/Mask/Mask-5.svg',
+    'Bootleg/Mask/Mask-6.svg',
 ];
 
 const ContMask = document.querySelector('.BackgroundCustomOptions.Mask');
@@ -1340,24 +1340,23 @@ BgOptionMask.forEach((button, index) => {
 //  BG TEXTURES
 
 const TextureLinks = [
-    'Background/Textures/1.jpg',
-    'Background/Textures/1.svg',
-    'Background/Textures/2.jpg',
-    'Background/Textures/3.jpg',
-    'Background/Textures/4.jpg',
-    'Background/Textures/5.jpg',
-    'Background/Textures/6.jpg',
-    'Background/Textures/7.jpg',
-    'Background/Textures/8.jpg',
-    'Background/Textures/9.svg',
-    'Background/Textures/10.jpg',
-    'Background/Textures/11.jpg',
-    'Background/Textures/12.jpg',
-    'Background/Textures/13.jpg',
-    'Background/Textures/14.jpg',
-    'Background/Textures/15.jpg',
-    'Background/Textures/16.jpg',
-    'gggrain1.svg',
+    'Bootleg/Textures/1.jpg',
+    'Bootleg/Textures/1.svg',
+    'Bootleg/Textures/2.jpg',
+    'Bootleg/Textures/3.jpg',
+    'Bootleg/Textures/4.jpg',
+    'Bootleg/Textures/5.jpg',
+    'Bootleg/Textures/6.jpg',
+    'Bootleg/Textures/7.jpg',
+    'Bootleg/Textures/8.jpg',
+    'Bootleg/Textures/9.svg',
+    'Bootleg/Textures/10.jpg',
+    'Bootleg/Textures/11.jpg',
+    'Bootleg/Textures/12.jpg',
+    'Bootleg/Textures/13.jpg',
+    'Bootleg/Textures/14.jpg',
+    'Bootleg/Textures/15.jpg',
+    'Bootleg/Textures/16.jpg',
 ];
 
 const ContTexture = document.querySelector('.BackgroundCustomOptions.Texture');
@@ -1386,26 +1385,5 @@ BgOptionTexture.forEach((button, index) => {
         });
         button.classList.add('selected');
         ImgContainerMasked.style.backgroundImage = `url(${TextureLinks[index]})`;
-    });
-});
-
-const BtnBuyNow = document.querySelector('.BtnBuyNow');
-const preview = document.querySelector('.preview');
-
-BtnBuyNow.addEventListener('click', () => {
-    var scale = 4961 / preview.offsetHeight;
-    domtoimage.toPng(preview, {
-        width: preview.clientWidth * scale,
-        height: preview.clientHeight * scale,
-        style: {
-            transform: 'scale('+scale+')',
-            transformOrigin: 'top left'
-        }  
-    })
-    .then(function (dataUrl) {
-        var img = new Image();
-        img.className = 'PreviewFile';
-        img.src = dataUrl;
-        document.body.appendChild(img);
     });
 });

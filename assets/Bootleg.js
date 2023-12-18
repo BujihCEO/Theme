@@ -1223,7 +1223,7 @@ function creatBackgroundText() {
         button.className = 'btnBackgroundText';
         var colorCont = document.createElement('div');
         colorCont.className = 'btnBackgroundTextColor';
-        colorCont.style = 'height: 100%; aspect-ratio: 1/1; background-color: var(--text-color); mix-blend-mode: color;';
+        colorCont.style = 'height: 100%; width: 100%; background-color: var(--text-color); mix-blend-mode: color;';
         button.appendChild(colorCont);
         if (index === 0) {
             button.classList.add('selected');

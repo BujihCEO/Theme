@@ -309,14 +309,15 @@
 .Personalization {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: aqua;
-    background-image: url(https://usagif.com/wp-content/uploads/gif/snwflks-103.gif);
-    padding: 0px 0px 40px;
-    border-bottom-left-radius: 60px;
-    border-bottom-right-radius: 60px;
+    --resize: "";
+    font-size: calc(1vh * var(--resize));
+    background-color: #0ff;
+    background-image: url(Christmas.gif);
+    padding: 6px 0 40px;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
 }
 
 .WRAPBTNOPTIONS {

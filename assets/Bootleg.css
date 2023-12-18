@@ -915,6 +915,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    height: 24em;
     width: 100%;
     overflow-x: scroll;
 }
@@ -922,16 +923,17 @@
 .BgOption {
     flex-shrink: 0;
     position: relative;
-    height: 24em;
+    height: 90%;
     aspect-ratio: 29/42;
-    margin: 3% 10px;
+    margin: 0 10px;
     border-radius: 1em;
-    transition: border .5s,transform .5s;
+    border: 3px solid black;
+    transition: border .5s, height .5s;
     cursor: pointer;
 }
 
 .BgOption.selected {
-    transform: scale(1.1);
+    height: 100%;
     border: 3px solid red;
 }
 

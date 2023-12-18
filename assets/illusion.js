@@ -48,9 +48,12 @@ BtnCustomAll.forEach((element, index) => {
     });
 });
 
+const Personalization = document.querySelector('.Personalization');
 function resize() {
-    var value = Tshirt.offsetWidth / window.innerWidth;
-    Tshirt.style.setProperty('--resize', value);
+    var value1 = Tshirt.offsetWidth / window.innerWidth;
+    var value2 = Personalization.offsetWidth / window.innerWidth;
+    Tshirt.style.setProperty('--resize', value1);
+    Personalization.style.setProperty('--resize', value2);
 }
 resize();
 

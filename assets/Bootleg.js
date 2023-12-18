@@ -17,6 +17,7 @@ const ImgSelector = document.querySelector('.ImgSelector');
 const ImgDragMove = document.querySelector('.ImgDragMove');
 const ImgSizeControl = document.querySelector('.ImgSizeControl');
 const ImgCutBtn = document.querySelector('.ImgCutBtn');
+const LinkAssets = 'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/';
 let ImgMaskContainer = null;
 let PreviewImgContainer = null;
 let RoundedContainer = null;
@@ -1138,18 +1139,18 @@ addTouchHoldListener(TextDown, TextMoveDown);
 //  TEXT FONT FAMILY
 
 const fontFamilyLinks = [
-    'assets/Bootleg/Fonts/alfa-slab-one/AlfaSlabOne-Regular.ttf',
-    'assets/Bootleg/Fonts/amos-normal-maisfontes.b214/amos-normal.ttf',
-    'assets/Bootleg/Fonts/army_rust/ARMYRUST.ttf',
-    'assets/Bootleg/Fonts/ataxia-brk/Ataxia.ttf',
-    'assets/Bootleg/Fonts/bodoni-poster_Gw4Y3/BodoniPoster/BodoniPoster.otf',
-    'assets/Bootleg/Fonts/cloister_black/CloisterBlack.ttf',
-    'assets/Bootleg/Fonts/cooper-std-black-maisfontes.ed43/cooper-std-black.otf',
-    'assets/Bootleg/Fonts/coverface-se-font/CoverfaceSeBold-Yw2O.ttf',
-    'assets/Bootleg/Fonts/fusion-sans/PFFusionSansPro-Black-subset.otf',
-    'assets/Bootleg/Fonts/revue-maisfontes.99f9/revue.otf',
-    'assets/Bootleg/Fonts/soccer_league/SoccerLeague.ttf',
-    'assets/Bootleg/Fonts/wanted_m54/WantedM54.ttf',
+    LinkAssets + 'Bootleg/Fonts/alfa-slab-one/AlfaSlabOne-Regular.ttf',
+    LinkAssets + 'Bootleg/Fonts/amos-normal-maisfontes.b214/amos-normal.ttf',
+    LinkAssets + 'Bootleg/Fonts/army_rust/ARMYRUST.ttf',
+    LinkAssets + 'Bootleg/Fonts/ataxia-brk/Ataxia.ttf',
+    LinkAssets + 'Bootleg/Fonts/bodoni-poster_Gw4Y3/BodoniPoster/BodoniPoster.otf',
+    LinkAssets + 'Bootleg/Fonts/cloister_black/CloisterBlack.ttf',
+    LinkAssets + 'Bootleg/Fonts/cooper-std-black-maisfontes.ed43/cooper-std-black.otf',
+    LinkAssets + 'Bootleg/Fonts/coverface-se-font/CoverfaceSeBold-Yw2O.ttf',
+    LinkAssets + 'Bootleg/Fonts/fusion-sans/PFFusionSansPro-Black-subset.otf',
+    LinkAssets + 'Bootleg/Fonts/revue-maisfontes.99f9/revue.otf',
+    LinkAssets + 'Bootleg/Fonts/soccer_league/SoccerLeague.ttf',
+    LinkAssets + 'Bootleg/Fonts/wanted_m54/WantedM54.ttf',
     //'Fonts/brush-script-std_EOAtM/BrushScriptStd/BrushScriptStdMedium/BrushScriptStdMedium.ttf',
     //'Fonts/choc-std-regular/ChocStdRegular/ChocStdRegular.otf',
     //'Fonts/detonate_brk/detonate.ttf',
@@ -1205,16 +1206,16 @@ FontFamilySelector.forEach((button, index) => {
 //  TEXT BACKGROUND
 
 const BackgroundTextLinks = [
-    'assets/Bootleg/Font-Textures/gggrain1.svg',
-    'Font-Textures/gggrain2.svg',
-    'Font-Textures/pattern.svg',
-    'Font-Textures/subtle-prism.svg',
-    'Font-Textures/1.jpg',
-    'Font-Textures/2.jpg',
-    'Font-Textures/3.jpg',
-    'Font-Textures/4.jpg',
-    'Font-Textures/5.jpg',
-    'Font-Textures/6.jpg',
+    LinkAssets + 'Bootleg/Font-Textures/gggrain1.svg',
+    LinkAssets + 'Bootleg/Font-Textures/gggrain2.svg',
+    LinkAssets + 'Bootleg/Font-Textures/pattern.svg',
+    LinkAssets + 'Bootleg/Font-Textures/subtle-prism.svg',
+    LinkAssets + 'Bootleg/Font-Textures/1.jpg',
+    LinkAssets + 'Bootleg/Font-Textures/2.jpg',
+    LinkAssets + 'Bootleg/Font-Textures/3.jpg',
+    LinkAssets + 'Bootleg/Font-Textures/4.jpg',
+    LinkAssets + 'Bootleg/Font-Textures/5.jpg',
+    LinkAssets + 'Bootleg/Font-Textures/6.jpg',
 ]
 const BackgroundTextEffect = document.querySelector('.BackgroundTextEffect');
 
@@ -1306,12 +1307,12 @@ function updateBgColor() {
 //  BG MASK
 
 const maskLinks = [
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Mask/Mask-1.svg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Mask/Mask-2.svg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Mask/Mask-3.svg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Mask/Mask-4.svg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Mask/Mask-5.svg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Mask/Mask-6.svg',
+    LinkAssets + 'Bootleg/Mask/Mask-1.svg',
+    LinkAssets + 'Bootleg/Mask/Mask-2.svg',
+    LinkAssets + 'Bootleg/Mask/Mask-3.svg',
+    LinkAssets + 'Bootleg/Mask/Mask-4.svg',
+    LinkAssets + 'Bootleg/Mask/Mask-5.svg',
+    LinkAssets + 'Bootleg/Mask/Mask-6.svg',
 ];
 
 const ContMask = document.querySelector('.BackgroundCustomOptions.Mask');
@@ -1347,22 +1348,22 @@ BgOptionMask.forEach((button, index) => {
 //  BG TEXTURES
 
 const TextureLinks = [
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-1.jpg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-2.jpg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-3.jpg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-4.jpg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-5.jpg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-6.jpg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-7.jpg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-8.jpg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-9.jpg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-10.jpg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-11.jpg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-12.jpg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-13.jpg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-14.jpg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-15.jpg',
-    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-16.jpg',
+    LinkAssets + 'Bootleg/Textures/Tex-1.jpg',
+    LinkAssets + 'Bootleg/Textures/Tex-2.jpg',
+    LinkAssets + 'Bootleg/Textures/Tex-3.jpg',
+    LinkAssets + 'Bootleg/Textures/Tex-4.jpg',
+    LinkAssets + 'Bootleg/Textures/Tex-5.jpg',
+    LinkAssets + 'Bootleg/Textures/Tex-6.jpg',
+    LinkAssets + 'Bootleg/Textures/Tex-7.jpg',
+    LinkAssets + 'Bootleg/Textures/Tex-8.jpg',
+    LinkAssets + 'Bootleg/Textures/Tex-9.jpg',
+    LinkAssets + 'Bootleg/Textures/Tex-10.jpg',
+    LinkAssets + 'Bootleg/Textures/Tex-11.jpg',
+    LinkAssets + 'Bootleg/Textures/Tex-12.jpg',
+    LinkAssets + 'Bootleg/Textures/Tex-13.jpg',
+    LinkAssets + 'Bootleg/Textures/Tex-14.jpg',
+    LinkAssets + 'Bootleg/Textures/Tex-15.jpg',
+    LinkAssets + 'Bootleg/Textures/Tex-16.jpg',
 ];
 
 const ContTexture = document.querySelector('.BackgroundCustomOptions.Texture');

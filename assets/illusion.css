@@ -233,10 +233,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -60px;
-    right: -60px;
-    height: 60px;
-    width: 60px;
+    top: -30px;
+    right: -30px;
+    height: 30px;
+    width: 30px;
     background-color: white;
     background-image: url(Size.svg);
     background-size: 90%;
@@ -245,6 +245,13 @@
     border-radius: 40%;
     border-bottom-left-radius: 0;
     box-sizing: border-box;
+}
+
+.ImgSizeControl::after {
+    content: '';
+    position: absolute;
+    height: 150%;
+    width: 150%;
 }
 
 .Zomm_Wrap {

@@ -331,52 +331,60 @@ BtnsChooseControlsImg.forEach((button, index) => {
 });
 
 function addTouchHoldListener(element, action) {
-    let isInteracting = false;
-    let timer = null;
-    let touchTimer = null;
-    
-    function startMoving() {
-        element.style.boxShadow = '0px 0px 30px red';
-        function ContinueAction() {
-            action();
-            timer = setTimeout(ContinueAction, 100);
-        }
-        if (isInteracting) {
-            action();
-            timer = setTimeout(ContinueAction, 400);
-        }
-    }
-    
-    function stopMoving() {
-        isInteracting = false;
-        clearTimeout(timer);
-        clearTimeout(touchTimer);
-        element.style.boxShadow = '';
-    }
-    
-    element.addEventListener('mousedown', () => {
-        isInteracting = true;
-        startMoving();
-    });
+    if (element) {
+        let isInteracting = false;
+        let timer = null;
+        let touchTimer = null;
 
-    element.addEventListener('mouseup', stopMoving);
-    element.addEventListener('mouseleave', stopMoving);
+        function startMoving() {
+            if (element) {
+                element.style.boxShadow = '0px 0px 30px red';
+                function ContinueAction() {
+                    action();
+                    timer = setTimeout(ContinueAction, 100);
+                }
+                if (isInteracting) {
+                    action();
+                    timer = setTimeout(ContinueAction, 400);
+                }
+            }
+        }
 
-    
-    element.addEventListener('touchstart', () => {
-        isInteracting = true;
-        touchTimer = setTimeout(() => {
+        function stopMoving() {
+            isInteracting = false;
+            clearTimeout(timer);
+            clearTimeout(touchTimer);
+            if (element) {
+                element.style.boxShadow = '';
+            }
+        }
+
+        element.addEventListener('mousedown', () => {
+            isInteracting = true;
             startMoving();
-        }, 200);
-    });
-    
-    element.addEventListener('touchmove', () => {
-        clearTimeout(touchTimer);
-    });
-    
-    element.addEventListener('touchend', stopMoving);
-    element.addEventListener('touchcancel', stopMoving);
+        });
+
+        element.addEventListener('mouseup', stopMoving);
+        element.addEventListener('mouseleave', stopMoving);
+
+        element.addEventListener('touchstart', () => {
+            isInteracting = true;
+            touchTimer = setTimeout(() => {
+                startMoving();
+            }, 200);
+        });
+
+        element.addEventListener('touchmove', () => {
+            clearTimeout(touchTimer);
+        });
+
+        element.addEventListener('touchend', stopMoving);
+        element.addEventListener('touchcancel', stopMoving);
+    } else {
+        console.error('Element is null');
+    }
 }
+
 
 //  IMG MOVE BTN
 

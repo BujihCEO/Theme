@@ -116,7 +116,7 @@
     bottom: -100%;
     background-blend-mode: multiply;
     background: radial-gradient(100% 100%, var(--color), white);
-    --size: calc(0.1vh * var(--resize));
+    --size: calc(.2vh * var(--resize));
     background-size: var(--size) var(--size);
     background-position: 0 -3px, -2px 0, 2px 0;
     mix-blend-mode: screen;

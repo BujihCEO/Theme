@@ -1010,37 +1010,37 @@
 }
 
 .Positive {
-    background: url(Positive.svg) contain;
+    background: url(Positive.svg) center / contain no-repeat;
 }
 
 .Negative {
-    background: url(Negative.svg) contain;
+    background: url(Negative.svg) center / contain no-repeat;
 }
 
 .Up {
-    background: url(Up.svg) contain;
+    background: url(Up.svg) center / contain no-repeat;
 }
 
 .Down {
-    background: url(Down.svg) contain;
+    background: url(Down.svg) center / contain no-repeat;
 }
 
 .Left {
-    background: url(Left.svg) contain;
+    background: url(Left.svg) center / contain no-repeat;
 }
 
 .Right {
-    background: url(Right.svg) contain;
+    background: url(Right.svg) center / contain no-repeat;
 }
 
 .MaskImgFalse {
-    background: url(Mask-Out.png) contain;
+    background: url(Mask-Out.png) center / contain no-repeat;
 }
 
 .MaskImgTrue {
-    background: url(Mask-In.png) contain;
+    background: url(Mask-In.png) center / contain no-repeat;
 }
 
 .RoundedSelector {
-    background: url(Rounded.png) contain;
+    background: url(Rounded.png) center / contain no-repeat;
 }

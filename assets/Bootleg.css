@@ -241,16 +241,15 @@
 
 .ImgSelector {
     display: none;
-    position: absolute;
-    border: 4px solid red;
 }
 
 .ImgSelector.selected {
+    position: absolute;
     display: block;
+    border: 2px dashed red;
 }
 
 .ImgDragMove {
-    position: absolute;
     height: 100%;
     width: 100%;
 }
@@ -260,10 +259,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -60px;
-    right: -60px;
-    height: 60px;
-    width: 60px;
+    top: -30px;
+    right: -30px;
+    height: 30px;
+    width: 30px;
     background-color: white;
     background-image: url(Size.svg);
     background-size: 90%;
@@ -358,14 +357,15 @@
 .ContainerCustomization {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: aqua;
-    background-image: url(christmas.gif);
-    padding: 10px 0px 40px;
-    border-bottom-left-radius: 60px;
-    border-bottom-right-radius: 60px;
+    --resize: "";
+    font-size: calc(1vh * var(--resize));
+    background-color: #0ff;
+    background-image: url(Christmas.gif);
+    padding: 6px 0 40px;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
 }
 
 .OptionCustomization {
@@ -993,21 +993,19 @@ input[type="text"] {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 80px;
-    font-size: 60px;
-    font-family: sans-serif;
+    height: 1.7em;
+    font-size: 3em;
     font-weight: 700;
     padding: 10px 20px;
-    margin: 0px 5px;
+    margin: 0 3px;
     background-color: #fff;
-    color: black;
+    color: #000;
     cursor: pointer;
 }
 
 .BTNOPTIONS.selected {
     background-color: #000;
-    color: white;
-    font-size: 70px;
+    color: #fff;
 }
 
 @keyframes BoxShadowSelected {

@@ -1206,15 +1206,15 @@ FontFamilySelector.forEach((button, index) => {
 
 const BackgroundTextLinks = [
     'assets/Bootleg/Font-Textures/gggrain1.svg',
-    'assets/Bootleg/Font-Textures/gggrain2.svg',
-    'assets/Bootleg/Font-Textures/pattern.svg',
-    'assets/Bootleg/Font-Textures/subtle-prism.svg',
-    'assets/Bootleg/Font-Textures/1.jpg',
-    'assets/Bootleg/Font-Textures/2.jpg',
-    'assets/Bootleg/Font-Textures/3.jpg',
-    'assets/Bootleg/Font-Textures/4.jpg',
-    'assets/Bootleg/Font-Textures/5.jpg',
-    'assets/Bootleg/Font-Textures/6.jpg',
+    'Font-Textures/gggrain2.svg',
+    'Font-Textures/pattern.svg',
+    'Font-Textures/subtle-prism.svg',
+    'Font-Textures/1.jpg',
+    'Font-Textures/2.jpg',
+    'Font-Textures/3.jpg',
+    'Font-Textures/4.jpg',
+    'Font-Textures/5.jpg',
+    'Font-Textures/6.jpg',
 ]
 const BackgroundTextEffect = document.querySelector('.BackgroundTextEffect');
 
@@ -1306,12 +1306,12 @@ function updateBgColor() {
 //  BG MASK
 
 const maskLinks = [
-    'Bootleg/Mask/Mask-1.svg',
-    'Bootleg/Mask/Mask-2.svg',
-    'Bootleg/Mask/Mask-3.svg',
-    'Bootleg/Mask/Mask-4.svg',
-    'Bootleg/Mask/Mask-5.svg',
-    'Bootleg/Mask/Mask-6.svg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Mask/Mask-1.svg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Mask/Mask-2.svg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Mask/Mask-3.svg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Mask/Mask-4.svg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Mask/Mask-5.svg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Mask/Mask-6.svg',
 ];
 
 const ContMask = document.querySelector('.BackgroundCustomOptions.Mask');
@@ -1347,22 +1347,22 @@ BgOptionMask.forEach((button, index) => {
 //  BG TEXTURES
 
 const TextureLinks = [
-    'https://361875-4.myshopify.com/cdn/shop/t/8/assets/Bootleg/Textures/Tex-1.jpg',
-    'https://361875-4.myshopify.com/cdn/shop/t/8/assets/Bootleg/Textures/Tex-2.jpg',
-    'https://361875-4.myshopify.com/cdn/shop/t/8/assets/Bootleg/Textures/Tex-3.jpg',
-    'https://361875-4.myshopify.com/cdn/shop/t/8/assets/Bootleg/Textures/Tex-4.jpg',
-    'https://361875-4.myshopify.com/cdn/shop/t/8/assets/Bootleg/Textures/Tex-5.jpg',
-    'https://361875-4.myshopify.com/cdn/shop/t/8/assets/Bootleg/Textures/Tex-6.jpg',
-    'https://361875-4.myshopify.com/cdn/shop/t/8/assets/Bootleg/Textures/Tex-7.jpg',
-    'https://361875-4.myshopify.com/cdn/shop/t/8/assets/Bootleg/Textures/Tex-8.jpg',
-    'https://361875-4.myshopify.com/cdn/shop/t/8/assets/Bootleg/Textures/Tex-9.svg',
-    'https://361875-4.myshopify.com/cdn/shop/t/8/assets/Bootleg/Textures/Tex-10.jpg',
-    'https://361875-4.myshopify.com/cdn/shop/t/8/assets/Bootleg/Textures/Tex-11.jpg',
-    'https://361875-4.myshopify.com/cdn/shop/t/8/assets/Bootleg/Textures/Tex-12.jpg',
-    'https://361875-4.myshopify.com/cdn/shop/t/8/assets/Bootleg/Textures/Tex-13.jpg',
-    'https://361875-4.myshopify.com/cdn/shop/t/8/assets/Bootleg/Textures/Tex-14.jpg',
-    'https://361875-4.myshopify.com/cdn/shop/t/8/assets/Bootleg/Textures/Tex-15.jpg',
-    'https://361875-4.myshopify.com/cdn/shop/t/8/assets/Bootleg/Textures/Tex-16.jpg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-1.jpg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-2.jpg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-3.jpg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-4.jpg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-5.jpg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-6.jpg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-7.jpg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-8.jpg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-9.jpg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-10.jpg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-11.jpg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-12.jpg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-13.jpg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-14.jpg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-15.jpg',
+    'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Bootleg/Textures/Tex-16.jpg',
 ];
 
 const ContTexture = document.querySelector('.BackgroundCustomOptions.Texture');

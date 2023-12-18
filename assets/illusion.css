@@ -187,8 +187,8 @@
     display: flex;
     justify-content: center;
     width: 0;
-    left: 13.8%;
-    bottom: 6.3%;
+    left: calc(4.4vw * var(--resize));
+    bottom: calc(2.7vw * var(--resize));
     color: var(--color);
     font-family: font_2;
     font-size: calc(2vw * var(--resize));

@@ -813,6 +813,10 @@
     user-select: none;
 }
 
+.TextSettings svg {
+    height: 100%;
+}
+
 .PositionTextBtns {
     display: flex;
     align-items: center;

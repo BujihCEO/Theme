@@ -171,11 +171,11 @@
 .oval {
     position: absolute;
     display: flex;
-    bottom: -1%;
+    bottom: -1.5%;
     left: 8%;
-    width: 10%;
+    width: 11%;
     aspect-ratio: 1/2;
-    border: calc(.4vw * var(--resize)) solid var(--color);
+    border: calc(0.4vw * var(--resize)) solid var(--color);
     border-radius: 50%;
     transform: rotate(75deg);
     align-items: center;
@@ -193,6 +193,7 @@
     font-family: font_2;
     font-size: calc(2vw * var(--resize));
     line-height: 0;
+    letter-spacing: normal;
 }
 
 .midBar {
@@ -207,6 +208,7 @@
     position: absolute;
     color: var(--color);
     font-size: calc(2vw * var(--resize));
+    letter-spacing: normal;
     bottom: 6.3%;
     right: 5%;
     font-family: font_2;

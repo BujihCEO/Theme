@@ -701,7 +701,7 @@ CopyColorBtn.forEach(button => {
 //  ALL JSCOLOR INPUT FUNCTION
 
 jscolor.presets.default = {
-    width:300, height:165, closeButton:true, closeText:'', sliderSize:20
+    width:250, height:165, closeButton:true, closeText:'', sliderSize:20
 };
 
 function updateJSColor(picker, selector) {

@@ -514,35 +514,35 @@ input[type="range"]::-webkit-slider-thumb {
 
 .Tittle {
     position: relative;
-    font-size: 50px;
-    font-family: sans-serif;
+    font-size: 3em;
     font-weight: 700;
-    background-color: black;
-    color: white;
-    padding: 15px 30px 10px;
-    margin: 0 0 0 0px;
+    line-height: 1;
+    background-color: #000;
+    color: #fff;
+    padding: 5px 30px;
+    margin: 0;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
 }
 
-input[type="text"] {
+.Personalization input[type="text"] {
     width: 80%;
-    font-size: 60px;
+    font-size: 3em;
     font-family: sans-serif;
     font-weight: 700;
-    border: 6px solid black;
-    border-radius: 30px;
-    padding: 20px 30px;
+    border: 0px;
+    border-radius: 1rem;
+    padding: 1rem;
 }
 
-input[type="number"] {
+.Personalization input[type="number"] {
     width: 80%;
-    font-size: 60px;
+    font-size: 3em;
     font-family: sans-serif;
     font-weight: 700;
-    border: 6px solid black;
-    border-radius: 30px;
-    padding: 20px 30px;
+    border: 0px;
+    border-radius: 1rem;
+    padding: 1rem;
 }
 
 @font-face {

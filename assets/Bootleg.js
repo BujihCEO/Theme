@@ -334,28 +334,26 @@ function addTouchHoldListener(element, action) {
     let isInteracting = false;
     let timer = null;
     let touchTimer = null;
-
-    function ContinueAction() {
-        action();
-        timer = setTimeout(ContinueAction, 100);
-    }
-
+    
     function startMoving() {
         element.style.boxShadow = '0px 0px 30px red';
-
+        function ContinueAction() {
+            action();
+            timer = setTimeout(ContinueAction, 100);
+        }
         if (isInteracting) {
             action();
             timer = setTimeout(ContinueAction, 400);
         }
     }
-
+    
     function stopMoving() {
         isInteracting = false;
         clearTimeout(timer);
         clearTimeout(touchTimer);
         element.style.boxShadow = '';
     }
-
+    
     element.addEventListener('mousedown', () => {
         isInteracting = true;
         startMoving();
@@ -364,17 +362,18 @@ function addTouchHoldListener(element, action) {
     element.addEventListener('mouseup', stopMoving);
     element.addEventListener('mouseleave', stopMoving);
 
+    
     element.addEventListener('touchstart', () => {
         isInteracting = true;
         touchTimer = setTimeout(() => {
             startMoving();
         }, 200);
     });
-
+    
     element.addEventListener('touchmove', () => {
         clearTimeout(touchTimer);
     });
-
+    
     element.addEventListener('touchend', stopMoving);
     element.addEventListener('touchcancel', stopMoving);
 }
@@ -406,11 +405,6 @@ function moveRight() {
     PreviewImgContainer.style.left = (parseInt(PreviewImgContainer.style.left) + step) + 'px';
     ImgSelector.style.left = (parseInt(ImgSelector.style.left) + step) + 'px';
 }
-
-addTouchHoldListener(BtnImgUp, moveUp);
-addTouchHoldListener(BtnImgDown, moveDown);
-addTouchHoldListener(BtnImgLeft, moveLeft);
-addTouchHoldListener(BtnImgRight, moveRight);
 
 //  IMG SIZE BTN
 
@@ -576,11 +570,6 @@ function PlusSize() {
 function PlusPlusSize() {
     updateScale(Scale * 2);
 }
-
-addTouchHoldListener(sizeLess, LessSize);
-addTouchHoldListener(sizePlus, PlusSize);
-addTouchHoldListener(SizeLessLess, LessLessSize);
-addTouchHoldListener(SizePlusPlus, PlusPlusSize);
 
 //  LAYER BUTTONS
 
@@ -969,9 +958,6 @@ function RoundedBorderMore() {
     }
 }
 
-addTouchHoldListener(LessRoundedBorder, RoundedBorderLess);
-addTouchHoldListener(MoreRoundedBorder, RoundedBorderMore);
-
 // ROUNDED SHADOW SIZE
 
 function getBlurValue(boxShadow) {
@@ -999,10 +985,6 @@ function RoundedShadowMore() {
 
 const LessRoundedShadow = document.querySelector('.LessRoundedShadow');
 const MoreRoundedShadow = document.querySelector('.MoreRoundedShadow');
-
-addTouchHoldListener(LessRoundedShadow, RoundedShadowLess);
-addTouchHoldListener(MoreRoundedShadow, RoundedShadowMore);
-
 
 //  TEXT CUSTOMIZATION 
 
@@ -1082,11 +1064,6 @@ function Size2xPlusText() {
     textSize(FontSizeValue * 2);
 }
 
-addTouchHoldListener(TextSize2xLess, Size2xLessText);
-addTouchHoldListener(TextSizeLess, SizeLessText);
-addTouchHoldListener(TextSizePlus, SizePlusText);
-addTouchHoldListener(TextSize2xPlus, Size2xPlusText);
-
 const LessLetterSpacing = document.querySelector('.LessLetterSpacing');
 const MoreLetterSpacing = document.querySelector('.MoreLetterSpacing');
 const LetterSpacingValue = 1;
@@ -1109,8 +1086,7 @@ function LetterSpacingMore() {
     LetterSpacing(LetterSpacingValue);
 }
 
-addTouchHoldListener(LessLetterSpacing, LetterSpacingLess);
-addTouchHoldListener(MoreLetterSpacing, LetterSpacingMore);
+
 
 const TextUp = document.querySelector('.TextUp');
 const TextDown = document.querySelector('.TextDown');
@@ -1126,8 +1102,7 @@ function TextMoveDown() {
     TextPreview.style.top = TextTopValue + stepText + 'px';
 }
 
-addTouchHoldListener(TextUp, TextMoveUp);
-addTouchHoldListener(TextDown, TextMoveDown);
+
 
 //  TEXT FONT FAMILY
 
@@ -1278,8 +1253,7 @@ function StrokePlusText() {
     }
 }
 
-addTouchHoldListener(TextStrokeLess, StrokeLessText);
-addTouchHoldListener(TextStrokePlus, StrokePlusText);
+
 
 //  TEXT STROKE COLOR
 
@@ -1399,3 +1373,30 @@ function resize() {
 resize();
 
 window.addEventListener('resize', resize);
+
+document.addEventListener('DOMContentLoaded', function() {
+    addTouchHoldListener(BtnImgUp, moveUp);
+    addTouchHoldListener(BtnImgDown, moveDown);
+    addTouchHoldListener(BtnImgLeft, moveLeft);
+    addTouchHoldListener(BtnImgRight, moveRight);
+    addTouchHoldListener(sizeLess, LessSize);
+    addTouchHoldListener(sizePlus, PlusSize);
+    addTouchHoldListener(SizeLessLess, LessLessSize);
+    addTouchHoldListener(SizePlusPlus, PlusPlusSize);
+    addTouchHoldListener(LessRoundedBorder, RoundedBorderLess);
+    addTouchHoldListener(MoreRoundedBorder, RoundedBorderMore);
+    addTouchHoldListener(LessRoundedBorder, RoundedBorderLess);
+    addTouchHoldListener(MoreRoundedBorder, RoundedBorderMore);
+    addTouchHoldListener(LessRoundedShadow, RoundedShadowLess);
+    addTouchHoldListener(MoreRoundedShadow, RoundedShadowMore);
+    addTouchHoldListener(TextSize2xLess, Size2xLessText);
+    addTouchHoldListener(TextSizeLess, SizeLessText);
+    addTouchHoldListener(TextSizePlus, SizePlusText);
+    addTouchHoldListener(TextSize2xPlus, Size2xPlusText);
+    addTouchHoldListener(LessLetterSpacing, LetterSpacingLess);
+    addTouchHoldListener(MoreLetterSpacing, LetterSpacingMore);
+    addTouchHoldListener(TextUp, TextMoveUp);
+    addTouchHoldListener(TextDown, TextMoveDown);
+    addTouchHoldListener(TextStrokeLess, StrokeLessText);
+    addTouchHoldListener(TextStrokePlus, StrokePlusText);
+});

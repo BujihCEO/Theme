@@ -889,7 +889,6 @@
 .btnBackgroundText {
     display: flex;
     height: 90%;
-    aspect-ratio: 1/1;
     border: 2px solid black;
     border-radius: 15px;
     align-items: center;
@@ -899,7 +898,8 @@
     background-size: 100%;
     background-color: #fff;
     margin: 0 10px;
-    transition: border .5s, height .5s;
+    transition: border .5s,height .5s;
+    overflow: hidden;
     -webkit-user-select: none;
     user-select: none;
 }

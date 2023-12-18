@@ -430,7 +430,7 @@
     width: 100%;
 }
 
-input[type="range"] {
+.Personalization input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
     width: 95%;
@@ -441,13 +441,13 @@ input[type="range"] {
     z-index: 2;
 }
 
-input[type="range"]::-webkit-slider-runnable-track {
+.Personalization input[type="range"]::-webkit-slider-runnable-track {
     width: 100%;
     height: 40px;
     border-radius: 5px;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+.Personalization input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 20px;
     height: 40px;
@@ -479,7 +479,7 @@ input[type="range"]::-webkit-slider-thumb {
     border-top-right-radius: 2rem;
 }
 
-input[type="text"] {
+.Personalization input[type="text"] {
     width: 80%;
     font-size: 3em;
     font-family: sans-serif;

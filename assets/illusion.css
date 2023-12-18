@@ -434,10 +434,8 @@
     align-items: center;
     height: 100px;
     width: 100%;
-    font-size: 50px;
-    font-family: sans-serif;
     font-weight: 700;
-    margin: 70px 0px 0px;
+    margin: 0;
 }
 
 .threshold-slider {

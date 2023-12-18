@@ -31,7 +31,7 @@
     width: 100%;
     max-width: 50vh;
     aspect-ratio: 1/1;
-    background-image: url(assents/Branco.png);
+    background-image: url(Branco.png);
     background-size: cover;
     background-position: center;
     margin: auto;
@@ -140,10 +140,10 @@
 
 .Star {
     background-color: var(--color);
-    -webkit-mask-image: url(assents/Star.svg);
+    -webkit-mask-image: url(Star.svg);
     -webkit-mask-size: contain;
     -webkit-mask-repeat: no-repeat;
-    mask-image: url(assents/Star.svg);
+    mask-image: url(Star.svg);
     mask-size: contain;
     mask-repeat: no-repeat;
 }

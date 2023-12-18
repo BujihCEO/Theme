@@ -849,55 +849,64 @@
 
 .FontFamilyContainer {
     display: flex;
+    align-items: center;
     width: 100%;
+    height: 10em;
     overflow-x: scroll;
 }
 
 .FontFamilySelector {
     display: flex;
-    justify-content: center;
+    height: 90%;
+    aspect-ratio: 1/1;
+    border: 2px solid black;
+    border-radius: 15px;
     align-items: center;
-    height: 150px;
-    width: 150px;
-    flex-shrink: 0;
-    background-color: white;
-    border: 6px solid black;
-    border-radius: 40px;
-    margin: 15px 20px;
-    font-size: 110px;
-    box-shadow: 3px 5px 10px #000;
-    transition: border 0.5s, transform 0.5s;
-    cursor: pointer;
+    justify-content: center;
+    font-size: 3em;
+    font-weight: 700;
+    background-size: 100%;
+    background-color: #fff;
+    margin: 0 10px;
+    transition: border .5s, height .5s;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .FontFamilySelector.selected {
-    transform: scale(1.1); 
-    border: 6px solid red;
+    border: 2px solid red;
+    height: 100%;
 }
 
 .BackgroundTextEffect {
     display: flex;
+    align-items: center;
     width: 100%;
+    height: 10em;
     overflow-x: scroll;
 }
 
 .btnBackgroundText {
-    height: 150px;
-    width: 150px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    flex-shrink: 0;
-    border: 6px solid black;
-    border-radius: 40px;
-    margin: 15px 20px;
-    box-shadow: 3px 5px 10px #000;
-    transition: border 0.5s, transform 0.5s;
-    overflow: hidden;
+    display: flex;
+    height: 90%;
+    aspect-ratio: 1/1;
+    border: 2px solid black;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    font-weight: 700;
+    background-size: 100%;
+    background-color: #fff;
+    margin: 0 10px;
+    transition: border .5s, height .5s;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .btnBackgroundText.selected {
-    transform: scale(1.1); 
-    border: 6px solid red;
+    border: 2px solid red;
+    height: 100%;
 }
 
 .BackgroundCustomOptions {
@@ -911,17 +920,17 @@
 .BgOption {
     flex-shrink: 0;
     position: relative;
-    height: 320px;
+    height: 24em;
     aspect-ratio: 29/42;
-    margin: 3% 30px;
-    border-radius: 2em;
-    transition: border 0.5s, transform 0.5s;
+    margin: 3% 10px;
+    border-radius: 1em;
+    transition: border .5s,transform .5s;
     cursor: pointer;
 }
 
 .BgOption.selected {
-    transform: scale(1.1); 
-    border: 6px solid red;
+    transform: scale(1.1);
+    border: 3px solid red;
 }
 
 .BgOption.Mask {

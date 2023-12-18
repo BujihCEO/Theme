@@ -282,23 +282,3 @@ InputText_2.addEventListener('input', function() {
 });
 
 window.addEventListener('resize', resize, textScaleX);
-
-const BtnBuyNow = document.querySelector('.BtnBuyNow');
-
-BtnBuyNow.addEventListener('click', () => {
-    var scale = 4961 / Pr_Drag.offsetHeight;
-    domtoimage.toPng(Pr_Drag, {
-        width: Pr_Drag.clientWidth * scale,
-        height: Pr_Drag.clientHeight * scale,
-        style: {
-            transform: 'scale('+scale+')',
-            transformOrigin: 'top left'
-        }  
-    })
-    .then(function (dataUrl) {
-        var img = new Image();
-        img.style = 'width: 100%;';
-        img.src = dataUrl;
-        document.body.appendChild(img);
-    });
-});

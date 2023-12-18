@@ -1,3 +1,20 @@
+.headerWrap {
+    width: 100%;
+    margin: 25px 0px 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.headerTitlle{
+    font-size: 2rem;
+    line-height: 0;
+    border-radius: 4rem;
+    padding: 20px 40px;
+    box-shadow: 0 0 6px #000;
+    color: #fff;
+    background-color: #000;
+}
+
 .Bg_Tshirt {
     position: sticky;
     top: 0;

@@ -391,12 +391,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 12em;
+    height: 14em;
     width: 95%;
     border-radius: 2em;
     background-color: #fff;
     box-shadow: 5px 5px 15px #000;
-    margin: 30px auto 0;
+    margin: 3em auto 0;
 }
 
 .UploadImageLabel {
@@ -409,7 +409,7 @@
 }
 
 .UploadImageLabel p {
-    font-size: 50px;
+    font-size: 3em;
     font-family: sans-serif;
     font-weight: 700;
     margin: 0 10px;
@@ -452,7 +452,7 @@
 
 .ImageIcon.selected {
     transform: scale(1.05); 
-    border: 6px solid red;
+    border: 2px solid red;
 }
 
 .clearIconContainer {

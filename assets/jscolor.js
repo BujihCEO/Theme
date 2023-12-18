@@ -581,7 +581,7 @@ var jsc = {
 				'.jscolor-wrap .jscolor-border { position:relative; }',
 				'.jscolor-wrap .jscolor-palette { position:absolute; }',
 				'.jscolor-wrap .jscolor-palette-sw { position:absolute; display:block; cursor:pointer; }',
-				'.jscolor-wrap .jscolor-btn { position:absolute; overflow:hidden; white-space:nowrap; font:100px sans-serif; text-align:center; cursor:pointer; }',
+				'.jscolor-wrap .jscolor-btn { position:absolute; overflow:hidden; white-space:nowrap; font: 0px sans-serif; text-align:center; cursor:pointer; }',
 			].join('\n')
 		);
 	},

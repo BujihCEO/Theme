@@ -1009,10 +1009,38 @@
     }
 }
 
-.desactived {
-    display: none;
+.Positive {
+    background: url(Positive.svg) contain;
 }
 
-.PreviewFile {
-    width: 100%;
+.Negative {
+    background: url(Negative.svg) contain;
+}
+
+.Up {
+    background: url(Up.svg) contain;
+}
+
+.Down {
+    background: url(Down.svg) contain;
+}
+
+.Left {
+    background: url(Left.svg) contain;
+}
+
+.Right {
+    background: url(Right.svg) contain;
+}
+
+.MaskImgFalse {
+    background: url(Mask-Out.png) contain;
+}
+
+.MaskImgTrue {
+    background: url(Mask-In.png) contain;
+}
+
+.RoundedSelector {
+    background: url(Rounded.png) contain;
 }

@@ -319,34 +319,42 @@
     border-bottom-right-radius: 60px;
 }
 
-.BtnCustomWrap {
-    position: relative;
+.WRAPBTNOPTIONS {
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    height: 100%;
+    border-radius: 2em;
+    overflow: hidden;
+    overflow-x: scroll;
+    :first-child {
+        margin-left: 0px;
+    }
+    :last-child {
+        margin-right: 0px;
+    }
 }
 
-.BtnCustom {
+.WRAPBTNOPTIONS.SUB {
+    margin: 20px 0px 0px;
+}
+
+.BTNOPTIONS {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 80px;
-    font-size: 60px;
-    font-family: sans-serif;
+    height: 1.7em;
+    font-size: 3em;
     font-weight: 700;
     padding: 10px 20px;
-    border: 6px solid black;
+    margin: 0 3px;
     background-color: #fff;
-    color: black;
+    color: #000;
+    cursor: pointer;
 }
 
-.BtnCustom.selected {
+.BTNOPTIONS.selected {
     background-color: #000;
-    color: white;
-    font-size: 70px;
+    color: #fff;
 }
 
 .CustomContainer {

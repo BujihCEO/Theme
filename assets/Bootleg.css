@@ -282,15 +282,15 @@
 
 .ImgCutBtn {
     position: absolute;
-    left: calc(50% - 20px);
-    bottom: -24px;
-    height: 40px;
-    width: 40px;
+    left: calc(50% - 15px);
+    bottom: -17px;
+    height: 30px;
+    width: 30px;
     background: white;
     background-image: url(Two-Arrows.svg);
     background-size: 90%;
     background-position: center;
-    border: 4px solid black;
+    border: 2px solid black;
     border-radius: 30px;
     cursor: n-resize;
 }

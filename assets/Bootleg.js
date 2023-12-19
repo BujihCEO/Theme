@@ -1403,3 +1403,5 @@ function resize() {
 resize();
 
 window.addEventListener('resize', resize);
+
+const PrintTarget = document.querySelector('.PrintTarget');

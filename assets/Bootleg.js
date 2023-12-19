@@ -1424,14 +1424,14 @@ function PrintResult() {
             fetch(dataUrl)
             .then(res => res.blob())
             .then(blob => {
-                var fileList1 = createFileList(blob, 'croppedImage1.webp');
-                InputPrint.files = fileList1;
+                var fileList = createFileList(blob, 'Estampa.png');
+                InputPrint.files = fileList;
             });
-            function createFileList(file1, name1) {
-                var fileList1 = new DataTransfer();
-                var newFile1 = new File([file1], name1);
-                fileList1.items.add(newFile1);
-                return fileList1.files;
+            function createFileList(file, name) {
+                var fileList = new DataTransfer();
+                var newFile = new File([file], name);
+                fileList.items.add(newFile);
+                return fileList.files;
             }
             resolve(); 
         })

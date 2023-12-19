@@ -363,7 +363,7 @@
     font-size: calc(1vh * var(--resize));
     background-color: #0ff;
     background-image: url(Christmas.gif);
-    padding: 6px 0 40px;
+    padding: 6px 0 20px;
     border-bottom-left-radius: 2em;
     border-bottom-right-radius: 2em;
 }
@@ -442,17 +442,18 @@
 .ImageIcon {
     height: 85%;
     aspect-ratio: 1/1;
-    background-color: white;
+    background-color: #fff;
     border-radius: 2em;
-    margin: 0px 3%;
-    border: 0px solid red;
-    box-shadow: 0px 0px 10px;
-    transition: border 0.5s, transform 0.5s;
+    margin: 0 3%;
+    border: 2px solid black;
+    box-shadow: 0 0 0px;
+    transition: .5s;
 }
 
 .ImageIcon.selected {
-    transform: scale(1.05); 
+    height: 90%;
     border: 2px solid red;
+    box-shadow: 0 0 5px;
 }
 
 .clearIconContainer {
@@ -621,7 +622,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 50px 0px 0px;
+    margin: 20px 0 0;
 }
 
 .ImgEffect.selected {
@@ -675,13 +676,12 @@
 }
 
 .ImgGradient {
-    height: 150px;
+    height: 60px;
     aspect-ratio: 1/1;
-    background-color: black;
-    padding: 10px;
-    border: 5px solid #5b5b5b;
-    border-radius: 20px;
-    margin: 0px 20px;
+    background-color: #000;
+    border: 3px solid white;
+    border-radius: 15px;
+    margin: 0 15px;
 }
 
 .ImgGradient.With {
@@ -691,28 +691,32 @@
 
 .ContainerImgCorEff {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
 }
 
 .OptionImgColorEffect {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 120px;
-    font-size: 55px;
+    height: 90%;
     font-family: sans-serif;
-    background-color: white;
-    color: black;
-    border: 6px solid black;
-    border-radius: 30px;
-    padding: 15px;
-    margin: 0px 20px;
-    box-shadow: 0px 0px 10px;
-    transition: border 0.5s, transform 0.5s;
+    background-color: #fff;
+    color: #000;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin: 0px 15px;
+    padding: 5px;
+    box-shadow: 0 0 0px;
+    transition: .5s;
 }
 
 .OptionImgColorEffect.selected {
+    height: 100%;
     border: 2px solid red;
-    box-shadow: 0px 0px 20px red;
+    box-shadow: 0 0 10px red;
 }
 
 .ImgColorEffectContainer {
@@ -721,24 +725,24 @@
 
 .ImgColorEffectContainer.selected {
     display: flex;
-    margin: 40px 0px 0px;
+    margin: 20px 0px 0px;
 }
 
 .RoundedSelector {
     flex-shrink: 0;
-    height: 150px;
-    width: 150px;
-    margin: 0px 40px -15px;
-    border-radius: 40px;
+    height: 90%;
+    aspect-ratio: 1/1;
+    margin: 0 20px;
+    border-radius: 15px;
     overflow: hidden;
     border: 0px solid red;
-    box-shadow: 5px 5px 15px #000;
-    transition: border .5s, transform .5s;
+    box-shadow: 2px 2px 5px #000;
+    transition: .5s;
 }
 
 .RoundedSelector.selected {
-    border: 6px solid red;
-    transform: scale(1.1);
+    border: 2px solid red;
+    height: 100%;
 }
 
 .RoundedEffectOptions.WRAPBTNOPTIONS {

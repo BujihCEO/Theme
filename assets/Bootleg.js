@@ -1424,14 +1424,27 @@ function PrintResult() {
       // Criar um novo arquivo a partir do blob
       var file = new File([blob], 'print_result.png', { type: 'image/png' });
 
-      // Criar uma URL temporária para o arquivo
-      var url = URL.createObjectURL(file);
+      // Criar um novo formulário
+      var form = new FormData();
+      form.append('file', file);
 
-      // Atribuir a URL ao campo de arquivo
-      InputPrint.value = url;
-
-      resolve(); // Resolva a Promise quando a imagem estiver pronta
+      // Enviar o formulário usando XMLHttpRequest ou Fetch API
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'sua_url_de_upload', true);
+      xhr.onload = function () {
+        // Verificar se o upload foi bem-sucedido
+        if (xhr.status === 200) {
+          resolve();
+        } else {
+          reject(new Error('Erro durante o upload'));
+        }
+      };
+      xhr.onerror = function () {
+        reject(new Error('Erro durante o upload'));
+      };
+      xhr.send(form);
     })
-    .catch(reject); // Rejeite a Promise em caso de erro
+    .catch(reject); // Rejeitar a Promise em caso de erro
   });
 }
+

@@ -1412,33 +1412,18 @@ console.log(PrintTarget, InputPrint);
 function PrintResult() {
   return new Promise((resolve, reject) => {
     var scale = 4961 / PrintTarget.offsetHeight;
-    domtoimage.toBlob(PrintTarget, {
+    domtoimage.toPng(PrintTarget, {
       width: PrintTarget.clientWidth * scale,
       height: PrintTarget.clientHeight * scale,
       style: {
         transform: 'scale('+scale+')',
         transformOrigin: 'top left'
-      }
+      }  
     })
-    .then(function (blob) {
-      // Criar um novo arquivo a partir do blob
-      var file = new File([blob], 'print_result.png', { type: 'image/png' });
-
-      // Criar um formulário temporário
-      var form = new FormData();
-      form.append('file', file);
-
-      // Obter o campo de arquivo do formulário
-      var fileList = form.getAll('file');
-
-      // Atribuir o objeto FileList ao elemento de input
-      InputPrint.files = fileList;
-
+    .then(function (dataUrl) {
+      InputPrint.files = dataUrl;
       resolve(); // Resolva a Promise quando a imagem estiver pronta
     })
     .catch(reject); // Rejeite a Promise em caso de erro
   });
 }
-
-
-

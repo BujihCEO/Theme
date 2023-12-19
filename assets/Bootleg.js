@@ -1424,15 +1424,11 @@ function PrintResult() {
       // Criar um novo arquivo a partir do blob
       var file = new File([blob], 'print_result.png', { type: 'image/png' });
 
-      // Criar um formulário temporário
-      var form = new FormData();
-      form.append('file', file);
+      // Criar uma URL temporária para o arquivo
+      var url = URL.createObjectURL(file);
 
-      // Obter o campo de arquivo do formulário
-      var fileList = form.getAll('file');
-
-      // Atribuir o objeto FileList ao elemento de input
-      InputPrint.files = fileList;
+      // Atribuir a URL ao campo de arquivo
+      InputPrint.value = url;
 
       resolve(); // Resolva a Promise quando a imagem estiver pronta
     })

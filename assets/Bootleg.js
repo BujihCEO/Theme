@@ -1406,22 +1406,30 @@ window.addEventListener('resize', resize);
 
 const PrintTarget = document.querySelector('.PrintTarget');
 const InputPrint = document.querySelector('.InputPrint');
+const InputPreview = document.querySelector('.InputPreview');
 
 console.log(PrintTarget, InputPrint);
 
-function PrintResult() {
-    var scale = 4961 / PrintTarget.offsetHeight;
-    return domtoimage.toBlob(PrintTarget, {
-        width: PrintTarget.clientWidth * scale,
-        height: PrintTarget.clientHeight * scale,
-        style: {
-        transform: 'scale(' + scale + ')',
-        transformOrigin: 'top left',
-        },
-    })
-    .then((blob) => {
-        var fileList = new DataTransfer();
-        fileList.items.add(new File([blob], 'Estampa.png'));
-        InputPrint.files = fileList.files;
-    });
+function PrintResult(configurations) {
+    return Promise.all(configurations.map(config => {
+        return domtoimage.toBlob(PrintTarget, {
+            width: PrintTarget.clientWidth * config.scale,
+            height: PrintTarget.clientHeight * config.scale,
+            style: {
+            transform: 'scale(' + config.scale + ')',
+            transformOrigin: 'top left',
+            },
+        })
+        .then((blob) => {
+          var fileList = new DataTransfer();
+          fileList.items.add(new File([blob], config.fileName));
+          config.inputElement.files = fileList.files;
+        });
+    }));
 }
+  
+  // Uso da função para gerar ambas as imagens
+PrintResult([
+    { scale: 4961 / PrintTarget.offsetHeight, inputElement: InputPrint, fileName: 'Estampa.png' },
+    { scale: 300 / PrintTarget.offsetHeight, inputElement: InputPreview, fileName: 'PreviewEstampa.png' }
+]);

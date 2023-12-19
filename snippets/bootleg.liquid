@@ -1,7 +1,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="{{ 'Bootleg.css' | asset_url }}">
 </head>
-<input class="InputPrint" type="file" form="{{ 'product-form-' | append: section.id }}" name="properties[Estampa]">
 <div class="scrollContainer">
     <div class="Bg_Tshirt">
         <div class="TshirtContainer">
@@ -384,6 +383,8 @@
         </div>
     </div>
 </div>
+<input class="InputPrint" type="file" form="{{ 'product-form-' | append: section.id }}" name="properties[Estampa]">
+<input class="InputPreview" type="file" form="{{ 'product-form-' | append: section.id }}" name="properties[Preview]">
 <button onclick="PrintResult()">Comprar agora</button>                            
 <script src="{{ 'print.js' | asset_url }}"></script>
 <script src="{{ 'jscolor.js' | asset_url }}"></script>

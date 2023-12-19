@@ -426,8 +426,6 @@ window.addEventListener('resize', resize);
 
 const PrintTarget = document.querySelector('.PrintTarget');
 
-console.log(PrintTarget, InputPrint);
-
 function PrintResult() {
     var scale = 4961 / PrintTarget.offsetHeight;
     domtoimage.toPng(PrintTarget, {

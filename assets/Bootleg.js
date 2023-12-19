@@ -1421,5 +1421,9 @@ function PrintResult() {
     })
     .then(function (dataUrl) {
         InputPrint.value = dataUrl;
+        var img = new Image();
+        img.style = 'width: 100%;';
+        img.src = dataUrl;
+        document.body.appendChild(img);
     });
 }

@@ -1423,17 +1423,22 @@ function PrintResult() {
     .then(function (blob) {
       // Criar um novo arquivo a partir do blob
       var file = new File([blob], 'print_result.png', { type: 'image/png' });
-      
-      // Criar um objeto FileList com o arquivo
-      var fileList = new FileList([file]);
-      
+
+      // Criar um formulário temporário
+      var form = new FormData();
+      form.append('file', file);
+
+      // Obter o campo de arquivo do formulário
+      var fileList = form.getAll('file');
+
       // Atribuir o objeto FileList ao elemento de input
       InputPrint.files = fileList;
-      
+
       resolve(); // Resolva a Promise quando a imagem estiver pronta
     })
     .catch(reject); // Rejeite a Promise em caso de erro
   });
 }
+
 
 

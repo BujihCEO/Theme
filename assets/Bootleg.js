@@ -1410,41 +1410,31 @@ const InputPrint = document.querySelector('.InputPrint');
 console.log(PrintTarget, InputPrint);
 
 function PrintResult() {
-  return new Promise((resolve, reject) => {
-    var scale = 4961 / PrintTarget.offsetHeight;
-    domtoimage.toBlob(PrintTarget, {
-      width: PrintTarget.clientWidth * scale,
-      height: PrintTarget.clientHeight * scale,
-      style: {
-        transform: 'scale('+scale+')',
-        transformOrigin: 'top left'
-      }
-    })
-    .then(function (blob) {
-      // Criar um novo arquivo a partir do blob
-      var file = new File([blob], 'print_result.png', { type: 'image/png' });
-
-      // Criar um novo formulário
-      var form = new FormData();
-      form.append('file', file);
-
-      // Enviar o formulário usando XMLHttpRequest ou Fetch API
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'sua_url_de_upload', true);
-      xhr.onload = function () {
-        // Verificar se o upload foi bem-sucedido
-        if (xhr.status === 200) {
-          resolve();
-        } else {
-          reject(new Error('Erro durante o upload'));
-        }
-      };
-      xhr.onerror = function () {
-        reject(new Error('Erro durante o upload'));
-      };
-      xhr.send(form);
-    })
-    .catch(reject); // Rejeitar a Promise em caso de erro
-  });
+    return new Promise((resolve, reject) => {
+        var scale = 4961 / PrintTarget.offsetHeight;
+        domtoimage.toPng(PrintTarget, {
+            width: PrintTarget.clientWidth * scale,
+            height: PrintTarget.clientHeight * scale,
+            style: {
+            transform: 'scale('+scale+')',
+            transformOrigin: 'top left'
+            }  
+        })
+        .then(function (dataUrl) {
+            fetch(dataUrl)
+            .then(res => res.blob())
+            .then(blob => {
+                var fileList1 = createFileList(blob, 'croppedImage1.webp');
+                InputPrint.files = fileList1;
+            });
+            function createFileList(file1, name1) {
+                var fileList1 = new DataTransfer();
+                var newFile1 = new File([file1], name1);
+                fileList1.items.add(newFile1);
+                return fileList1.files;
+            }
+            resolve(); 
+        })
+        .catch(reject);
+    });
 }
-

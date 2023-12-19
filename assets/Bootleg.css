@@ -1082,3 +1082,7 @@
 .RoundedSelector {
     background: url(Rounded.png) center / contain no-repeat;
 }
+
+.Layer-Exm {
+    background: url(LayerSvg.svg) center / contain no-repeat;
+}

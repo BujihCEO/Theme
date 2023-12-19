@@ -1305,7 +1305,7 @@ function updateBgColor() {
 //  BG MASK
 
 const maskLinks = [
-    LinkAssets + 'Bootleg/Mask/Mask-1.svg',
+    'Mask-1.svg',
     LinkAssets + 'Bootleg/Mask/Mask-2.svg',
     LinkAssets + 'Bootleg/Mask/Mask-3.svg',
     LinkAssets + 'Bootleg/Mask/Mask-4.svg',
@@ -1346,7 +1346,7 @@ BgOptionMask.forEach((button, index) => {
 //  BG TEXTURES
 
 const TextureLinks = [
-    LinkAssets + 'Bootleg/Textures/Tex-1.jpg',
+    'Tex-1.jpg',
     LinkAssets + 'Bootleg/Textures/Tex-2.jpg',
     LinkAssets + 'Bootleg/Textures/Tex-3.jpg',
     LinkAssets + 'Bootleg/Textures/Tex-4.jpg',

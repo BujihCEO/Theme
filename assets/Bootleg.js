@@ -83,11 +83,11 @@ function generateUniqueValue(existingValues) {
 }
 
 function CenterPosition(element, container) {
-    element.style.bottom = (container.offsetHeight - element.offsetHeight) / 2;
-    element.style.left = (container.offsetWidth - element.offsetWidth) / 2;
-    element.style.height = element.offsetHeight;
-    element.style.width = element.offsetWidth;
-    PreviewImg.style.width = element.offsetWidth;
+    element.style.bottom = (container.offsetHeight - element.offsetHeight) / 2 + 'px';
+    element.style.left = (container.offsetWidth - element.offsetWidth) / 2 + 'px';
+    element.style.height = element.offsetHeight + 'px';
+    element.style.width = element.offsetWidth + 'px';
+    PreviewImg.style.width = element.offsetWidth + 'px';
     PreviewImg.style.height = 'auto';
 }
 
@@ -381,39 +381,6 @@ function addTouchHoldListener(element, action) {
     }
 }
 
-//  IMG MOVE BTN
-
-const step = 1;
-const BtnImgUp = document.querySelector('.ImgUp');
-const BtnImgDown = document.querySelector('.ImgDown');
-const BtnImgLeft = document.querySelector('.ImgLeft');
-const BtnImgRight = document.querySelector('.ImgRight');
-
-function moveUp() {
-    PreviewImgContainer.style.bottom = (parseInt(PreviewImgContainer.style.bottom) + step) + 'px';
-    ImgSelector.style.bottom = (parseInt(ImgSelector.style.bottom) + step) + 'px';
-}
-
-function moveDown() {
-    PreviewImgContainer.style.bottom = (parseInt(PreviewImgContainer.style.bottom) - step) + 'px';
-    ImgSelector.style.bottom = (parseInt(ImgSelector.style.bottom) - step) + 'px';
-}
-
-function moveLeft() {
-    PreviewImgContainer.style.left = (parseInt(PreviewImgContainer.style.left) - step) + 'px';
-    ImgSelector.style.left = (parseInt(ImgSelector.style.left) - step) + 'px';
-}
-
-function moveRight() {
-    PreviewImgContainer.style.left = (parseInt(PreviewImgContainer.style.left) + step) + 'px';
-    ImgSelector.style.left = (parseInt(ImgSelector.style.left) + step) + 'px';
-}
-
-addTouchHoldListener(BtnImgUp, moveUp);
-addTouchHoldListener(BtnImgDown, moveDown);
-addTouchHoldListener(BtnImgLeft, moveLeft);
-addTouchHoldListener(BtnImgRight, moveRight);
-
 //  IMG SIZE BTN
 
 const Scale = 1;
@@ -444,8 +411,8 @@ ImgSizeControl.addEventListener('mousedown', function (event) {
                 PreviewImgContainer.style.width = width;
                 PreviewImg.style.width = width;
             }
-            ImgSelector.style.height = PreviewImgContainer.offsetHeight;
-            ImgSelector.style.width = PreviewImgContainer.offsetWidth;
+            ImgSelector.style.height = PreviewImgContainer.offsetHeight + 'px';
+            ImgSelector.style.width = PreviewImgContainer.offsetWidth + 'px';
             var bottom = parseFloat(window.getComputedStyle(PreviewImgContainer).bottom);
             ImgSelector.style.bottom = (bottom - 4) +'px';
             ImgSelector.style.left = (PreviewImgContainer.offsetLeft - 4) +'px';

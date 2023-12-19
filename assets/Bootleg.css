@@ -157,13 +157,11 @@
 
 .imgWrap {
     position: relative;
-    height: 100%;
 }
 
 .PreviewImg {
     position: relative;
     height: 100%;
-    width: 100%;
     object-fit: cover;
     object-position: top;
     padding: 20px;

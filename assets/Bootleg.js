@@ -88,6 +88,7 @@ function CenterPosition(element, container) {
     element.style.height = element.offsetHeight;
     element.style.width = element.offsetWidth;
     PreviewImg.style.width = element.offsetWidth;
+    PreviewImg.style.height = 'auto';
 }
 
 function ImgSelectorUpdate() {

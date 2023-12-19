@@ -74,13 +74,10 @@ OptionCustom.forEach((button, index) => {
 });
 
 function generateUniqueValue(existingValues) {
-    // Gere um número aleatório de 1 a 8
     const newValue = Math.floor(Math.random() * 8) + 1;
-    // Verifique se o valor já existe nos elementos existentes
     if (!existingValues.includes(newValue)) {
         return newValue;
     } else {
-        // Se o valor já existe, gere um novo de forma recursiva
         return generateUniqueValue(existingValues);
     }
 }
@@ -91,7 +88,6 @@ function CenterPosition(element, container) {
     element.style.height = element.offsetHeight;
     element.style.width = element.offsetWidth;
     PreviewImg.style.width = element.offsetWidth;
-    PreviewImg.style.height = 'auto';
 }
 
 function ImgSelectorUpdate() {

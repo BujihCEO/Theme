@@ -452,8 +452,8 @@ ImgSizeControl.addEventListener('touchstart', function (event) {
                 PreviewImgContainer.style.width = width;
                 PreviewImg.style.width = width;
             }
-            ImgSelector.style.height = PreviewImgContainer.offsetHeight;
-            ImgSelector.style.width = PreviewImgContainer.offsetWidth;
+            ImgSelector.style.height = PreviewImgContainer.offsetHeight + 'px';
+            ImgSelector.style.width = PreviewImgContainer.offsetWidth + 'px';
             var bottom = parseFloat(window.getComputedStyle(PreviewImgContainer).bottom);
             ImgSelector.style.bottom = (bottom - 4) +'px';
             ImgSelector.style.left = (PreviewImgContainer.offsetLeft - 4) +'px';

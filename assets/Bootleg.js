@@ -1410,31 +1410,18 @@ const InputPrint = document.querySelector('.InputPrint');
 console.log(PrintTarget, InputPrint);
 
 function PrintResult() {
-    return new Promise((resolve, reject) => {
-        var scale = 4961 / PrintTarget.offsetHeight;
-        domtoimage.toPng(PrintTarget, {
-            width: PrintTarget.clientWidth * scale,
-            height: PrintTarget.clientHeight * scale,
-            style: {
-            transform: 'scale('+scale+')',
-            transformOrigin: 'top left'
-            }  
-        })
-        .then(function (dataUrl) {
-            fetch(dataUrl)
-            .then(res => res.blob())
-            .then(blob => {
-                var fileList = createFileList(blob, 'Estampa.png');
-                InputPrint.files = fileList;
-            });
-            function createFileList(file, name) {
-                var fileList = new DataTransfer();
-                var newFile = new File([file], name);
-                fileList.items.add(newFile);
-                return fileList.files;
-            }
-            resolve(); 
-        })
-        .catch(reject);
+    var scale = 4961 / PrintTarget.offsetHeight;
+    return domtoimage.toBlob(PrintTarget, {
+        width: PrintTarget.clientWidth * scale,
+        height: PrintTarget.clientHeight * scale,
+        style: {
+        transform: 'scale(' + scale + ')',
+        transformOrigin: 'top left',
+        },
+    })
+    .then((blob) => {
+      var fileList = new DataTransfer();
+      fileList.items.add(new File([blob], 'Estampa.png'));
+      InputPrint.files = fileList.files;
     });
 }

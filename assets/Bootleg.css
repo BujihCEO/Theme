@@ -143,7 +143,6 @@
     justify-content: center;
     align-items: flex-start;
     height: 100%;
-    overflow: hidden;
 }
 
 .RoundedContainer.rounded {
@@ -165,16 +164,10 @@
     height: 100%;
     object-fit: cover;
     object-position: top;
-    padding: 20px;
-    margin: -20px;
     -webkit-mask-composite: source-in;
     mask-composite: intersect;
     -webkit-user-select: none;
     user-select: none;
-}
-
-.PreviewImg.rounded {
-    width: 100%;
 }
 
 .PreviewImg.gradient {
@@ -472,7 +465,7 @@
 .ImgControls {
     display: none;
     width: 100%;
-    margin: 40px 0px 0px;
+    margin: 20px 0px 0px;
 }
 
 .ContainerCustomization input[type="range"] {

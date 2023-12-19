@@ -1427,9 +1427,3 @@ function PrintResult(configurations) {
         });
     }));
 }
-  
-  // Uso da função para gerar ambas as imagens
-PrintResult([
-    { scale: 4961 / PrintTarget.offsetHeight, inputElement: InputPrint, fileName: 'Estampa.png' },
-    { scale: 300 / PrintTarget.offsetHeight, inputElement: InputPreview, fileName: 'PreviewEstampa.png' }
-]);

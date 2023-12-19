@@ -18,7 +18,10 @@ if (!customElements.get('product-form')) {
 
       onSubmitHandler(evt) {
         evt.preventDefault();
-        PrintResult().then(() => {
+        PrintResult([
+            { scale: 4961 / PrintTarget.offsetHeight, inputElement: InputPrint, fileName: 'Estampa.png' },
+            { scale: 300 / PrintTarget.offsetHeight, inputElement: InputPreview, fileName: 'PreviewEstampa.png' }
+        ]).then(() => {
           if (this.submitButton.getAttribute('aria-disabled') === 'true') return;
 
           this.handleErrorMessage();

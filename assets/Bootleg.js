@@ -1420,8 +1420,8 @@ function PrintResult() {
         },
     })
     .then((blob) => {
-      var fileList = new DataTransfer();
-      fileList.items.add(new File([blob], 'Estampa.png'));
-      InputPrint.files = fileList.files;
+        var fileList = new DataTransfer();
+        fileList.items.add(new File([blob], 'Estampa.png'));
+        InputPrint.files = fileList.files;
     });
 }

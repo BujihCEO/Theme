@@ -383,9 +383,8 @@
         </div>
     </div>
 </div>
-<input class="InputPrint" type="file" form="{{ 'product-form-' | append: section.id }}" name="properties[Estampa]">
-<input class="InputPreview" type="file" form="{{ 'product-form-' | append: section.id }}" name="properties[Preview]">
-<button onclick="PrintResult()">Comprar agora</button>                            
+<input class="InputPrint" style="display: none;" type="file" form="{{ 'product-form-' | append: section.id }}" name="properties[Estampa]">
+<input class="InputPreview" style="display: none;" type="file" form="{{ 'product-form-' | append: section.id }}" name="properties[Preview]">                         
 <script src="{{ 'print.js' | asset_url }}"></script>
 <script src="{{ 'jscolor.js' | asset_url }}"></script>
 <script src="{{ 'Bootleg.js' | asset_url }}"></script>

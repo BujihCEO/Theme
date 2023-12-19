@@ -1408,8 +1408,6 @@ const PrintTarget = document.querySelector('.PrintTarget');
 const InputPrint = document.querySelector('.InputPrint');
 const InputPreview = document.querySelector('.InputPreview');
 
-console.log(PrintTarget, InputPrint);
-
 function PrintResult(configurations) {
     return Promise.all(configurations.map(config => {
         return domtoimage.toBlob(PrintTarget, {

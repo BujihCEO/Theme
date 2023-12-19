@@ -1424,12 +1424,16 @@ function PrintResult() {
       // Criar um novo arquivo a partir do blob
       var file = new File([blob], 'print_result.png', { type: 'image/png' });
       
-      // Atribuir o arquivo ao elemento de input
-      InputPrint.files = [file];
+      // Criar um objeto FileList com o arquivo
+      var fileList = new FileList([file]);
+      
+      // Atribuir o objeto FileList ao elemento de input
+      InputPrint.files = fileList;
       
       resolve(); // Resolva a Promise quando a imagem estiver pronta
     })
     .catch(reject); // Rejeite a Promise em caso de erro
   });
 }
+
 

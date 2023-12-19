@@ -1405,3 +1405,19 @@ resize();
 window.addEventListener('resize', resize);
 
 const PrintTarget = document.querySelector('.PrintTarget');
+const InputPrint = document.querySelector('.InputPrint');
+
+function PrintResult() {
+    var scale = 4961 / PrintTarget.offsetHeight;
+    domtoimage.toPng(PrintTarget, {
+        width: PrintTarget.clientWidth * scale,
+        height: PrintTarget.clientHeight * scale,
+        style: {
+            transform: 'scale('+scale+')',
+            transformOrigin: 'top left'
+        }  
+    })
+    .then(function (dataUrl) {
+        InputPrint.value = dataUrl;
+    });
+}

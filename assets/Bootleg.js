@@ -93,10 +93,10 @@ function CenterPosition(element, container) {
 
 function ImgSelectorUpdate() {
     ImgSelector.classList.add('selected');
-    ImgSelector.style.height = PreviewImgContainer.offsetHeight;
-    ImgSelector.style.width = PreviewImgContainer.offsetWidth;
-    ImgSelector.style.bottom = parseFloat(window.getComputedStyle(PreviewImgContainer).bottom) - 4;
-    ImgSelector.style.left = PreviewImgContainer.offsetLeft - 4;
+    ImgSelector.style.height = PreviewImgContainer.offsetHeight + 'px';
+    ImgSelector.style.width = PreviewImgContainer.offsetWidth + 'px';
+    ImgSelector.style.bottom = parseFloat(window.getComputedStyle(PreviewImgContainer).bottom) - 4  + 'px';
+    ImgSelector.style.left = PreviewImgContainer.offsetLeft - 2  + 'px';
 }
 
 //  ADD IMAGE AND SELECT
@@ -414,8 +414,8 @@ ImgSizeControl.addEventListener('mousedown', function (event) {
             ImgSelector.style.height = PreviewImgContainer.offsetHeight + 'px';
             ImgSelector.style.width = PreviewImgContainer.offsetWidth + 'px';
             var bottom = parseFloat(window.getComputedStyle(PreviewImgContainer).bottom);
-            ImgSelector.style.bottom = (bottom - 4) +'px';
-            ImgSelector.style.left = (PreviewImgContainer.offsetLeft - 4) +'px';
+            ImgSelector.style.bottom = (bottom - 2) +'px';
+            ImgSelector.style.left = (PreviewImgContainer.offsetLeft - 2) +'px';
         };
         document.onmouseup = function () {
             document.onmousemove = null;
@@ -455,8 +455,8 @@ ImgSizeControl.addEventListener('touchstart', function (event) {
             ImgSelector.style.height = PreviewImgContainer.offsetHeight + 'px';
             ImgSelector.style.width = PreviewImgContainer.offsetWidth + 'px';
             var bottom = parseFloat(window.getComputedStyle(PreviewImgContainer).bottom);
-            ImgSelector.style.bottom = (bottom - 4) +'px';
-            ImgSelector.style.left = (PreviewImgContainer.offsetLeft - 4) +'px';
+            ImgSelector.style.bottom = (bottom - 2) +'px';
+            ImgSelector.style.left = (PreviewImgContainer.offsetLeft - 2) +'px';
             event.preventDefault();
         });
     }
@@ -470,14 +470,15 @@ ImgCutBtn.addEventListener('mousedown', function (event) {
         var ImgHeight = parseFloat(window.getComputedStyle(PreviewImg).height);
         document.onmousemove = function (e) {
             var moviment = e.clientY - startY;
-            var newBottom = ((-moviment + bottom) / PreviewScale);
+            var newBottom = ((-moviment + bottom) / PreviewScale)  + 'px';
             if ((moviment + currentHeight) / PreviewScale < ImgHeight) {
-                PreviewImgContainer.style.height = ((moviment + currentHeight) / PreviewScale) + 'px';
+                var newBottom = (-moviment + bottom) / PreviewScale + 'px';
+                PreviewImgContainer.style.height = (moviment + currentHeight) / PreviewScale + 'px';
                 PreviewImgContainer.style.bottom = newBottom;
-                ImgSelector.style.height = PreviewImgContainer.offsetHeight;
-                ImgSelector.style.width = PreviewImgContainer.offsetWidth;
-                ImgSelector.style.bottom = newBottom - 4;
-                ImgSelector.style.left = (PreviewImgContainer.offsetLeft - 4) +'px';
+                ImgSelector.style.height = PreviewImgContainer.offsetHeight + 'px';
+                ImgSelector.style.width = PreviewImgContainer.offsetWidth + 'px';
+                ImgSelector.style.bottom = parseFloat(newBottom) - 2 + 'px';
+                ImgSelector.style.left = (PreviewImgContainer.offsetLeft - 2) + 'px';
             }
         };
         document.onmouseup = function () {
@@ -507,8 +508,8 @@ ImgCutBtn.addEventListener('touchstart', function (event) {
                 PreviewImgContainer.style.bottom = newBottom;
                 ImgSelector.style.height = PreviewImgContainer.offsetHeight + 'px';
                 ImgSelector.style.width = PreviewImgContainer.offsetWidth + 'px';
-                ImgSelector.style.bottom = parseFloat(newBottom) - 4 + 'px';
-                ImgSelector.style.left = (PreviewImgContainer.offsetLeft - 4) + 'px';
+                ImgSelector.style.bottom = parseFloat(newBottom) - 2 + 'px';
+                ImgSelector.style.left = (PreviewImgContainer.offsetLeft - 2) + 'px';
                 event.preventDefault();
             }
         }

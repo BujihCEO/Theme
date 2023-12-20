@@ -22,20 +22,21 @@
     max-width: 50vh;
     aspect-ratio: 1/1;
     background-image: url(Preto.png);
-    background-size: cover;
+    background-size: 100% auto;
     background-position: center;
     margin: auto;
     overflow: hidden;
+    transition: .5s;
 }
 
 
 .previewContainer {
     position: absolute;
-    top: 26%;
-    height: 53%;
+    width: 35%;
     aspect-ratio: 3508/4961;
     border: 1px dashed transparent;
     box-sizing: content-box;
+    transition: .5s;
 }
 
 .preview {
@@ -51,13 +52,11 @@
 }
 
 .TshirtContainer.Zoom {
-    background-size: 192%;
-    background-position-y: 53%;
+    background-size: 190%;
 }
 
 .previewContainer.Zoom {
-    top: 23.5%;
-    transform: scale(1.88);
+    transform: scale(1.90);
 }
 
 .ImgContainerMasked {
@@ -1093,7 +1092,6 @@
             border-radius: 16px;
             border: 4px solid #fff;
         }
-    
         ::-webkit-scrollbar-button {
             display:none;
         }

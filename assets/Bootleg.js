@@ -36,7 +36,7 @@ function ZoomInLayout(button) {
         icon.classList.remove('selected');
     });
     button.classList.add('selected');
-    PreviewScale = 1.88;
+    PreviewScale = 1.90;
 }
 
 function ZoomOutLayout(button) {

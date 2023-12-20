@@ -253,18 +253,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -16px;
-    right: -16px;
+    top: -8px;
+    right: -8px;
     height: 16px;
     width: 16px;
     background-color: #fff;
-    background-image: url(Size.svg);
-    background-size: 90%;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 2px solid;
-    border-radius: 40% 40% 40% 0;
+    border: 2px solid black;
+    border-radius: 50%;
     box-sizing: border-box;
+    cursor: ne-resize;
 }
 
 .ImgSizeControl::after {
@@ -276,18 +273,18 @@
 
 .ImgCutBtn {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     left: calc(50% - 8px);
-    bottom: -10px;
+    bottom: -8px;
     height: 16px;
     width: 16px;
     background: white;
-    background-image: url(Two-Arrows.svg);
-    background-size: 90%;
-    background-position: center;
-    background-repeat: no-repeat;
     border: 2px solid black;
     border-radius: 30px;
     cursor: n-resize;
+    box-sizing: border-box;
 }
 
 .ImgCutBtn::after {

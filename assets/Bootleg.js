@@ -1016,7 +1016,9 @@ function TextScaleX() {
     }
 }
 
-TextScaleX();
+window.onload = ()=> {
+    TextScaleX();
+};
 
 TextInput.addEventListener('input', function() {
     TextPreviewBG.innerText = TextInput.value;

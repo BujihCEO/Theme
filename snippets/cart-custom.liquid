@@ -4,23 +4,23 @@
         <div class="ProductPreview" style="background-image: url(Preto.png);">
             <div class="ResultPreview" style="background-image: url({{ property.last }});"></div>
         </div>
+        <style>
+            .ProductPreview {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                aspect-ratio: 1/1;
+                background-size: cover;
+            }
+            .ResultPreview {
+                position: absolute;
+                width: 35%;
+                aspect-ratio: 3508/4961;
+                background-size: contain;
+                background-position: center;
+            }
+        </style>
     {%- endif -%}
-    <style>
-        .ProductPreview {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            aspect-ratio: 1/1;
-            background-size: cover;
-        }
-        .ResultPreview {
-            position: absolute;
-            width: 35%;
-            aspect-ratio: 3508/4961;
-            background-size: contain;
-            background-position: center;
-        }
-    </style>
 </dd> 

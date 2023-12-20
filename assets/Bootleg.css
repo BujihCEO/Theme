@@ -196,7 +196,7 @@
 
 .TextPreview {
     position: absolute;
-    font-size: 90px;
+    font-size: 60px;
     text-transform: uppercase;
     text-align: center;
     -webkit-background-clip: text;

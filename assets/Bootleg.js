@@ -89,7 +89,6 @@ function CenterPosition(element, container) {
     element.style.width = element.offsetWidth + 'px';
     PreviewImg.style.width = element.offsetWidth + 'px';
     PreviewImg.style.height = element.offsetHeight + 'px';
-    PreviewImg.setAttribute('Height', element.offsetHeight);
 }
 
 function ImgSelectorUpdate() {
@@ -396,17 +395,14 @@ ImgSizeControl.addEventListener('mousedown', function (event) {
         var currentHeight = PreviewImgContainer.offsetHeight * PreviewScale;
         var currentWidth = PreviewImgContainer.offsetWidth * PreviewScale;
         var Aspect = currentWidth / currentHeight;
-        var MaxHeight = PreviewImg.getAttribute('Height') * PreviewScale;
         if (PreviewImgContainer.classList.contains('rounded'))  {
             var ImgcurrentWidth = parseFloat(window.getComputedStyle(PreviewImg).width) * PreviewScale;
             var ImgAspect = ImgcurrentWidth / currentHeight;
         }
         document.onmousemove = function (e) {
             var moviment = e.clientY - startY;
-            var height = ((-moviment + currentHeight) / PreviewScale);
-            PreviewImgContainer.style.height = height + 'px';
-            PreviewImg.style.height = height + 'px';
-            PreviewImg.setAttribute('Height', ((-moviment + MaxHeight) / PreviewScale));
+            PreviewImgContainer.style.height = ((-moviment + currentHeight) / PreviewScale) + 'px';
+            PreviewImg.style.height = ((-moviment + currentHeight) / PreviewScale) + 'px';
             if (PreviewImgContainer.classList.contains('rounded')) {
                 var width = ((-moviment * ImgAspect) + ImgcurrentWidth) / PreviewScale + 'px';
                 PreviewImgContainer.style.width = width;
@@ -439,7 +435,6 @@ ImgSizeControl.addEventListener('touchstart', function (event) {
         var currentHeight = PreviewImgContainer.offsetHeight * PreviewScale;
         var currentWidth = PreviewImgContainer.offsetWidth * PreviewScale;
         var Aspect = currentWidth / currentHeight;
-        var MaxHeight = PreviewImg.getAttribute('Height') * PreviewScale;
         if (PreviewImgContainer.classList.contains('rounded'))  {
             var ImgcurrentWidth = parseFloat(window.getComputedStyle(PreviewImg).width) * PreviewScale;
             var ImgAspect = ImgcurrentWidth / currentHeight;
@@ -448,10 +443,8 @@ ImgSizeControl.addEventListener('touchstart', function (event) {
         ImgSizeControl.addEventListener('touchmove', function (event) {
             var touch = event.touches[0];
             var moviment = touch.clientY - startY;
-            var height = ((-moviment + currentHeight) / PreviewScale);
-            PreviewImgContainer.style.height = height + 'px';
-            PreviewImg.style.height = height + 'px';
-            PreviewImg.setAttribute('Height', ((-moviment + MaxHeight) / PreviewScale));
+            PreviewImgContainer.style.height = ((-moviment + currentHeight) / PreviewScale) + 'px';
+            PreviewImg.style.height = ((-moviment + currentHeight) / PreviewScale) + 'px';
             if (PreviewImgContainer.classList.contains('rounded')) {
                 var width = ((-moviment * ImgAspect) + ImgcurrentWidth) / PreviewScale + 'px';
                 PreviewImgContainer.style.width = width;
@@ -476,20 +469,17 @@ ImgCutBtn.addEventListener('mousedown', function (event) {
         startY = event.clientY;
         var currentHeight = PreviewImgContainer.offsetHeight * PreviewScale;
         var bottom = parseFloat(window.getComputedStyle(PreviewImgContainer).bottom) * PreviewScale;
-        var ImgHeight = PreviewImg.getAttribute('Height');
         document.onmousemove = function (e) {
             var moviment = e.clientY - startY;
             var newBottom = ((-moviment + bottom) / PreviewScale)  + 'px';
-            if ((moviment + currentHeight) / PreviewScale < ImgHeight) {
-                var newBottom = (-moviment + bottom) / PreviewScale + 'px';
-                PreviewImgContainer.style.height = (moviment + currentHeight) / PreviewScale + 'px';
-                PreviewImgContainer.style.bottom = newBottom;
-                PreviewImg.style.height = PreviewImgContainer.offsetHeight + 'px';
-                ImgSelector.style.height = PreviewImgContainer.offsetHeight + 'px';
-                ImgSelector.style.width = PreviewImgContainer.offsetWidth + 'px';
-                ImgSelector.style.bottom = parseFloat(newBottom) - 2 + 'px';
-                ImgSelector.style.left = (PreviewImgContainer.offsetLeft - 2) + 'px';
-            }
+            var newBottom = (-moviment + bottom) / PreviewScale + 'px';
+            PreviewImgContainer.style.height = (moviment + currentHeight) / PreviewScale + 'px';
+            PreviewImgContainer.style.bottom = newBottom;
+            PreviewImg.style.height = PreviewImgContainer.offsetHeight + 'px';
+            ImgSelector.style.height = PreviewImgContainer.offsetHeight + 'px';
+            ImgSelector.style.width = PreviewImgContainer.offsetWidth + 'px';
+            ImgSelector.style.bottom = parseFloat(newBottom) - 2 + 'px';
+            ImgSelector.style.left = (PreviewImgContainer.offsetLeft - 2) + 'px';
         };
         document.onmouseup = function () {
             document.onmousemove = null;
@@ -507,22 +497,19 @@ ImgCutBtn.addEventListener('touchstart', function (event) {
         startY = touch.clientY;
         var currentHeight = PreviewImgContainer.offsetHeight * PreviewScale;
         var bottom = parseFloat(window.getComputedStyle(PreviewImgContainer).bottom) * PreviewScale;
-        var ImgHeight = PreviewImg.getAttribute('Height');
         event.preventDefault();
         function handleTouchMove(event) {
             var touch = event.touches[0];
             var moviment = touch.clientY - startY;
-            if ((moviment + currentHeight) / PreviewScale < ImgHeight) {
-                var newBottom = (-moviment + bottom) / PreviewScale + 'px';
-                PreviewImgContainer.style.height = (moviment + currentHeight) / PreviewScale + 'px';
-                PreviewImgContainer.style.bottom = newBottom;
-                PreviewImg.style.height = PreviewImgContainer.offsetHeight + 'px';
-                ImgSelector.style.height = PreviewImgContainer.offsetHeight + 'px';
-                ImgSelector.style.width = PreviewImgContainer.offsetWidth + 'px';
-                ImgSelector.style.bottom = parseFloat(newBottom) - 2 + 'px';
-                ImgSelector.style.left = (PreviewImgContainer.offsetLeft - 2) + 'px';
-                event.preventDefault();
-            }
+            var newBottom = (-moviment + bottom) / PreviewScale + 'px';
+            PreviewImgContainer.style.height = (moviment + currentHeight) / PreviewScale + 'px';
+            PreviewImgContainer.style.bottom = newBottom;
+            PreviewImg.style.height = PreviewImgContainer.offsetHeight + 'px';
+            ImgSelector.style.height = PreviewImgContainer.offsetHeight + 'px';
+            ImgSelector.style.width = PreviewImgContainer.offsetWidth + 'px';
+            ImgSelector.style.bottom = parseFloat(newBottom) - 2 + 'px';
+            ImgSelector.style.left = (PreviewImgContainer.offsetLeft - 2) + 'px';
+            event.preventDefault();
         }
         ImgCutBtn.addEventListener('touchmove', handleTouchMove);
         ImgCutBtn.addEventListener('touchend', function () {

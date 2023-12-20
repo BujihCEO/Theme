@@ -89,6 +89,7 @@ function CenterPosition(element, container) {
     element.style.width = element.offsetWidth + 'px';
     PreviewImg.style.width = element.offsetWidth + 'px';
     PreviewImg.style.height = element.offsetHeight + 'px';
+    PreviewImg.setAttribute('Height', element.offsetHeight);
 }
 
 function ImgSelectorUpdate() {
@@ -395,14 +396,17 @@ ImgSizeControl.addEventListener('mousedown', function (event) {
         var currentHeight = PreviewImgContainer.offsetHeight * PreviewScale;
         var currentWidth = PreviewImgContainer.offsetWidth * PreviewScale;
         var Aspect = currentWidth / currentHeight;
+        var MaxHeight = PreviewImg.getAttribute('Height') * PreviewScale;
         if (PreviewImgContainer.classList.contains('rounded'))  {
             var ImgcurrentWidth = parseFloat(window.getComputedStyle(PreviewImg).width) * PreviewScale;
             var ImgAspect = ImgcurrentWidth / currentHeight;
         }
         document.onmousemove = function (e) {
             var moviment = e.clientY - startY;
-            PreviewImgContainer.style.height = ((-moviment + currentHeight) / PreviewScale) + 'px';
-            PreviewImg.style.height = ((-moviment + currentHeight) / PreviewScale) + 'px';
+            var height = ((-moviment + currentHeight) / PreviewScale);
+            PreviewImgContainer.style.height = height + 'px';
+            PreviewImg.style.height = height + 'px';
+            PreviewImg.setAttribute('Height', ((-moviment + MaxHeight) / PreviewScale));
             if (PreviewImgContainer.classList.contains('rounded')) {
                 var width = ((-moviment * ImgAspect) + ImgcurrentWidth) / PreviewScale + 'px';
                 PreviewImgContainer.style.width = width;
@@ -435,6 +439,7 @@ ImgSizeControl.addEventListener('touchstart', function (event) {
         var currentHeight = PreviewImgContainer.offsetHeight * PreviewScale;
         var currentWidth = PreviewImgContainer.offsetWidth * PreviewScale;
         var Aspect = currentWidth / currentHeight;
+        var MaxHeight = PreviewImg.getAttribute('Height') * PreviewScale;
         if (PreviewImgContainer.classList.contains('rounded'))  {
             var ImgcurrentWidth = parseFloat(window.getComputedStyle(PreviewImg).width) * PreviewScale;
             var ImgAspect = ImgcurrentWidth / currentHeight;
@@ -443,8 +448,10 @@ ImgSizeControl.addEventListener('touchstart', function (event) {
         ImgSizeControl.addEventListener('touchmove', function (event) {
             var touch = event.touches[0];
             var moviment = touch.clientY - startY;
-            PreviewImgContainer.style.height = ((-moviment + currentHeight) / PreviewScale) + 'px';
-            PreviewImg.style.height = ((-moviment + currentHeight) / PreviewScale) + 'px';
+            var height = ((-moviment + currentHeight) / PreviewScale);
+            PreviewImgContainer.style.height = height + 'px';
+            PreviewImg.style.height = height + 'px';
+            PreviewImg.setAttribute('Height', ((-moviment + MaxHeight) / PreviewScale));
             if (PreviewImgContainer.classList.contains('rounded')) {
                 var width = ((-moviment * ImgAspect) + ImgcurrentWidth) / PreviewScale + 'px';
                 PreviewImgContainer.style.width = width;
@@ -469,7 +476,7 @@ ImgCutBtn.addEventListener('mousedown', function (event) {
         startY = event.clientY;
         var currentHeight = PreviewImgContainer.offsetHeight * PreviewScale;
         var bottom = parseFloat(window.getComputedStyle(PreviewImgContainer).bottom) * PreviewScale;
-        var ImgHeight = parseFloat(window.getComputedStyle(PreviewImg).height);
+        var ImgHeight = PreviewImg.getAttribute('Height');
         document.onmousemove = function (e) {
             var moviment = e.clientY - startY;
             var newBottom = ((-moviment + bottom) / PreviewScale)  + 'px';
@@ -500,7 +507,7 @@ ImgCutBtn.addEventListener('touchstart', function (event) {
         startY = touch.clientY;
         var currentHeight = PreviewImgContainer.offsetHeight * PreviewScale;
         var bottom = parseFloat(window.getComputedStyle(PreviewImgContainer).bottom) * PreviewScale;
-        var ImgHeight = parseFloat(window.getComputedStyle(PreviewImg).height);
+        var ImgHeight = PreviewImg.getAttribute('Height');
         event.preventDefault();
         function handleTouchMove(event) {
             var touch = event.touches[0];

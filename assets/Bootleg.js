@@ -1251,7 +1251,13 @@ addTouchHoldListener(TextStrokePlus, StrokePlusText);
 
 //  TEXT STROKE COLOR
 
+const InputStrokeColor = document.querySelector('.InputStrokeColor');
 
+InputJsColorFunction(InputStrokeColor, '', '', updateStrokeColor);
+
+function updateStrokeColor() {
+    TextPreview.style.webkitTextStrokeColor = NewValue;
+}
 
 //  BACKGROUND CUSTOMIZATION
 

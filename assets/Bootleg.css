@@ -425,8 +425,7 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    overflow-x: scroll;
-    padding: 0px 10px;
+    overflow-x: auto;
     border-left: 4px solid black;
     border-right: 4px solid black;
 }
@@ -998,7 +997,7 @@
     width: 100%;
     border-radius: 2em;
     overflow: hidden;
-    overflow-x: scroll;
+    overflow-x: auto;
     :first-child {
         margin-left: 0px;
     }
@@ -1080,24 +1079,24 @@
     background: url(LayerSvg.svg) center / contain no-repeat;
 }
 
-::-webkit-scrollbar {
-    background-color: #fff;
-    width: 16px;
-}
 
-/* background of the scrollbar except button or resizer */
-::-webkit-scrollbar-track {
-    background-color: #fff;
-}
-
-/* scrollbar itself */
-::-webkit-scrollbar-thumb {
-    background-color: #babac0;
-    border-radius: 16px;
-    border: 4px solid #fff;
-}
-
-/* set button(top and bottom of the scrollbar) */
-::-webkit-scrollbar-button {
-    display:none;
+@media screen and (min-width: 768px) {
+    .ContainerCustomization {
+        ::-webkit-scrollbar {
+            background-color: #fff;
+            width: 16px;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: #fff;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #babac0;
+            border-radius: 16px;
+            border: 4px solid #fff;
+        }
+    
+        ::-webkit-scrollbar-button {
+            display:none;
+        }
+    }
 }

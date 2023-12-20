@@ -80,7 +80,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: #7FFFD4;
+    background-color: #ffd700;
     mix-blend-mode: multiply;
     -webkit-mask-image: var(--mask-image);;
     -webkit-mask-size: var(--mask-size);

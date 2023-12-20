@@ -997,7 +997,7 @@ const TextPreviewColor = document.querySelector('.TextPreviewColor');
 let minLeft = null; 
 let minRight = null;
 
-function TextScaleX () {
+function TextScaleX() {
     var fontSize = parseFloat(window.getComputedStyle(TextPreview).fontSize);
     var Space = parseFloat(window.getComputedStyle(TextPreview).letterSpacing);
     if (!minLeft == 0) {
@@ -1015,6 +1015,8 @@ function TextScaleX () {
         TextPreview.style.marginRight = `-${Space}px`;
     }
 }
+
+TextScaleX();
 
 TextInput.addEventListener('input', function() {
     TextPreviewBG.innerText = TextInput.value;

@@ -253,37 +253,38 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -30px;
-    right: -30px;
-    height: 30px;
-    width: 30px;
-    background-color: white;
+    top: -16px;
+    right: -16px;
+    height: 16px;
+    width: 16px;
+    background-color: #fff;
     background-image: url(Size.svg);
     background-size: 90%;
     background-position: center;
+    background-repeat: no-repeat;
     border: 2px solid;
-    border-radius: 40%;
-    border-bottom-left-radius: 0;
+    border-radius: 40% 40% 40% 0;
     box-sizing: border-box;
 }
 
 .ImgSizeControl::after {
     content: '';
     position: absolute;
-    height: 150%;
-    width: 150%;
+    height: 200%;
+    width: 200%;
 }
 
 .ImgCutBtn {
     position: absolute;
-    left: calc(50% - 15px);
-    bottom: -17px;
-    height: 30px;
-    width: 30px;
+    left: calc(50% - 8px);
+    bottom: -10px;
+    height: 16px;
+    width: 16px;
     background: white;
     background-image: url(Two-Arrows.svg);
     background-size: 90%;
     background-position: center;
+    background-repeat: no-repeat;
     border: 2px solid black;
     border-radius: 30px;
     cursor: n-resize;
@@ -292,8 +293,8 @@
 .ImgCutBtn::after {
     content: '';
     position: absolute;
-    height: 150%;
-    width: 150%;
+    height: 200%;
+    width: 200%;
 }
 
 .PreviwLayout {

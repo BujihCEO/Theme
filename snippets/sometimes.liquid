@@ -8,7 +8,7 @@
       <div class="Bg_Tshirt">
           <div class="Tshirt">
               <div class="Preview">
-                  <div class="Pr_Drag">
+                  <div class="Pr_Drag PrintTarget">
                       <div class="Pr_Bg_1"></div>
                       <div class="TextPreview">
                           Mãe, guerreira, cuidadosa, amorosa, linda e maravilhosa.
@@ -83,6 +83,8 @@
           <div class="loadingEffect"></div>
       </div>
   </div>
+<input class="InputPrint" style="display: none;" type="file" form="{{ 'product-form-' | append: section.id }}" name="properties[Estampa]">
+<input class="InputPreview" style="display: none;" type="file" form="{{ 'product-form-' | append: section.id }}" name="properties[Preview]">
 <script src="{{ 'print.js' | asset_url }}"></script>
 <script src="{{ 'potrace.js' | asset_url }}"></script>
 <script src="{{ 'sometimes.js' | asset_url }}"></script>

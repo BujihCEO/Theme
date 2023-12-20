@@ -425,21 +425,23 @@ resize();
 window.addEventListener('resize', resize);
 
 const PrintTarget = document.querySelector('.PrintTarget');
+const InputPrint = document.querySelector('.InputPrint');
+const InputPreview = document.querySelector('.InputPreview');
 
-function PrintResult() {
-    var scale = 4961 / PrintTarget.offsetHeight;
-    domtoimage.toPng(PrintTarget, {
-        width: PrintTarget.clientWidth * scale,
-        height: PrintTarget.clientHeight * scale,
-        style: {
-            transform: 'scale('+scale+')',
-            transformOrigin: 'top left'
-        }  
-    })
-    .then(function (dataUrl) {
-        var img = new Image();
-        img.style = 'width: 100%;';
-        img.src = dataUrl;
-        document.body.appendChild(img);
-    });
+function PrintResult(configurations) {
+    return Promise.all(configurations.map(config => {
+        return domtoimage.toBlob(PrintTarget, {
+            width: PrintTarget.clientWidth * config.scale,
+            height: PrintTarget.clientHeight * config.scale,
+            style: {
+            transform: 'scale(' + config.scale + ')',
+            transformOrigin: 'top left',
+            },
+        })
+        .then((blob) => {
+          var fileList = new DataTransfer();
+          fileList.items.add(new File([blob], config.fileName));
+          config.inputElement.files = fileList.files;
+        });
+    }));
 }

@@ -20,7 +20,7 @@ if (!customElements.get('product-form')) {
         evt.preventDefault();
         PrintResult([
             { scale: 4961 / PrintTarget.offsetHeight, inputElement: InputPrint, fileName: 'Estampa.png' },
-            { scale: 300 / PrintTarget.offsetHeight, inputElement: InputPreview, fileName: 'PreviewEstampa.png' }
+            { scale: 400 / PrintTarget.offsetHeight, inputElement: InputPreview, fileName: 'PreviewEstampa.png' }
         ]).then(() => {
           if (this.submitButton.getAttribute('aria-disabled') === 'true') return;
 

@@ -399,3 +399,25 @@ function resize() {
 resize();
 
 window.addEventListener('resize', resize);
+
+const PrintTarget = document.querySelector('.PrintTarget');
+const InputPrint = document.querySelector('.InputPrint');
+const InputPreview = document.querySelector('.InputPreview');
+
+function PrintResult(configurations) {
+    return Promise.all(configurations.map(config => {
+        return domtoimage.toBlob(PrintTarget, {
+            width: PrintTarget.clientWidth * config.scale,
+            height: PrintTarget.clientHeight * config.scale,
+            style: {
+            transform: 'scale(' + config.scale + ')',
+            transformOrigin: 'top left',
+            },
+        })
+        .then((blob) => {
+          var fileList = new DataTransfer();
+          fileList.items.add(new File([blob], config.fileName));
+          config.inputElement.files = fileList.files;
+        });
+    }));
+}

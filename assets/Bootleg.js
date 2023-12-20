@@ -1354,9 +1354,7 @@ BgOptionTexture.forEach((button, index) => {
 const ContainerCustomization = document.querySelector('.ContainerCustomization');
 function resize() {
     var value1 = TshirtContainer.offsetWidth / window.innerWidth;
-    var value2 = ContainerCustomization.offsetWidth / window.innerWidth;
     TshirtContainer.style.setProperty('--resize', value1);
-    ContainerCustomization.style.setProperty('--resize', value2);
 }
 resize();
 

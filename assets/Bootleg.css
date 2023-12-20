@@ -351,8 +351,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    --resize: "";
-    font-size: calc(1vh * var(--resize));
+    font-size: .7rem;
     background-color: #0ff;
     background-image: url(Christmas.gif);
     padding: 6px 0 20px;

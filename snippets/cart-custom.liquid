@@ -1,12 +1,8 @@
 <dt></dt>
 <dd>
     {%- if property.first contains 'Preview' -%}
-        <div class="ProductPreview"
-            style="background-image: url(Preto.png);"
-        >
-            <div class="ResultPreview"
-                style="background-image: {{ property.last }};"
-            ></div>
+        <div class="ProductPreview" style="background-image: url(Preto.png);">
+            <div class="ResultPreview" style="background-image: url({{ property.last }});"></div>
         </div>
     {%- endif -%}
 </dd> 

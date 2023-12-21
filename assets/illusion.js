@@ -1,7 +1,7 @@
 const Tshirt = document.querySelector('.Tshirt');
 const Preview = document.querySelector('.Preview');
 const Zoom_Btn = document.querySelectorAll('.Zoom_Btn');
-const LinkAssets = 'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/';
+const LinkAssets = 'https://361875-4.myshopify.com/cdn/shop/t/12/assets/';
 var PreviewScale = 1;
 Zoom_Btn.forEach(button => {
     button.addEventListener('click', () => {

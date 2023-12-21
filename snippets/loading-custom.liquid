@@ -1,0 +1,9 @@
+{{ 'loading-custom.css' | asset_url | stylesheet_tag }}
+{{ 'component-loading-spinner.css' | asset_url | stylesheet_tag }}
+
+<div class="{% if class %}{{ class }}{% else %}loading__spinner hidden{% endif %} LoadingCustom">
+    <div class="loadGif"></div>
+    <div class="loadMessage">
+        Enviando para o carrinho...
+    </div>
+</div>

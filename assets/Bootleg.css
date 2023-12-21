@@ -995,16 +995,6 @@
     border: 3px solid red;
 }
 
-.BgOption.Mask {
-    object-fit: contain;
-    -webkit-mask-size: var(--mask-size);
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: var(--mask-position);
-    mask-size: var(--mask-size);
-    mask-repeat: no-repeat;
-    mask-position: var(--mask-position);
-}
-
 .BgOption.Texture {
     background-size: cover;
 }

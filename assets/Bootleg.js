@@ -1408,7 +1408,7 @@ ColorPickers.forEach((Color, index) => {
     var div = document.createElement('div');
     div.className = 'ColorPicker ' + Color;
     if (index === 0) {
-        div.classList.add(selected);
+        div.classList.add('selected');
     }
     div.setAttribute('color', Color)
     ProductColorsBox.appendChild(div);
@@ -1444,7 +1444,7 @@ SizePickers.forEach((Size, index) => {
     var div = document.createElement('div');
     div.className = 'SizePicker ' + Size;
     if (index === 0) {
-        div.classList.add(selected);
+        div.classList.add('selected');
     }
     div.innerText = Size;
     div.setAttribute('size', Size);

@@ -1392,6 +1392,7 @@ function PrintResult(configurations) {
     }));
 }
 
+const LinkProduct = 'https://361875-4.myshopify.com/cdn/shop/t/12/assets/';
 const ProductColorsBox = document.querySelector('.ProductColorsBox');
 const ColorPickers = [
     'Preto',
@@ -1417,7 +1418,7 @@ ColorPickerAll.forEach((button) => {
         });
         button.classList.add('selected');
         ProductColor = button.getAttribute('color');
-        TshirtContainer.style.backgroundImage = 'url('+LinkAssets+ProductColor+'.png)';
+        TshirtContainer.style.backgroundImage = 'url('+LinkProduct+ProductColor+'.png)';
         InputPreview.setAttribute('name', `properties[Preview Color:${ProductColor}/Size:${ProductSize}]`);
     });
 });

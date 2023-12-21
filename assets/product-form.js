@@ -18,17 +18,18 @@ if (!customElements.get('product-form')) {
 
       onSubmitHandler(evt) {
         evt.preventDefault();
+        if (this.submitButton.getAttribute('aria-disabled') === 'true') return;
+        
+        this.handleErrorMessage();
+        
+        this.submitButton.setAttribute('aria-disabled', true);
+        this.submitButton.classList.add('loading');
+        this.querySelector('.loading__spinner').classList.remove('hidden');
+        
         PrintResult([
             { scale: 4961 / PrintTarget.offsetHeight, inputElement: InputPrint, fileName: 'Estampa.png' },
             { scale: 400 / PrintTarget.offsetHeight, inputElement: InputPreview, fileName: 'PreviewEstampa.png' }
         ]).then(() => {
-          if (this.submitButton.getAttribute('aria-disabled') === 'true') return;
-
-          this.handleErrorMessage();
-
-          this.submitButton.setAttribute('aria-disabled', true);
-          this.submitButton.classList.add('loading');
-          this.querySelector('.loading__spinner').classList.remove('hidden');
 
           const config = fetchConfig('javascript');
           config.headers['X-Requested-With'] = 'XMLHttpRequest';
@@ -44,7 +45,6 @@ if (!customElements.get('product-form')) {
             this.cart.setActiveElement(document.activeElement);
           }
           config.body = formData;
-
         
           fetch(`${routes.cart_add_url}`, config)
             .then((response) => response.json())

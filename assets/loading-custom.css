@@ -11,7 +11,7 @@
 .loadGif {
     height: 270px;
     width: 270px;
-    background-image: url(cat-working.gif) center / contain no-repeat;
+    background: url(cat-working.gif) center / contain no-repeat;
 }
 
 .loadMessage {

@@ -1,7 +1,6 @@
 const Tshirt = document.querySelector('.Tshirt');
 const Preview = document.querySelector('.Preview');
 const Zoom_Btn = document.querySelectorAll('.Zoom_Btn');
-const LinkAssets = 'https://361875-4.myshopify.com/cdn/shop/t/12/assets/';
 var PreviewScale = 1;
 Zoom_Btn.forEach(button => {
     button.addEventListener('click', () => {
@@ -307,6 +306,7 @@ function PrintResult(configurations) {
     }));
 }
 
+const LinkProduct = 'https://361875-4.myshopify.com/cdn/shop/t/12/assets/';
 const ProductColorsBox = document.querySelector('.ProductColorsBox');
 const ColorPickers = [
     'Branco',
@@ -330,7 +330,7 @@ ColorPickerAll.forEach((button) => {
         });
         button.classList.add('selected');
         ProductColor = button.getAttribute('color');
-        Tshirt.style.backgroundImage = 'url('+LinkAssets+ProductColor+'.png)';
+        Tshirt.style.backgroundImage = 'url('+LinkProduct+ProductColor+'.png)';
         InputPreview.setAttribute('name', `properties[Preview Color:${ProductColor}/Size:${ProductSize}]`);
     });
 });

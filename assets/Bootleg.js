@@ -1393,17 +1393,11 @@ function PrintResult(configurations) {
 }
 
 const ProductColorsBox = document.querySelector('.ProductColorsBox');
-
 const ColorPickers = [
     'Preto',
     'Branco',
 ];
-
-ColorPickers[0].backgroundColor = 'black';
-ColorPickers[1].backgroundColor = 'white';
-
 var ProductColor = ColorPickers[0];
-
 ColorPickers.forEach((Color, index) => {
     var div = document.createElement('div');
     div.className = 'ColorPicker ' + Color;
@@ -1413,9 +1407,9 @@ ColorPickers.forEach((Color, index) => {
     div.setAttribute('color', Color)
     ProductColorsBox.appendChild(div);
 });
-
 const ColorPickerAll = document.querySelectorAll('.ColorPicker');
-
+ColorPickerAll[0].backgroundColor = 'black';
+ColorPickerAll[1].backgroundColor = 'white';
 ColorPickerAll.forEach((button) => {
     button.addEventListener('click', () => {
         ColorPickerAll.forEach((button) => {
@@ -1429,7 +1423,6 @@ ColorPickerAll.forEach((button) => {
 });
 
 const ProductSizeBox = document.querySelector('.ProductSizeBox');
-
 const SizePickers = [
     'P',
     'M',
@@ -1437,9 +1430,7 @@ const SizePickers = [
     'GG',
     'XGG',
 ];
-
 var ProductSize = SizePickers[0];
-
 SizePickers.forEach((Size, index) => {
     var div = document.createElement('div');
     div.className = 'SizePicker ' + Size;
@@ -1450,9 +1441,7 @@ SizePickers.forEach((Size, index) => {
     div.setAttribute('size', Size);
     ProductSizeBox.appendChild(div);
 });
-
 const SizePickerAll = document.querySelectorAll('.SizePicker');
-
 SizePickerAll.forEach((button) => {
     button.addEventListener('click', () => {
         SizePickerAll.forEach((button) => {

@@ -6,7 +6,11 @@
 }
 
 .PickersTitle {
-    
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    line-height: 1;
+    font-size: 25px;
 }
 
 .ProductSizeBox {

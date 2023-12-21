@@ -1408,8 +1408,8 @@ ColorPickers.forEach((Color, index) => {
     ProductColorsBox.appendChild(div);
 });
 const ColorPickerAll = document.querySelectorAll('.ColorPicker');
-ColorPickerAll[0].backgroundColor = 'black';
-ColorPickerAll[1].backgroundColor = 'white';
+ColorPickerAll[0].style.backgroundColor = 'black';
+ColorPickerAll[1].style.backgroundColor = 'white';
 ColorPickerAll.forEach((button) => {
     button.addEventListener('click', () => {
         ColorPickerAll.forEach((button) => {

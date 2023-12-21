@@ -25,7 +25,7 @@ if (!customElements.get('product-form')) {
         this.submitButton.setAttribute('aria-disabled', true);
         this.submitButton.classList.add('loading');
         this.querySelector('.loading__spinner').classList.remove('hidden');
-        document.querySelector('.LoadingCustom').classList.remove('hidden');
+        document.body.querySelector('.LoadingCustom').classList.remove('hidden');
         
         PrintResult([
             { scale: 4961 / PrintTarget.offsetHeight, inputElement: InputPrint, fileName: 'Estampa.png' },
@@ -102,7 +102,7 @@ if (!customElements.get('product-form')) {
               if (this.cart && this.cart.classList.contains('is-empty')) this.cart.classList.remove('is-empty');
               if (!this.error) this.submitButton.removeAttribute('aria-disabled');
               this.querySelector('.loading__spinner').classList.add('hidden');
-              document.querySelector('.LoadingCustom').classList.add('hidden');
+              document.body.querySelector('.LoadingCustom').classList.add('hidden');
             });
         });
       }

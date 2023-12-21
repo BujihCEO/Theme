@@ -5,6 +5,51 @@
     --text-color: #FFD700;
 }
 
+.ProductSizeBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 75px;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.SizePicker {
+    height: 85%;
+    background-color: white;
+    color: black;
+    border-radius: 2em;
+    transition: .5s;
+}
+
+.SizePicker.selected {
+    height: 100%;
+    background-color: black;
+    color: white;
+}
+
+.ProductColorsBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 75px;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.ColorPicker {
+    height: 85%;
+    aspect-ratio: 1/1;
+    border: 2px solid black;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.ColorPicker.selected {
+    height: 100%;
+    border: 2px solid red;
+}
+
 .Bg_Tshirt {
     position: sticky;
     top: 0;

@@ -1370,19 +1370,6 @@ resize();
 
 window.addEventListener('resize', resize);
 
-const ProductColors = document.querySelector('.ProductColors');
-
-const ColorPickers = [
-    'Preto',
-    'Branco',
-];
-
-ColorPickers.forEach((Color) => {
-    var div = document.createElement('div');
-    div.className = 'ColorPicker ' + Color;
-    ProductColors.appendChild(div);
-});
-
 const PrintTarget = document.querySelector('.PrintTarget');
 const InputPrint = document.querySelector('.InputPrint');
 const InputPreview = document.querySelector('.InputPreview');
@@ -1393,7 +1380,7 @@ function PrintResult(configurations) {
             width: PrintTarget.clientWidth * config.scale,
             height: PrintTarget.clientHeight * config.scale,
             style: {
-            transform: 'scale(' + config.scale + ')',
+                transform: 'scale(' + config.scale + ')',
             transformOrigin: 'top left',
             },
         })
@@ -1404,3 +1391,66 @@ function PrintResult(configurations) {
         });
     }));
 }
+
+const ProductColorsBox = document.querySelector('.ProductColorsBox');
+
+const ColorPickers = [
+    'Preto',
+    'Branco',
+];
+
+var ProductColor = ColorPickers[0];
+
+ColorPickers.forEach((Color) => {
+    var div = document.createElement('div');
+    div.className = 'ColorPicker ' + Color;
+    div.setAttribute('color', Color)
+    ProductColorsBox.appendChild(div);
+});
+
+const ColorPickerAll = document.querySelectorAll('.ColorPicker');
+
+ColorPickerAll.forEach((button) => {
+    button.addEventListener('click', () => {
+        ColorPickerAll.forEach((button) => {
+            button.classList.remove('selected');
+        });
+        button.classList.add('selected');
+        ProductColor = button.getAttribute('color');
+        InputPreview.setAttribute('name', `properties[Color:${ProductColor}/Size:${ProductSize}]`);
+    });
+});
+
+const ProductSizeBox = document.querySelector('.ProductSizeBox');
+
+const SizePickers = [
+    'P',
+    'M',
+    'G',
+    'GG',
+    'XGG',
+];
+
+var ProductSize = SizePickers[0];
+
+SizePickers.forEach((Size) => {
+    var div = document.createElement('div');
+    div.className = 'SizePicker ' + Size;
+    div.setAttribute('size', Size);
+    ProductSizeBox.appendChild(div);
+});
+
+const SizePickerAll = document.querySelectorAll('.SizePicker');
+
+SizePickerAll.forEach((button) => {
+    button.addEventListener('click', () => {
+        SizePickerAll.forEach((button) => {
+            button.classList.remove('selected');
+        });
+        button.classList.add('selected');
+        ProductSize = button.getAttribute('size');
+        InputPreview.setAttribute('name', `properties[Color:${ProductColor}/Size:${ProductSize}]`);
+    });
+});
+
+InputPreview.setAttribute('name', `properties[Color:${ProductColor}/Size:${ProductSize}]`);

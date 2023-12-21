@@ -5,6 +5,10 @@
     --text-color: #FFD700;
 }
 
+.PickersTitle {
+    
+}
+
 .ProductSizeBox {
     position: relative;
     display: flex;

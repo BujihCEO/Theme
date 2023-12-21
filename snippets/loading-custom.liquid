@@ -1,9 +1,18 @@
-{{ 'loading-custom.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-spinner.css' | asset_url | stylesheet_tag }}
 
-<div class="{% if class %}{{ class }}{% else %}loading__spinner hidden{% endif %} LoadingCustom">
-    <div class="loadGif"></div>
-    <div class="loadMessage">
-        Enviando para o carrinho...
-    </div>
-</div>
+<script>
+    var loadingContainer = document.createElement('div');
+    loadingContainer.className = "{% if class %}{{ class }}{% else %}loading__spinner hidden{% endif %} LoadingCustom";
+
+    var loadGif = document.createElement('div');
+    loadGif.className = "loadGif";
+
+    var loadMessage = document.createElement('div');
+    loadMessage.className = "loadMessage";
+    loadMessage.innerText = "Enviando para o carrinho...";
+
+    loadingContainer.appendChild(loadGif);
+    loadingContainer.appendChild(loadMessage);
+
+    document.body.appendChild(loadingContainer);
+</script>

@@ -359,10 +359,10 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    font-size: .7em;
+    font-size: .7rem;
     background-color: #0ff;
     background-image: url(Christmas.gif);
-    padding: 6px 0 40px;
+    padding: 6px 0 20px;
     border-bottom-left-radius: 2em;
     border-bottom-right-radius: 2em;
 }

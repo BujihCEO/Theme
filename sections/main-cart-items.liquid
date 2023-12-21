@@ -17,6 +17,25 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .ProductPreview {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .ResultPreview {
+    position: absolute;
+    width: 35%;
+    aspect-ratio: 3508/4961;
+    background-size: contain;
+    background-position: center;
+  }
 {%- endstyle -%}
 
 {%- unless settings.cart_type == 'drawer' -%}
@@ -147,24 +166,6 @@
                                   <div class="ProductPreview" style="background-image: url(https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Preto.png);">
                                       <div class="ResultPreview" style="background-image: url({{ property.last }});"></div>
                                   </div>
-                                  {%- style -%}
-                                      .ProductPreview {
-                                          position: relative;
-                                          display: flex;
-                                          justify-content: center;
-                                          align-items: center;
-                                          width: 100%;
-                                          aspect-ratio: 1/1;
-                                          background-size: cover;
-                                      }
-                                      .ResultPreview {
-                                          position: absolute;
-                                          width: 35%;
-                                          aspect-ratio: 3508/4961;
-                                          background-size: contain;
-                                          background-position: center;
-                                      }
-                                  {%- endstyle -%}
                                 {%- endif -%}
                               </div>
                             {%- endif -%}

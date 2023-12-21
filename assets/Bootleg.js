@@ -1400,7 +1400,7 @@ const ColorPickers = [
 var ProductColor = ColorPickers[0];
 ColorPickers.forEach((Color, index) => {
     var div = document.createElement('div');
-    div.className = 'ColorPicker ' + Color;
+    div.className = 'ColorPicker ';
     if (index === 0) {
         div.classList.add('selected');
     }
@@ -1433,7 +1433,7 @@ const SizePickers = [
 var ProductSize = SizePickers[0];
 SizePickers.forEach((Size, index) => {
     var div = document.createElement('div');
-    div.className = 'SizePicker ' + Size;
+    div.className = 'SizePicker ';
     if (index === 0) {
         div.classList.add('selected');
     }

@@ -420,7 +420,7 @@
 .UploadImgWrap {
     display: flex;
     width: 30%;
-    margin: 40px 0px 0px;
+    margin: 3em auto 0;
 }
 
 .IconContainer {
@@ -471,7 +471,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: 30px 0px;
+    margin: 1em 0 0;
 }
 
 .ImgEffect {
@@ -553,7 +553,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 40px 0px 0px;
+    margin: 3em auto 0;
 }
 
 .Tittle {
@@ -572,9 +572,9 @@
 .Personalization input[type="text"] {
     width: 80%;
     font-size: 3em;
-    font-family: sans-serif;
     font-weight: 700;
-    border: 0px;
+    text-align: center;
+    border: 0px; 
     border-radius: 1rem;
     padding: 1rem;
 }
@@ -582,9 +582,9 @@
 .Personalization input[type="number"] {
     width: 80%;
     font-size: 3em;
-    font-family: sans-serif;
     font-weight: 700;
-    border: 0px;
+    text-align: center;
+    border: 0px; 
     border-radius: 1rem;
     padding: 1rem;
 }

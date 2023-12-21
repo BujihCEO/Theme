@@ -162,7 +162,6 @@
                             {%- if property.last != blank and property_first_char != '_' -%}
                               <div class="product-option">
                                 {%- if property.first contains 'Preview' -%}
-                                  <div class="ProductSize">Tamanho: {{ property.first | split: 'Size:' | '/' }}</div>
                                   <div class="ProductPreview" style="background-image: url(https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/{{ property.first | split: 'Color:' | '/' }}.png);">
                                       <div class="ResultPreview" style="background-image: url({{ property.last }});"></div>
                                   </div>

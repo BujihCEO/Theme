@@ -1436,6 +1436,7 @@ var ProductSize = SizePickers[0];
 SizePickers.forEach((Size) => {
     var div = document.createElement('div');
     div.className = 'SizePicker ' + Size;
+    div.innerText = Size;
     div.setAttribute('size', Size);
     ProductSizeBox.appendChild(div);
 });

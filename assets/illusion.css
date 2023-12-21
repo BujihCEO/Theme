@@ -372,7 +372,7 @@
     width: 100%;
     border-radius: 2em;
     overflow: hidden;
-    overflow-x: scroll;
+    overflow-x: auto;
     :first-child {
         margin-left: 0px;
     }

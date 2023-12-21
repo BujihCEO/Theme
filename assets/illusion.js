@@ -50,8 +50,8 @@ BtnCustomAll.forEach((element, index) => {
 
 const Personalization = document.querySelector('.Personalization');
 function resize() {
-    var value1 = Tshirt.offsetWidth / window.innerWidth;
-    Tshirt.style.setProperty('--resize', value1);
+    var value = Tshirt.offsetWidth / window.innerWidth;
+    Tshirt.style.setProperty('--resize', value);
 }
 resize();
 

@@ -1,18 +1,64 @@
-.headerWrap {
+.PickersTitle {
     width: 100%;
-    margin: 25px 0px 15px;
+    text-align: center;
+    margin: 0px;
+    line-height: 1;
+    font-size: 25px;
+}
+
+.ProductSizeBox {
+    position: relative;
     display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin: 15px 0px;
+    overflow-x: auto;
+}
+
+.SizePicker {
+    display: flex;
+    height: 85%;
+    font-size: 25px;
+    background-color: #fff;
+    font-weight: 600;
+    color: #000;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0px 10px;
+    margin: 0px 10px;
+    transition: .5s;
+    align-items: center;
     justify-content: center;
 }
 
-.headerTitlle{
-    font-size: 2rem;
-    line-height: 0;
-    border-radius: 4rem;
-    padding: 20px 40px;
-    box-shadow: 0 0 6px #000;
-    color: #fff;
-    background-color: #000;
+.SizePicker.selected {
+    height: 100%;
+    background-color: black;
+    color: white;
+}
+
+.ProductColorsBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.ColorPicker {
+    height: 90%;
+    aspect-ratio: 1/1;
+    border: 2px solid black;
+    border-radius: 50%;
+    transition: .5s;
+    margin: 0px 10px;
+}
+
+.ColorPicker.selected {
+    height: 100%;
+    border: 2px solid red;
 }
 
 .Bg_Tshirt {
@@ -379,11 +425,10 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    --resize: "";
-    font-size: calc(1vh * var(--resize));
+    font-size: .7rem;
     background-color: #0ff;
     background-image: url(Christmas.gif);
-    padding: 6px 0 40px;
+    padding: 6px 0 20px;
     border-bottom-left-radius: 2em;
     border-bottom-right-radius: 2em;
 }
@@ -393,7 +438,7 @@
     width: 100%;
     border-radius: 2em;
     overflow: hidden;
-    overflow-x: scroll;
+    overflow-x: auto;
     :first-child {
         margin-left: 0px;
     }
@@ -436,7 +481,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 30px 0px 0px;
+    padding: 3em 0 0;
 }
 
 .TemplatesWrap {

@@ -1,6 +1,7 @@
 const Tshirt = document.querySelector('.Tshirt');
 const Preview = document.querySelector('.Preview');
 const Zoom_Btn = document.querySelectorAll('.Zoom_Btn');
+const LinkAssets = 'https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/';
 var PreviewScale = 1;
 Zoom_Btn.forEach(button => {
     button.addEventListener('click', () => {
@@ -51,9 +52,7 @@ BtnCustomAll.forEach((element, index) => {
 const Personalization = document.querySelector('.Personalization');
 function resize() {
     var value1 = Tshirt.offsetWidth / window.innerWidth;
-    var value2 = Personalization.offsetWidth / window.innerWidth;
     Tshirt.style.setProperty('--resize', value1);
-    Personalization.style.setProperty('--resize', value2);
 }
 resize();
 
@@ -307,3 +306,65 @@ function PrintResult(configurations) {
         });
     }));
 }
+
+const ProductColorsBox = document.querySelector('.ProductColorsBox');
+const ColorPickers = [
+    'Branco',
+];
+var ProductColor = ColorPickers[0];
+ColorPickers.forEach((Color, index) => {
+    var div = document.createElement('div');
+    div.className = 'ColorPicker ' + Color;
+    if (index === 0) {
+        div.classList.add('selected');
+    }
+    div.setAttribute('color', Color)
+    ProductColorsBox.appendChild(div);
+});
+const ColorPickerAll = document.querySelectorAll('.ColorPicker');
+ColorPickerAll[0].style.backgroundColor = 'black';
+ColorPickerAll[1].style.backgroundColor = 'white';
+ColorPickerAll.forEach((button) => {
+    button.addEventListener('click', () => {
+        ColorPickerAll.forEach((button) => {
+            button.classList.remove('selected');
+        });
+        button.classList.add('selected');
+        ProductColor = button.getAttribute('color');
+        TshirtContainer.style.backgroundImage = 'url('+LinkAssets+ProductColor+'.png)';
+        InputPreview.setAttribute('name', `properties[Preview Color:${ProductColor}/Size:${ProductSize}]`);
+    });
+});
+
+const ProductSizeBox = document.querySelector('.ProductSizeBox');
+const SizePickers = [
+    'P',
+    'M',
+    'G',
+    'GG',
+    'XGG',
+];
+var ProductSize = SizePickers[0];
+SizePickers.forEach((Size, index) => {
+    var div = document.createElement('div');
+    div.className = 'SizePicker ' + Size;
+    if (index === 0) {
+        div.classList.add('selected');
+    }
+    div.innerText = Size;
+    div.setAttribute('size', Size);
+    ProductSizeBox.appendChild(div);
+});
+const SizePickerAll = document.querySelectorAll('.SizePicker');
+SizePickerAll.forEach((button) => {
+    button.addEventListener('click', () => {
+        SizePickerAll.forEach((button) => {
+            button.classList.remove('selected');
+        });
+        button.classList.add('selected');
+        ProductSize = button.getAttribute('size');
+        InputPreview.setAttribute('name', `properties[Preview Color:${ProductColor}/Size:${ProductSize}]`);
+    });
+});
+
+InputPreview.setAttribute('name', `properties[Preview Color:${ProductColor}/Size:${ProductSize}]`);

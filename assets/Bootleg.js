@@ -1399,11 +1399,17 @@ const ColorPickers = [
     'Branco',
 ];
 
+ColorPickers[0].backgroundColor = 'black';
+ColorPickers[1].backgroundColor = 'white';
+
 var ProductColor = ColorPickers[0];
 
 ColorPickers.forEach((Color) => {
     var div = document.createElement('div');
     div.className = 'ColorPicker ' + Color;
+    if (index === 0) {
+        div.classList.add(selected);
+    }
     div.setAttribute('color', Color)
     ProductColorsBox.appendChild(div);
 });
@@ -1417,7 +1423,8 @@ ColorPickerAll.forEach((button) => {
         });
         button.classList.add('selected');
         ProductColor = button.getAttribute('color');
-        InputPreview.setAttribute('name', `properties[Color:${ProductColor}/Size:${ProductSize}]`);
+        TshirtContainer.style.backgroundImage = 'url('+LinkAssets+ProductColor+'.png)';
+        InputPreview.setAttribute('name', `properties[Color:${ProductColor}/Size:${ProductSize}/]`);
     });
 });
 
@@ -1436,6 +1443,9 @@ var ProductSize = SizePickers[0];
 SizePickers.forEach((Size) => {
     var div = document.createElement('div');
     div.className = 'SizePicker ' + Size;
+    if (index === 0) {
+        div.classList.add(selected);
+    }
     div.innerText = Size;
     div.setAttribute('size', Size);
     ProductSizeBox.appendChild(div);
@@ -1450,8 +1460,8 @@ SizePickerAll.forEach((button) => {
         });
         button.classList.add('selected');
         ProductSize = button.getAttribute('size');
-        InputPreview.setAttribute('name', `properties[Color:${ProductColor}/Size:${ProductSize}]`);
+        InputPreview.setAttribute('name', `properties[Color:${ProductColor}/Size:${ProductSize}/]`);
     });
 });
 
-InputPreview.setAttribute('name', `properties[Color:${ProductColor}/Size:${ProductSize}]`);
+InputPreview.setAttribute('name', `properties[Color:${ProductColor}/Size:${ProductSize}/]`);

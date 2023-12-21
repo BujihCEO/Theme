@@ -9,17 +9,26 @@
     position: relative;
     display: flex;
     align-items: center;
-    height: 75px;
+    height: 50px;
     width: 100%;
+    margin: 15px 0px;
     overflow-x: auto;
 }
 
 .SizePicker {
+    display: flex;
     height: 85%;
-    background-color: white;
-    color: black;
-    border-radius: 2em;
+    font-size: 25px;
+    background-color: #fff;
+    font-weight: 600;
+    color: #000;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0px 10px;
+    margin: 0px 10px;
     transition: .5s;
+    align-items: center;
+    justify-content: center;
 }
 
 .SizePicker.selected {
@@ -32,17 +41,18 @@
     position: relative;
     display: flex;
     align-items: center;
-    height: 75px;
+    height: 70px;
     width: 100%;
     overflow-x: auto;
 }
 
 .ColorPicker {
-    height: 85%;
+    height: 90%;
     aspect-ratio: 1/1;
     border: 2px solid black;
     border-radius: 50%;
     transition: .5s;
+    margin: 0px 10px;
 }
 
 .ColorPicker.selected {

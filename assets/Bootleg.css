@@ -23,6 +23,21 @@
     overflow-x: auto;
 }
 
+.SizePicker {
+    display: flex;
+    height: 85%;
+    font-size: 25px;
+    background-color: #fff;
+    font-weight: 600;
+    color: #000;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0px 10px;
+    margin: 0px 10px;
+    transition: .5s;
+    align-items: center;
+    justify-content: center;
+}
 
 .SizePicker.selected {
     height: 100%;

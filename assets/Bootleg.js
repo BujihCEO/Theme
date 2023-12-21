@@ -1370,6 +1370,19 @@ resize();
 
 window.addEventListener('resize', resize);
 
+const ProductColors = document.querySelector('.ProductColors');
+
+const ColorPickers = [
+    'Preto',
+    'Branco',
+];
+
+ColorPickers.forEach((Color) => {
+    var div = document.createElement('div');
+    div.className = 'ColorPicker ' + Color;
+    ProductColors.appendChild(div);
+});
+
 const PrintTarget = document.querySelector('.PrintTarget');
 const InputPrint = document.querySelector('.InputPrint');
 const InputPreview = document.querySelector('.InputPreview');

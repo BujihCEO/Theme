@@ -1418,7 +1418,7 @@ ColorPickerAll.forEach((button) => {
         button.classList.add('selected');
         ProductColor = button.getAttribute('color');
         TshirtContainer.style.backgroundImage = 'url('+LinkAssets+ProductColor+'.png)';
-        InputPreview.setAttribute('name', `properties[Color:${ProductColor}/Size:${ProductSize}/]`);
+        InputPreview.setAttribute('name', `properties[Preview Color:${ProductColor}/Size:${ProductSize}/]`);
     });
 });
 
@@ -1449,8 +1449,8 @@ SizePickerAll.forEach((button) => {
         });
         button.classList.add('selected');
         ProductSize = button.getAttribute('size');
-        InputPreview.setAttribute('name', `properties[Color:${ProductColor}/Size:${ProductSize}/]`);
+        InputPreview.setAttribute('name', `properties[Preview Color:${ProductColor}/Size:${ProductSize}/]`);
     });
 });
 
-InputPreview.setAttribute('name', `properties[Color:${ProductColor}/Size:${ProductSize}/]`);
+InputPreview.setAttribute('name', `properties[Preview Color:${ProductColor}/Size:${ProductSize}/]`);

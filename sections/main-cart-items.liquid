@@ -147,7 +147,7 @@
                                   <div class="ProductPreview" style="background-image: url(https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/Preto.png);">
                                       <div class="ResultPreview" style="background-image: url({{ property.last }});"></div>
                                   </div>
-                                  <style>
+                                  {%- style -%}
                                       .ProductPreview {
                                           position: relative;
                                           display: flex;
@@ -164,7 +164,7 @@
                                           background-size: contain;
                                           background-position: center;
                                       }
-                                  </style>
+                                  {%- endstyle -%}
                                 {%- endif -%}
                               </div>
                             {%- endif -%}

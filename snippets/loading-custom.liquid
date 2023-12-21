@@ -1,9 +1,8 @@
 {{ 'component-loading-spinner.css' | asset_url | stylesheet_tag }}
-{{ 'component-loading-spinner.css' | asset_url | stylesheet_tag }}
 
 <script>
     var loadingContainer = document.createElement('div');
-    loadingContainer.className = "{% if class %}{{ class }}{% else %}loading__spinner hidden{% endif %} LoadingCustom";
+    loadingContainer.className = "LoadingCustom hidden";
 
     var loadGif = document.createElement('div');
     loadGif.className = "loadGif";

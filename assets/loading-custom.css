@@ -1,4 +1,4 @@
-.button.loading>.loading__spinner.LoadingCustom {
+.LoadingCustom {
     position: fixed;
     top: 0;
     height: 100vh;

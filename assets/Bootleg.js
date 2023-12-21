@@ -1404,7 +1404,7 @@ ColorPickers[1].backgroundColor = 'white';
 
 var ProductColor = ColorPickers[0];
 
-ColorPickers.forEach((Color) => {
+ColorPickers.forEach((Color, index) => {
     var div = document.createElement('div');
     div.className = 'ColorPicker ' + Color;
     if (index === 0) {
@@ -1440,7 +1440,7 @@ const SizePickers = [
 
 var ProductSize = SizePickers[0];
 
-SizePickers.forEach((Size) => {
+SizePickers.forEach((Size, index) => {
     var div = document.createElement('div');
     div.className = 'SizePicker ' + Size;
     if (index === 0) {

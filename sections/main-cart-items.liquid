@@ -143,7 +143,29 @@
                             {%- assign property_first_char = property.first | slice: 0 -%}
                             {%- if property.last != blank and property_first_char != '_' -%}
                               <div class="product-option">
-                                {%- render 'cart-custom' -%}
+                                {%- if property.last contains '/uploads/' -%}
+                                  <div class="ProductPreview" style="background-image: url(Preto.png);">
+                                      <div class="ResultPreview" style="background-image: url({{ property.last }});"></div>
+                                  </div>
+                                  <style>
+                                      .ProductPreview {
+                                          position: relative;
+                                          display: flex;
+                                          justify-content: center;
+                                          align-items: center;
+                                          width: 100%;
+                                          aspect-ratio: 1/1;
+                                          background-size: cover;
+                                      }
+                                      .ResultPreview {
+                                          position: absolute;
+                                          width: 35%;
+                                          aspect-ratio: 3508/4961;
+                                          background-size: contain;
+                                          background-position: center;
+                                      }
+                                  </style>
+                              {%- endif -%}
                               </div>
                             {%- endif -%}
                           {%- endfor -%}

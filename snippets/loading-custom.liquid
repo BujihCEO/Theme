@@ -15,9 +15,18 @@
     loadMessage_2.className = "loadMessage";
     loadMessage_2.innerText = "Enviando para o carrinho";
 
+    var loaderDots = document.createElement('div');
+    loaderDots.className = "loaderDots";
+    Array.from({length: 3}, () => {
+        var dot = document.createElement('div');
+        dot.className = "dot";
+        loaderDots.appendChild(dot);
+    });
+
     loadingContainer.appendChild(loadGif);
     loadingContainer.appendChild(loadMessage_1);
     loadingContainer.appendChild(loadMessage_2);
+    loadingContainer.appendChild(loaderDots);
 
     document.body.appendChild(loadingContainer);
 </script>

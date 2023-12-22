@@ -14,6 +14,8 @@
 .loadGif {
     height: 270px;
     width: 270px;
+    max-width: 50vw;
+    max-height: 50vw;
     background: url(cat-working.gif) center / contain no-repeat;
 }
 

@@ -1338,6 +1338,11 @@ const TextureLinks = [
     LinkAssets + 'Bootleg/Textures/Tex-17.svg',
     LinkAssets + 'Bootleg/Textures/Tex-18.svg',
     LinkAssets + 'Bootleg/Textures/Tex-19.svg',
+    LinkAssets + 'Bootleg/Textures/Tex-20.svg',
+    LinkAssets + 'Bootleg/Textures/Tex-21.svg',
+    LinkAssets + 'Bootleg/Textures/Tex-22.svg',
+    LinkAssets + 'Bootleg/Textures/Tex-23.svg',
+    LinkAssets + 'Bootleg/Textures/Tex-24.svg',
 ];
 
 const ContTexture = document.querySelector('.BackgroundCustomOptions.Texture');

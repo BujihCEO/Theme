@@ -71,8 +71,6 @@
 
 @keyframes loaderDots {
     to {
-        opacity: 0.1;
-        transform: translate(0, -20px);
-        background : pink;
+        transform: translateY(-20px);
     }
 }

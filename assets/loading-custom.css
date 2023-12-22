@@ -11,15 +11,35 @@
     background-color: #000000e6;
 }
 
+.LoadingCustom.message1 {
+    :nth-child(2) {
+        display: block;
+    }
+    :nth-child(3) {
+        display: none;
+    }
+}
+
+.LoadingCustom.message2 {
+    :nth-child(2) {
+        display: none;
+    }
+    :nth-child(3) {
+        display: block;
+    }
+}
+
 .loadGif {
     height: 270px;
     width: 270px;
     max-width: 50vw;
     max-height: 50vw;
+    border-radius: 10%;
     background: url(cat-working.gif) center / contain no-repeat;
 }
 
 .loadMessage {
+    text-align: center;
     color: white;
     font-size: 3rem;
     margin: 20px 0 0;

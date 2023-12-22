@@ -1385,9 +1385,9 @@ function PrintResult(configurations) {
             },
         })
         .then((blob) => {
-          var fileList = new DataTransfer();
-          fileList.items.add(new File([blob], config.fileName));
-          config.inputElement.files = fileList.files;
+            var fileList = new DataTransfer();
+            fileList.items.add(new File([blob], config.fileName));
+            config.inputElement.files = fileList.files;
         });
     }));
 }

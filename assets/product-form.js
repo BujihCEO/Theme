@@ -25,13 +25,14 @@ if (!customElements.get('product-form')) {
         this.submitButton.setAttribute('aria-disabled', true);
         this.submitButton.classList.add('loading');
         this.querySelector('.loading__spinner').classList.remove('hidden');
-        document.body.querySelector('.LoadingCustom').classList.remove('hidden');
-        
+        const LoadingCustom = document.body.querySelector('.LoadingCustom');
+        LoadingCustom.classList.remove('hidden');
         PrintResult([
             { scale: 4961 / PrintTarget.offsetHeight, inputElement: InputPrint, fileName: 'Estampa.png' },
             { scale: 400 / PrintTarget.offsetHeight, inputElement: InputPreview, fileName: 'PreviewEstampa.png' }
         ]).then(() => {
-
+          LoadingCustom.classList.remove('message1');
+          LoadingCustom.classList.add('message2');
           const config = fetchConfig('javascript');
           config.headers['X-Requested-With'] = 'XMLHttpRequest';
           delete config.headers['Content-Type'];
@@ -102,7 +103,9 @@ if (!customElements.get('product-form')) {
               if (this.cart && this.cart.classList.contains('is-empty')) this.cart.classList.remove('is-empty');
               if (!this.error) this.submitButton.removeAttribute('aria-disabled');
               this.querySelector('.loading__spinner').classList.add('hidden');
-              document.body.querySelector('.LoadingCustom').classList.add('hidden');
+              LoadingCustom.classList.add('hidden');
+              LoadingCustom.classList.remove('message1');
+              LoadingCustom.classList.add('message1');
             });
         });
       }

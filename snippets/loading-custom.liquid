@@ -2,17 +2,22 @@
 
 <script>
     var loadingContainer = document.createElement('div');
-    loadingContainer.className = "LoadingCustom hidden";
+    loadingContainer.className = "LoadingCustom hidden message1";
 
     var loadGif = document.createElement('div');
     loadGif.className = "loadGif";
 
-    var loadMessage = document.createElement('div');
-    loadMessage.className = "loadMessage";
-    loadMessage.innerText = "Enviando para o carrinho...";
+    var loadMessage_1 = document.createElement('div');
+    loadMessage_1.className = "loadMessage";
+    loadMessage_1.innerText = "Criando sua obra de arte...";
+
+    var loadMessage_2 = document.createElement('div');
+    loadMessage_2.className = "loadMessage";
+    loadMessage_2.innerText = "Enviando para o carrinho...";
 
     loadingContainer.appendChild(loadGif);
-    loadingContainer.appendChild(loadMessage);
+    loadingContainer.appendChild(loadMessage_1);
+    loadingContainer.appendChild(loadMessage_2);
 
     document.body.appendChild(loadingContainer);
 </script>

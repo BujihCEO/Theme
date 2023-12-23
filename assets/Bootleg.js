@@ -1178,6 +1178,7 @@ FontFamilySelector.forEach((button, index) => {
 
 const BackgroundTextLinks = [
     LinkAssets + 'Bootleg/Font-Textures/1.svg',
+    'linear-gradient(0deg, white 100%, transparent 0%)',
     LinkAssets + 'Bootleg/Font-Textures/2.svg',
     LinkAssets + 'Bootleg/Font-Textures/3.svg',
     LinkAssets + 'Bootleg/Font-Textures/4.svg',
@@ -1185,7 +1186,6 @@ const BackgroundTextLinks = [
     LinkAssets + 'Bootleg/Font-Textures/6.svg',
     LinkAssets + 'Bootleg/Font-Textures/7.svg',
     LinkAssets + 'Bootleg/Font-Textures/8.svg',
-    'linear-gradient(0deg, white 100%, transparent 0%)',
 ]
 const BackgroundTextEffect = document.querySelector('.BackgroundTextEffect');
 

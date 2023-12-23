@@ -95,7 +95,7 @@ function ImgSelectorUpdate() {
     ImgSelector.classList.add('selected');
     ImgSelector.style.height = PreviewImgContainer.offsetHeight + 'px';
     ImgSelector.style.width = PreviewImgContainer.offsetWidth + 'px';
-    ImgSelector.style.bottom = parseFloat(window.getComputedStyle(PreviewImgContainer).bottom) - 4  + 'px';
+    ImgSelector.style.bottom = parseFloat(window.getComputedStyle(PreviewImgContainer).bottom) - 2  + 'px';
     ImgSelector.style.left = PreviewImgContainer.offsetLeft - 2  + 'px';
 }
 

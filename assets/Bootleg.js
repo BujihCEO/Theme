@@ -1171,16 +1171,16 @@ FontFamilySelector.forEach((button, index) => {
 //  TEXT BACKGROUND
 
 const BackgroundTextLinks = [
-    LinkAssets + 'Bootleg/Font-Textures/gggrain1.svg',
-    LinkAssets + 'Bootleg/Font-Textures/gggrain2.svg',
-    LinkAssets + 'Bootleg/Font-Textures/pattern.svg',
-    LinkAssets + 'Bootleg/Font-Textures/subtle-prism.svg',
-    LinkAssets + 'Bootleg/Font-Textures/1.jpg',
-    LinkAssets + 'Bootleg/Font-Textures/2.jpg',
-    LinkAssets + 'Bootleg/Font-Textures/3.jpg',
-    LinkAssets + 'Bootleg/Font-Textures/4.jpg',
-    LinkAssets + 'Bootleg/Font-Textures/5.jpg',
-    LinkAssets + 'Bootleg/Font-Textures/6.jpg',
+    LinkAssets + 'Bootleg/Font-Textures/1.svg',
+    LinkAssets + 'Bootleg/Font-Textures/2.svg',
+    LinkAssets + 'Bootleg/Font-Textures/3.svg',
+    LinkAssets + 'Bootleg/Font-Textures/4.svg',
+    LinkAssets + 'Bootleg/Font-Textures/5.svg',
+    LinkAssets + 'Bootleg/Font-Textures/6.svg',
+    LinkAssets + 'Bootleg/Font-Textures/7.svg',
+    LinkAssets + 'Bootleg/Font-Textures/8.svg',
+    LinkAssets + 'Bootleg/Font-Textures/9.svg',
+    LinkAssets + 'Bootleg/Font-Textures/10.svg',
 ]
 const BackgroundTextEffect = document.querySelector('.BackgroundTextEffect');
 

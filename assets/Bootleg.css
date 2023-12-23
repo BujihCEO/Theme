@@ -70,7 +70,6 @@
 
 .Bg_Tshirt {
     position: sticky;
-    top: 0;
     width: 100%;
     background-color: #ffffff;
     z-index: 3;

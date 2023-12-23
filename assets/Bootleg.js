@@ -1366,6 +1366,7 @@ BgOptionTexture.forEach((button, index) => {
     });
 });
 
+document.querySelector('.Bg_Tshirt').style.top = document.querySelector('.header__icon').offsetHeight + 'px';
 const ContainerCustomization = document.querySelector('.ContainerCustomization');
 function resize() {
     var value1 = TshirtContainer.offsetWidth / window.innerWidth;

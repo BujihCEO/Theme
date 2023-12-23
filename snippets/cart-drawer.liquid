@@ -181,24 +181,34 @@
                                 {%- assign property_first_char = property.first | slice: 0 -%}
                                 {%- if property.last != blank and property_first_char != '_' -%}
                                   <div class="product-option">
-                                    <dt>{{ property.first }}:</dt>
-                                    <dd>
-                                      {%- if property.last contains '/uploads/' -%}
-                                        <a
-                                          href="{{ property.last }}"
-                                          class="link"
-                                          target="_blank"
-                                          aria-describedby="a11y-new-window-message"
-                                        >
-                                          {{ property.last | split: '/' | last }}
-                                        </a>
-                                      {%- else -%}
-                                        {{ property.last }}
-                                      {%- endif -%}
-                                    </dd>
+                                    {%- if property.first contains 'Preview' -%}
+                                      <div class="ProductSize">Tamanho: {{ property.first | split: 'Size:' | last }}</div>
+                                      <div class="ProductPreview" style="background-image: url(https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/{{ property.first | split: 'Color:' | last | split: '/Size:' | first }}.png);">
+                                          <div class="ResultPreview" style="background-image: url({{ property.last }});"></div>
+                                      </div>
+                                    {%- endif -%}
                                   </div>
                                 {%- endif -%}
                               {%- endfor -%}
+                              {%- style -%}
+                                .ProductPreview {
+                                    position: relative;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    width: 100%;
+                                    aspect-ratio: 1/1;
+                                    background-size: cover;
+                                    background-position: center;
+                                }
+                                .ResultPreview {
+                                    position: absolute;
+                                    width: 35%;
+                                    aspect-ratio: 3508/4961;
+                                    background-size: contain;
+                                    background-position: center;
+                                }
+                              {%- endstyle -%}
                             </dl>
 
                             <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>

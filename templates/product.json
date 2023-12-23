@@ -39,15 +39,6 @@
             "content": "<p><strong>Composição:<\/strong> 100% Algodão 30\/1 Penteado <\/p><p><strong>Gramatura da malha: <\/strong>165g\/m²<\/p><p><strong>Gola Ribana:<\/strong> 1x1 Penteada 97,5% Algodão 2,5% Elastano <\/p>",
             "page": ""
           }
-        },
-        "b4a25fb3-e632-43f2-add4-4b681320a791": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Medidas",
-            "icon": "ruler",
-            "content": "",
-            "page": ""
-          }
         }
       },
       "block_order": [
@@ -56,8 +47,7 @@
         "price",
         "quantity_selector",
         "buy_buttons",
-        "9a0527ef-08ee-4cd0-840c-66ecc67bebe7",
-        "b4a25fb3-e632-43f2-add4-4b681320a791"
+        "9a0527ef-08ee-4cd0-840c-66ecc67bebe7"
       ],
       "settings": {
         "enable_sticky_info": true,

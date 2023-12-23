@@ -287,7 +287,7 @@
     width: 100%;
     top: 0;
     background-color: var(--text-color);
-    mix-blend-mode: color;
+    mix-blend-mode: multiply;
     -webkit-background-clip: text;
     background-clip: text;
 }

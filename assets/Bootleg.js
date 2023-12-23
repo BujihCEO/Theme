@@ -1185,7 +1185,7 @@ const BackgroundTextLinks = [
     LinkAssets + 'Bootleg/Font-Textures/6.svg',
     LinkAssets + 'Bootleg/Font-Textures/7.svg',
     LinkAssets + 'Bootleg/Font-Textures/8.svg',
-    LinkAssets + 'Bootleg/Font-Textures/9.svg',
+    'linear-gradient(0deg, white 100%, transparent 0%)',
 ]
 const BackgroundTextEffect = document.querySelector('.BackgroundTextEffect');
 
@@ -1195,7 +1195,7 @@ function creatBackgroundText() {
         button.className = 'btnBackgroundText';
         var colorCont = document.createElement('div');
         colorCont.className = 'btnBackgroundTextColor';
-        colorCont.style = 'height: 100%; width: 100%; background-color: var(--text-color); mix-blend-mode: color;';
+        colorCont.style = 'height: 100%; width: 100%; background-color: var(--text-color); mix-blend-mode: multiply;';
         button.appendChild(colorCont);
         if (index === 0) {
             button.classList.add('selected');

@@ -959,7 +959,7 @@
     background-repeat: no-repeat;
     background-color: #fff;
     margin: 0 10px;
-    transition: border .5s,height .5s;
+    transition: .5s;
     overflow: hidden;
     -webkit-user-select: none;
     user-select: none;

@@ -221,7 +221,7 @@
 .PreviewImg {
     position: relative;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: top;
     -webkit-mask-composite: source-in;
     mask-composite: intersect;
@@ -241,13 +241,13 @@
     height: 100%;
     width: 100%;
     -webkit-mask-image: unset;
-    -webkit-mask-size: contain;
+    -webkit-mask-size: cover;
     -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
+    -webkit-mask-position: top;
     mask-image: unset;
-    mask-size: contain;
+    mask-size: cover;
     mask-repeat: no-repeat;
-    mask-position: center;
+    mask-position: top;
 }
 
 .BlendModeImg.blended {
@@ -955,7 +955,8 @@
     justify-content: center;
     font-size: 3em;
     font-weight: 700;
-    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-color: #fff;
     margin: 0 10px;
     transition: border .5s,height .5s;

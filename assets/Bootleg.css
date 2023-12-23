@@ -221,7 +221,7 @@
 .PreviewImg {
     position: relative;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: top;
     -webkit-mask-composite: source-in;
     mask-composite: intersect;

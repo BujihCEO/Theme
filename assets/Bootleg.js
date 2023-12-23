@@ -1186,8 +1186,6 @@ const BackgroundTextLinks = [
     LinkAssets + 'Bootleg/Font-Textures/7.svg',
     LinkAssets + 'Bootleg/Font-Textures/8.svg',
     LinkAssets + 'Bootleg/Font-Textures/9.svg',
-    LinkAssets + 'Bootleg/Font-Textures/10.svg',
-    LinkAssets + 'Bootleg/Font-Textures/11.svg',
 ]
 const BackgroundTextEffect = document.querySelector('.BackgroundTextEffect');
 

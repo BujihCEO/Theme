@@ -284,6 +284,7 @@ InputText_2.addEventListener('input', function() {
 
 window.addEventListener('resize', resize, textScaleX);
 
+document.querySelector('.Bg_Tshirt').style.top = document.querySelector('.header__icon').offsetHeight + 'px';
 const PrintTarget = document.querySelector('.PrintTarget');
 const InputPrint = document.querySelector('.InputPrint');
 const InputPreview = document.querySelector('.InputPreview');

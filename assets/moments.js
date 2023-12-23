@@ -1,6 +1,3 @@
-let src;
-let dst;
-let ctx;
 let Drag = false;
 let threshold = 1;
 const Preview = document.querySelector('.Preview');
@@ -422,6 +419,7 @@ resize();
 
 window.addEventListener('resize', resize);
 
+document.querySelector('.Bg_Tshirt').style.top = document.querySelector('.header__icon').offsetHeight + 'px';
 const PrintTarget = document.querySelector('.PrintTarget');
 const InputPrint = document.querySelector('.InputPrint');
 const InputPreview = document.querySelector('.InputPreview');

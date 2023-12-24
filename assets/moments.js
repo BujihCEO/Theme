@@ -203,7 +203,7 @@ function loadNewImage() {
 
 function potrace(target) {
     loadContainer.classList.add('on');
-    Potrace.loadImageFromUrl(target);
+    Potrace.loadImageFromFile(target);
     Potrace.process(function() {
         displaySVG(1);
     });

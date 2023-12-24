@@ -201,15 +201,23 @@
 }
 
 .ImgPreviewWrap {
-    position: relative;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .ImgPreview {
     position: relative;
+    user-select: none;
     height: 100%;
     width: 100%;
-    object-position: top;
-    user-select: none;
+}
+
+.ImgPreview svg {
+    height: 100%;
+    width: auto;
 }
 
 .ImgSelector {

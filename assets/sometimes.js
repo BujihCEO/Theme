@@ -112,8 +112,8 @@ IconContainerAll.forEach((element, index) => {
 });
 
 function DragOn() {
-    ImgSelector.style.width = ImgPreview.offsetWidth + 'px';
-    ImgSelector.style.height = ImgPreview.offsetHeight + 'px';
+    ImgSelector.style.width = ImgPreviewWrap.offsetWidth + 'px';
+    ImgSelector.style.height = ImgPreviewWrap.offsetHeight + 'px';
     ImgSelector.style.left =  `${Pr_ImgWrap.offsetLeft + ImgContainer.offsetLeft + ImgPreviewWrap.offsetLeft - 2}px`;
     ImgSelector.style.top = `${Pr_ImgWrap.offsetTop + ImgContainer.offsetTop + ImgPreviewWrap.offsetTop - 2}px`;
     ImgSelector.classList.add('selected');
@@ -128,7 +128,7 @@ function loadNewImage() {
     IconContainer.innerHTML = '';
     const file = imgInput.files[0];
     const reader = new FileReader();
-    ImgPreview = new Image();
+    ImgPreview = document.createElement('div');
     ImgPreviewWrap = document.createElement('div');
     imgIcon = document.createElement('img');
     ImgPreview.className = `ImgPreview index${dataPositon}`;
@@ -166,50 +166,31 @@ function potrace(target) {
     loadContainer.classList.add('on');
     Potrace.loadImageFromUrl(target);
     Potrace.process(function() {
-        displaySVG(4);
+        displaySVG(1);
     });
 }
 
 function displaySVG(size, type) {
     var svg = Potrace.getSVG(size, type);
-    var img = new Image();
-    img.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
-    img.onload = function() {
-        var canvas = document.createElement('canvas');
-        canvas.width = img.width;
-        canvas.height = img.height;
-        var ctx = canvas.getContext('2d');
-        ctx.drawImage(img, 0, 0, img.width, img.height);
-        changePixels(canvas);
-        ImgPreview.src = canvas.toDataURL();
-        ImgPreview.onload = function() {
-            if (Drag === true) {
-                DragOn();
-            }
-            loadContainer.classList.remove('on');
-        };
-    };
+    var modifiedSVG = newSVG(svg);
+    ImgPreviewWrap.appendChild(ImgPreview);
+    ImgPreview.innerHTML = modifiedSVG;
+    if (Drag === true) {
+        DragOn();
+    }
+    loadContainer.classList.remove('on');
 }
 
-function changePixels(canvas) {
-    const ctx = canvas.getContext('2d');
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    const pixels = imageData.data;
-
-    for (let i = 0; i < pixels.length; i += 4) {
-        const value = (pixels[i] + pixels[i + 1] + pixels[i + 2]) / 3;
-
-        if (value === 0) {
-            pixels[i] = 2;
-            pixels[i + 1] = 32;
-            pixels[i + 2] = 93;
-        }
-        if (value === 255) {
-            pixels[i + 3] = 0;
-        }
+function newSVG(svg) {
+    svg = svg.replace(/fill="black"/g, 'fill="red"');
+    const match = svg.match(/<svg[^>]* width="([^"]+)"[^>]* height="([^"]+)"/);
+    if (match && match.length === 3) {
+        const width = match[1];
+        const height = match[2];
+        svg = svg.replace(/<svg([^>]*)>/, `<svg$1 viewBox="0 0 ${width} ${height}">`);
+        svg = svg.replace(/<svg([^>]*)>/, `<svg$1 aspectRatio="${width}/${height}">`);
     }
-
-    ctx.putImageData(imageData, 0, 0);
+    return svg;
 }
 
 function changeThreshold() {
@@ -305,7 +286,7 @@ TouchMoveGroup.forEach((element) => {
 });
 
 ImgSizeControl.addEventListener('mousedown', function (event) {
-    if (ImgPreview) {
+    if (ImgPreviewWrap) {
         startY = event.clientY;
         var currentHeight = ImgPreviewWrap.offsetHeight * PreviewScale;
         var currentWidth = ImgPreviewWrap.offsetWidth * PreviewScale;
@@ -317,8 +298,8 @@ ImgSizeControl.addEventListener('mousedown', function (event) {
             ImgPreviewWrap.style.height = ((-moviment + currentHeight) / PreviewScale) + 'px';
             ImgPreviewWrap.style.width = ((-moviment * Aspect) + currentWidth) / PreviewScale + 'px';
             ImgPreviewWrap.style.top = ((moviment + currentTop) / PreviewScale) + 'px';
-            ImgSelector.style.height = ImgPreview.offsetHeight + 'px';
-            ImgSelector.style.width = ImgPreview.offsetWidth + 'px';
+            ImgSelector.style.height = ImgPreviewWrap.offsetHeight + 'px';
+            ImgSelector.style.width = ImgPreviewWrap.offsetWidth + 'px';
             ImgSelector.style.top = ((moviment + DragcurrentTop) / PreviewScale) + 'px';
             ImgContainer.classList.add('onDrag');
         };
@@ -334,7 +315,7 @@ ImgSizeControl.addEventListener('mousedown', function (event) {
 });
 
 ImgSizeControl.addEventListener('touchstart', function (event) {
-    if (ImgPreview) {
+    if (ImgPreviewWrap) {
         var touch = event.touches[0];
         startY = touch.clientY;
         var currentHeight = ImgPreviewWrap.offsetHeight * PreviewScale;
@@ -349,8 +330,8 @@ ImgSizeControl.addEventListener('touchstart', function (event) {
             ImgPreviewWrap.style.height = ((-moviment + currentHeight) / PreviewScale) + 'px';
             ImgPreviewWrap.style.width = ((-moviment * Aspect) + currentWidth) / PreviewScale + 'px';
             ImgPreviewWrap.style.top = ((moviment + currentTop) / PreviewScale) + 'px';
-            ImgSelector.style.height = ImgPreview.offsetHeight + 'px';
-            ImgSelector.style.width = ImgPreview.offsetWidth + 'px';
+            ImgSelector.style.height = ImgPreviewWrap.offsetHeight + 'px';
+            ImgSelector.style.width = ImgPreviewWrap.offsetWidth + 'px';
             ImgSelector.style.top = ((moviment + DragcurrentTop) / PreviewScale) + 'px';
             ImgContainer.classList.add('onDrag');
             event.preventDefault();

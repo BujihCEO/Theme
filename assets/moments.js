@@ -221,7 +221,6 @@ function displaySVG(size, type) {
     ImgPreview.src = 'data:image/svg+xml,' + encodeURIComponent(modifiedSVG);
 }
 
-var modifiedSVG = modifySVGColors(svg);
 function modifySVGColors(svg) {
     svg = svg.replace(/fill="black"/g, 'fill="red"');
     return svg;

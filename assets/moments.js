@@ -173,13 +173,13 @@ function DragOn() {
 }
 
 function loadNewImage() {
-    const file = imgInput.files[0];
-    const reader = new FileReader();
     Drag = true;
     threshold = 1;
     thresholdSlider.value = 1;
     ImgContainer.innerHTML = '';
     IconContainer.innerHTML = '';
+    const file = imgInput.files[0];
+    const reader = new FileReader();
     ImgPreview = new Image();
     ImgPreviewWrap = document.createElement('div');
     imgIcon = document.createElement('img');
@@ -192,7 +192,20 @@ function loadNewImage() {
         ImgContainer.appendChild(ImgPreviewWrap);
         ImgPreviewWrap.appendChild(ImgPreview);
         imgIcon.src = e.target.result;
-        potrace(file);
+        const newImage = new Image();
+        newImage.onload = function () {
+            const canvas = document.createElement('canvas');
+            canvas.width = newImage.width;
+            canvas.height = newImage.height;
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fillRect(0, 0, newImage.width, newImage.height);
+            ctx.filter = 'brightness(1) contrast(25000%) grayscale(1)';
+            ctx.drawImage(newImage, 0, 0, newImage.width, newImage.height);
+            var imgCanvas = canvas.toDataURL();
+            potrace(imgCanvas);
+        };
+        newImage.src = e.target.result;
         sliderStyle();
     };
     reader.readAsDataURL(file);
@@ -203,7 +216,7 @@ function loadNewImage() {
 
 function potrace(target) {
     loadContainer.classList.add('on');
-    Potrace.loadImageFromFile(target);
+    Potrace.loadImageFromUrl(target);
     Potrace.process(function() {
         displaySVG(1);
     });

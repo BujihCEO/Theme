@@ -405,17 +405,21 @@ function PrintResult(configurations) {
             width: PrintTarget.clientWidth * config.scale,
             height: PrintTarget.clientHeight * config.scale,
             style: {
-            transform: 'scale(' + config.scale + ')',
-            transformOrigin: 'top left',
+                transform: 'scale(' + config.scale + ')',
+                transformOrigin: 'top left',
             },
         })
         .then((blob) => {
-          var fileList = new DataTransfer();
-          fileList.items.add(new File([blob], config.fileName));
-          config.inputElement.files = fileList.files;
+            var fileList = new DataTransfer();
+            fileList.items.add(new File([blob], config.fileName));
+            config.inputElement.files = fileList.files;
+        })
+        .catch((error) => {
+            console.error('Error in domtoimage.toBlob:', error);
         });
     }));
 }
+
 
 const LinkProduct = 'https://361875-4.myshopify.com/cdn/shop/t/12/assets/';
 const ProductColorsBox = document.querySelector('.ProductColorsBox');

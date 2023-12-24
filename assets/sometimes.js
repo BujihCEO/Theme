@@ -172,19 +172,23 @@ function potrace(target) {
 
 function displaySVG(size, type) {
     var svg = Potrace.getSVG(size, type);
-    var modifiedSVG = modifySVGColors(svg);
-    ImgPreview.src = 'data:image/svg+xml,' + encodeURIComponent(modifiedSVG);
-    ImgPreview.onload = function() {
-        if (Drag === true) {
-            DragOn();
-        }
-        loadContainer.classList.remove('on');
+    var img = new Image();
+    img.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
+    img.onload = function() {
+        var canvas = document.createElement('canvas');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        var ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, img.width, img.height);
+        changePixels(canvas);
+        ImgPreview.src = canvas.toDataURL();
+        ImgPreview.onload = function() {
+            if (Drag === true) {
+                DragOn();
+            }
+            loadContainer.classList.remove('on');
+        };
     };
-}
-
-function modifySVGColors(svg) {
-    svg = svg.replace(/fill="black"/g, 'fill="red"');
-    return svg;
 }
 
 function changePixels(canvas) {

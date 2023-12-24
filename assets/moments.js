@@ -204,6 +204,7 @@ function loadNewImage() {
             ctx.drawImage(newImage, 0, 0, newImage.width, newImage.height);
             var imgCanvas = canvas.toDataURL();
             potrace(imgCanvas);
+            alert('Enviada');
         };
         newImage.src = e.target.result;
         sliderStyle();
@@ -218,11 +219,12 @@ function potrace(target) {
     loadContainer.classList.add('on');
     Potrace.loadImageFromUrl(target);
     Potrace.process(function() {
-        displaySVG(4);
+        displaySVG(1);
     });
 }
 
 function displaySVG(size, type) {
+    alert('Svg criado');
     var svg = Potrace.getSVG(size, type);
     var img = new Image();
     img.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
@@ -232,7 +234,9 @@ function displaySVG(size, type) {
         canvas.height = img.height;
         var ctx = canvas.getContext('2d');
         ctx.drawImage(img, 0, 0, img.width, img.height);
+        alert('Canva SVG');
         changePixels(canvas);
+        alert('changePixels');
         ImgPreview.src = canvas.toDataURL();
         ImgPreview.onload = function() {
             if (Drag === true) {

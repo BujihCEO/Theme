@@ -219,13 +219,15 @@ function potrace(target) {
     loadContainer.classList.add('on');
     Potrace.loadImageFromUrl(target);
     Potrace.process(function() {
-        displaySVG(1);
+        displaySVG(1, 'curve');
     });
 }
 
 function displaySVG(size, type) {
     alert('Svg criado');
     var svg = Potrace.getSVG(size, type);
+    modifySVGColors(svg);
+    alert('Cor Alterada');
     var img = new Image();
     img.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
     img.onload = function() {
@@ -235,8 +237,6 @@ function displaySVG(size, type) {
         var ctx = canvas.getContext('2d');
         ctx.drawImage(img, 0, 0, img.width, img.height);
         alert('Canva SVG');
-        changePixels(canvas);
-        alert('changePixels');
         ImgPreview.src = canvas.toDataURL();
         ImgPreview.onload = function() {
             if (Drag === true) {
@@ -245,6 +245,16 @@ function displaySVG(size, type) {
             loadContainer.classList.remove('on');
         };
     };
+}
+
+function modifySVGColors(svg) {
+    // Substitua todas as ocorrências de preto (#000000) por vermelho (#FF0000)
+    svg = svg.replace(/#000000/g, '#FF0000');
+
+    // Adicione ou modifique o atributo de preenchimento para tornar o fundo transparente
+    svg = svg.replace(/fill="none"/g, 'fill="transparent"');
+
+    return svg;
 }
 
 function changePixels(canvas) {

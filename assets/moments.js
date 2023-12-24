@@ -194,17 +194,7 @@ function loadNewImage() {
         imgIcon.src = e.target.result;
         const newImage = new Image();
         newImage.onload = function () {
-            const canvas = document.createElement('canvas');
-            canvas.width = newImage.width;
-            canvas.height = newImage.height;
-            const ctx = canvas.getContext('2d');
-            ctx.fillStyle = '#FFFFFF';
-            ctx.fillRect(0, 0, newImage.width, newImage.height);
-            ctx.filter = 'brightness(1) contrast(25000%) grayscale(1)';
-            ctx.drawImage(newImage, 0, 0, newImage.width, newImage.height);
-            var imgCanvas = canvas.toDataURL();
-            potrace(imgCanvas);
-            alert('Enviada');
+            potrace(newImage);
         };
         newImage.src = e.target.result;
         sliderStyle();
@@ -215,16 +205,20 @@ function loadNewImage() {
     imgInput.value = '';
 }
 
-function potrace(target) {
+function potrace(newImage) {
     loadContainer.classList.add('on');
-    Potrace.loadImageFromUrl(target);
-    Potrace.process(function() {
-        displaySVG(4);
-    });
+    const canvas = document.createElement('canvas');
+    canvas.width = newImage.width;
+    canvas.height = newImage.height;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(newImage, 0, 0, newImage.width, newImage.height);
+    var imgCanvas = canvas.toDataURL();
+    displaySVG(imgCanvas, 4);
 }
 
-function displaySVG(size, type) {
-    alert('Svg criado');
+function displaySVG(imgCanvas, size, type) {
+    // ... (sem alterações)
+
     var svg = Potrace.getSVG(size, type);
     var img = new Image();
     img.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
@@ -234,9 +228,7 @@ function displaySVG(size, type) {
         canvas.height = img.height;
         var ctx = canvas.getContext('2d');
         ctx.drawImage(img, 0, 0, img.width, img.height);
-        alert('Canva SVG');
         changePixels(canvas);
-        alert('changePixels');
         ImgPreview.src = canvas.toDataURL();
         ImgPreview.onload = function() {
             if (Drag === true) {

@@ -194,7 +194,16 @@ function loadNewImage() {
         imgIcon.src = e.target.result;
         const newImage = new Image();
         newImage.onload = function () {
-            potrace(newImage);
+            const canvas = document.createElement('canvas');
+            canvas.width = newImage.width;
+            canvas.height = newImage.height;
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fillRect(0, 0, newImage.width, newImage.height);
+            ctx.filter = 'brightness(1) contrast(25000%) grayscale(1)';
+            ctx.drawImage(newImage, 0, 0, newImage.width, newImage.height);
+            var imgCanvas = canvas.toDataURL();
+            potrace(imgCanvas);
         };
         newImage.src = e.target.result;
         sliderStyle();
@@ -205,20 +214,15 @@ function loadNewImage() {
     imgInput.value = '';
 }
 
-function potrace(newImage) {
+function potrace(target) {
     loadContainer.classList.add('on');
-    const canvas = document.createElement('canvas');
-    canvas.width = newImage.width;
-    canvas.height = newImage.height;
-    const ctx = canvas.getContext('2d');
-    ctx.drawImage(newImage, 0, 0, newImage.width, newImage.height);
-    var imgCanvas = canvas.toDataURL();
-    displaySVG(imgCanvas, 4);
+    Potrace.loadImageFromUrl(target);
+    Potrace.process(function() {
+        displaySVG(4);
+    });
 }
 
-function displaySVG(imgCanvas, size, type) {
-    // ... (sem alterações)
-
+function displaySVG(size, type) {
     var svg = Potrace.getSVG(size, type);
     var img = new Image();
     img.src = 'data:image/svg+xml,' + encodeURIComponent(svg);

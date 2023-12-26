@@ -61,6 +61,10 @@
     border: 2px solid red;
 }
 
+.Scroll {
+  --color: red;
+}
+
 .Bg_Tshirt {
     position: sticky;
     top: 0;
@@ -312,7 +316,7 @@
     display: flex;
     height: 100%;
     overflow: hidden;
-    border: calc(0.1vh * var(--resize)) solid red;
+    border: calc(0.1vh * var(--resize)) solid var(--color);
     box-sizing: border-box;
 }
 
@@ -525,7 +529,7 @@
 }
 
 .TempExmAfter {
-    border: 1px solid red;
+    border: 1px solid var(--color);
 }
 
 .UploadImgWrap {

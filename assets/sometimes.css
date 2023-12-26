@@ -61,6 +61,10 @@
     border: 2px solid red;
 }
 
+.Scroll {
+    --color: #031f5c;
+}
+
 .Bg_Tshirt {
     position: sticky;
     top: 0;
@@ -138,7 +142,7 @@
     font-family: Architype;
     text-transform: uppercase;
     text-align: center;
-    color: #031f5c;
+    color: var(--color);
     padding: 0;
     margin: 0;
     -webkit-user-select: none;
@@ -181,7 +185,7 @@
     text-transform: uppercase;
     text-align: center;
     white-space: nowrap;
-    color: #031F5C;
+    color: var(--color);
     line-height: 1;
     margin: 0;
     padding: 0px;

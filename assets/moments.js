@@ -234,7 +234,7 @@ function displaySVG(size, type) {
 }
 
 function newSVG(svg) {
-    svg = svg.replace(/fill="black"/g, 'fill="red"');
+    svg = svg.replace(/fill="black"/g, 'fill="var(--color)"');
     const match = svg.match(/<svg[^>]* width="([^"]+)"[^>]* height="([^"]+)"/);
     if (match && match.length === 3) {
         const width = match[1];

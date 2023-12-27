@@ -120,7 +120,6 @@ function cropImage(Input) {
         })
         .then(response => response.json())
         .then(data => {
-            console.log('Resposta da API:', data);
             if (data.code === 0 && data.data && data.data.imageBase64) {
                 var Url = 'data:image/png;base64,' + data.data.imageBase64;
                 loadImage(Url);
@@ -195,12 +194,16 @@ function loadImage(Url) {
         CenterPosition(PreviewImgContainer, ImgContainer);
         updateImgCustomizations();
         ImgSelectorUpdate();
+        loadingContainer.classList.add('hidden');
+        loadingContainer.classList.remove('ProductLoad');
     };
     PreviewImg.src = Url;
     ImageIcon.src = Url;
 }
 
 imageUpload.addEventListener('change', function () {
+    loadingContainer.classList.add('ProductLoad');
+    loadingContainer.classList.remove('hidden');
     SelectedImgList.forEach(function(element) {
         if (element()) {
             element().classList.remove('selected');
@@ -760,10 +763,10 @@ const ImgGradient = document.querySelectorAll('.ImgGradient');
 ImgGradient.forEach((element) => {
     element.addEventListener('click', function() {
         if (this.classList.contains('With')) {
-            PreviewImg.classList.add('gradient');
+            PreviewImg.classList.add('gradientMask');
             updateImgColor();
         } else {
-            PreviewImg.classList.remove('gradient');
+            PreviewImg.classList.remove('gradientMask');
             updateImgColor();
         }
     });
@@ -806,7 +809,7 @@ function updateImgColor() {
     if (BlendModeImg) {
         var Color = PreviewImg.getAttribute('BlendModeColor');
         var Style = PreviewImg.getAttribute('BlendModeStyle');
-        if (PreviewImg.classList.contains('gradient')) {
+        if (PreviewImg.classList.contains('gradientMask')) {
             BlendModeImg.style.background = 'linear-gradient(to top, transparent 10%, '+Color+' 30%)';
         } else {
             BlendModeImg.style.background = Color;

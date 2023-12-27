@@ -228,9 +228,9 @@
     user-select: none;
 }
 
-.PreviewImg.gradient {
-    -webkit-mask-image: linear-gradient(to top, transparent 10%, black 30%);
-    mask-image: linear-gradient(to top, transparent 10%, black 30%);
+.PreviewImg.gradientMask {
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 30%);
+    mask-image: linear-gradient(to top, transparent 0%, black 30%);
 }
 
 .BlendModeImg {
@@ -488,12 +488,12 @@
 
 .ImageIcon {
     height: 85%;
-    aspect-ratio: 1/1;
+    max-width: 100%;
     background-color: #fff;
     border-radius: 2em;
     margin: 0 3%;
     border: 2px solid black;
-    box-shadow: 0 0 0px;
+    box-shadow: 0 0;
     transition: .5s;
 }
 
@@ -725,15 +725,15 @@
 .ImgGradient {
     height: 60px;
     aspect-ratio: 1/1;
-    background-color: #000;
+    background-color: transparent;
+    background-image: linear-gradient(to top,transparent 0%, black 0%);
     border: 3px solid white;
     border-radius: 15px;
     margin: 0 15px;
 }
 
 .ImgGradient.With {
-    -webkit-mask-image: linear-gradient(to top, transparent 15%, black 80%);
-    mask-image: linear-gradient(to top, transparent 15%, black 80%);
+    background-image: linear-gradient(to top,transparent 0%, black 50%);
 }
 
 .ContainerImgCorEff {
@@ -820,8 +820,6 @@
     font-size: 3em;
     font-weight: 700;
     transition: box-shadow .5s;
-    background-size: 100%;
-    background-color: #fff;
     -webkit-user-select: none;
     user-select: none;
 }
@@ -871,6 +869,7 @@
     transition: box-shadow .5s;
     background-size: 100%;
     background-color: #fff;
+    color: black;
     -webkit-user-select: none;
     user-select: none;
 }
@@ -1083,11 +1082,11 @@
 }
 
 .Positive {
-    background: url(Positive.svg) center / contain no-repeat;
+    background: url(Positive.svg) center / contain no-repeat white;
 }
 
 .Negative {
-    background: url(Negative.svg) center / contain no-repeat;
+    background: url(Negative.svg) center / contain no-repeat white;
 }
 
 .Up {

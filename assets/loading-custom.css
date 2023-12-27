@@ -12,20 +12,26 @@
 }
 
 .LoadingCustom.message1 {
-    > div:nth-child(2) {
+    > div.loadMessage:nth-child(1) {
         display: block;
     }
-    > div:nth-child(3) {
+    > div.loadMessage:nth-child(2) {
         display: none;
     }
 }
 
 .LoadingCustom.message2 {
-    > div:nth-child(2) {
+    > div.loadMessage:nth-child(1) {
         display: none;
     }
-    > div:nth-child(3) {
+    > div.loadMessage:nth-child(2) {
         display: block;
+    }
+}
+
+.LoadingCustom.ProductLoad {
+    > div:nth-child(-n+3) {
+        display: none !important;
     }
 }
 

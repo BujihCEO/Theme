@@ -101,79 +101,103 @@ function ImgSelectorUpdate() {
 
 //  ADD IMAGE AND SELECT
 
-function loadImage(input) {
-    if (input.files && input.files[0])  {
-        var reader = new FileReader();
-        // createElement
-        ImgMaskContainer = document.createElement('div');
-        PreviewImgContainer = document.createElement('div');
-        RoundedContainer = document.createElement('div');
-        var imgWrap = document.createElement('div');
-        PreviewImg = document.createElement('img');
-        BlendModeImg = document.createElement('div');
-        ImageIcon = document.createElement('img');
+function cropImage(Input) {
+    if (Input.files.length > 0) {
+        const file = Input.files[0];
+        const formData = new FormData();
+        formData.append('file', file);
         
-        // className
-        ImgMaskContainer.className = 'ImgMaskContainer masked';
-        PreviewImgContainer.className = 'PreviewImgContainer';
-        RoundedContainer.className = 'RoundedContainer';
-        imgWrap.className = 'imgWrap';
-        PreviewImg.className = 'PreviewImg';
-        BlendModeImg.className = 'BlendModeImg';
-        ImageIcon.className = 'ImageIcon';
+        const queryParams = new URLSearchParams();
+        queryParams.set('mattingType', '6');
+        queryParams.set('crop', 'true');
 
-        // add Selected
-        SelectedImgList.forEach(function(element) {
-            element().classList.add('selected');
-        });
-
-        // appendChild
-        ImgContainer.appendChild(ImgMaskContainer);
-        ImgMaskContainer.appendChild(PreviewImgContainer);
-        PreviewImgContainer.appendChild(RoundedContainer);
-        RoundedContainer.appendChild(imgWrap);
-        imgWrap.appendChild(PreviewImg);
-        imgWrap.appendChild(BlendModeImg);
-        imgIconsContainer.appendChild(ImageIcon);
-        
-        // Unique Value
-        const existingImageIcons = document.querySelectorAll('.imgIconsContainer .ImageIcon');
-        const existingValues = Array.from(existingImageIcons).map(icon => parseInt(icon.getAttribute('data-value'), 10));
-        const uniqueValue = generateUniqueValue(existingValues);
-        SelectedImgList.forEach(function(element) {
-            element().setAttribute('data-value', uniqueValue);
-        });
-        
-        ImageIcon.onclick = ImgIconSelected;
-        
-        // Max Capacite 
-        if (existingImageIcons.length + 1 === 8) {
-            if (UploadImageLabel) {
-                UploadImageLabel.style.display = 'none';
-                FullUploaded.style.display = 'flex';
+        fetch(`https://www.cutout.pro/api/v1/matting2?${queryParams.toString()}`, {
+            method: 'POST',
+            headers: {
+                'APIKEY': '0b3e1c95c4c14120b56119afc9d4e5a2',
+            },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Resposta da API:', data);
+            if (data.code === 0 && data.data && data.data.imageBase64) {
+                var Url = 'data:image/png;base64,' + data.data.imageBase64;
+                loadImage(Url);
+                Input.value = '';
+            } else {
+                console.error('Erro na resposta da API:', data.msg);
             }
-        }
-        
-        // Styles Changes
-        previewContainer.style.cursor = 'move';
-        ImgControls.style.display = 'block';
-        IconsContainer.style.display = 'flex';
-        UploadImageLabelP.style.display = 'none';
-        
-        // Img File
-        reader.onload = function (e) {
-            var imageSrc = e.target.result;
-            PreviewImg.onload = function() {
-                CenterPosition(PreviewImgContainer, ImgContainer);
-                updateImgCustomizations();
-                ImgSelectorUpdate();
-            };
-            PreviewImg.src = imageSrc;
-            ImageIcon.src = imageSrc;
-        };
-        reader.readAsDataURL(input.files[0]);
-        imageUpload.value = '';
+        })
+        .catch(error => console.error(error));
     }
+}
+
+function loadImage(Url) {
+    // createElement
+    ImgMaskContainer = document.createElement('div');
+    PreviewImgContainer = document.createElement('div');
+    RoundedContainer = document.createElement('div');
+    var imgWrap = document.createElement('div');
+    PreviewImg = document.createElement('img');
+    BlendModeImg = document.createElement('div');
+    ImageIcon = document.createElement('img');
+    
+    // className
+    ImgMaskContainer.className = 'ImgMaskContainer masked';
+    PreviewImgContainer.className = 'PreviewImgContainer';
+    RoundedContainer.className = 'RoundedContainer';
+    imgWrap.className = 'imgWrap';
+    PreviewImg.className = 'PreviewImg';
+    BlendModeImg.className = 'BlendModeImg';
+    ImageIcon.className = 'ImageIcon';
+
+    // add Selected
+    SelectedImgList.forEach(function(element) {
+        element().classList.add('selected');
+    });
+
+    // appendChild
+    ImgContainer.appendChild(ImgMaskContainer);
+    ImgMaskContainer.appendChild(PreviewImgContainer);
+    PreviewImgContainer.appendChild(RoundedContainer);
+    RoundedContainer.appendChild(imgWrap);
+    imgWrap.appendChild(PreviewImg);
+    imgWrap.appendChild(BlendModeImg);
+    imgIconsContainer.appendChild(ImageIcon);
+    
+    // Unique Value
+    const existingImageIcons = document.querySelectorAll('.imgIconsContainer .ImageIcon');
+    const existingValues = Array.from(existingImageIcons).map(icon => parseInt(icon.getAttribute('data-value'), 10));
+    const uniqueValue = generateUniqueValue(existingValues);
+    SelectedImgList.forEach(function(element) {
+        element().setAttribute('data-value', uniqueValue);
+    });
+    
+    ImageIcon.onclick = ImgIconSelected;
+    
+    // Max Capacite 
+    if (existingImageIcons.length + 1 === 8) {
+        if (UploadImageLabel) {
+            UploadImageLabel.style.display = 'none';
+            FullUploaded.style.display = 'flex';
+        }
+    }
+    
+    // Styles Changes
+    previewContainer.style.cursor = 'move';
+    ImgControls.style.display = 'block';
+    IconsContainer.style.display = 'flex';
+    UploadImageLabelP.style.display = 'none';
+    
+    // Img Url
+    PreviewImg.onload = function() {
+        CenterPosition(PreviewImgContainer, ImgContainer);
+        updateImgCustomizations();
+        ImgSelectorUpdate();
+    };
+    PreviewImg.src = Url;
+    ImageIcon.src = Url;
 }
 
 imageUpload.addEventListener('change', function () {
@@ -182,7 +206,7 @@ imageUpload.addEventListener('change', function () {
             element().classList.remove('selected');
         }
     });
-    loadImage(this);
+    cropImage(this);
 });
 
 function deselectImg() {

@@ -404,3 +404,7 @@
 <script src="{{ 'print.js' | asset_url }}"></script>
 <script src="{{ 'jscolor.js' | asset_url }}"></script>
 <script src="{{ 'Bootleg.js' | asset_url }}"></script>
+<script>
+  var cutoutValue = "{{ product.metafields.custom.cutout.value }}";
+  console.log(cutoutValue);
+</script>

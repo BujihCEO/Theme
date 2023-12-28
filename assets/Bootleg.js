@@ -100,7 +100,8 @@ function ImgSelectorUpdate() {
 }
 
 //  ADD IMAGE AND SELECT
-
+var cutoutValue = "{{ product.metafields.custom.cutout.value }}";
+  console.log(cutoutValue);
 function cropImage(Input) {
     if (Input.files.length > 0) {
         const file = Input.files[0];

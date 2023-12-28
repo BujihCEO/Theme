@@ -687,36 +687,3 @@
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
 }
-
-.loadContainer {
-    position: fixed;
-    display: none;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: #000000e0;
-    z-index: 9999999;
-}
-
-.loadContainer.on {
-    display: flex;
-    justify-content: center;
-}
-
-.loadingEffect {
-    position: sticky;
-    top: calc(50% - 100px);
-    animation: is-rotating 1s infinite;
-    border: 40px solid #e5e5e5;
-    border-radius: 50%;
-    border-top-color: #51d4db;
-    height: 200px;
-    width: 200px;
-}
-  
-@keyframes is-rotating {
-    to {
-        transform: rotate(1turn);
-    }
-}

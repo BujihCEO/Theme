@@ -100,8 +100,7 @@ function ImgSelectorUpdate() {
 }
 
 //  ADD IMAGE AND SELECT
-var cutoutValue = "{{ product.metafields.custom.cutout.value }}";
-  console.log(cutoutValue);
+
 function cropImage(Input) {
     if (Input.files.length > 0) {
         const file = Input.files[0];
@@ -115,7 +114,7 @@ function cropImage(Input) {
         fetch(`https://www.cutout.pro/api/v1/matting2?${queryParams.toString()}`, {
             method: 'POST',
             headers: {
-                'APIKEY': '0b3e1c95c4c14120b56119afc9d4e5a2',
+                'APIKEY': cutoutValue,
             },
             body: formData
         })

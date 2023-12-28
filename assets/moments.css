@@ -101,10 +101,6 @@
     box-sizing: content-box;
 }
 
-.Preview.border {
-    border: 1px dashed black;
-}
-
 .Preview.Zoom {
     transform: scale(1.90);
 }

@@ -214,6 +214,7 @@ function loadNewImage() {
 }
 
 function potrace(target) {
+    loadingContainer.classList.add('ProductLoad');
     loadingContainer.classList.remove('hidden');
     Potrace.loadImageFromUrl(target);
     Potrace.process(function() {
@@ -230,6 +231,7 @@ function displaySVG(size, type) {
         DragOn();
     }
     loadingContainer.classList.add('hidden');
+    loadingContainer.classList.remove('ProductLoad');
 }
 
 function newSVG(svg) {

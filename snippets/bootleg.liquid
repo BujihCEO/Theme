@@ -1,6 +1,7 @@
-<head>
-    <link rel="stylesheet" type="text/css" href="{{ 'Bootleg.css' | asset_url }}">
-</head>
+<link rel="stylesheet" type="text/css" href="{{ 'Bootleg.css' | asset_url }}">
+<script>
+  var cutoutValue = "{{ product.metafields.custom.cutout.value }}";
+</script>
 <div class="PickersTitle">Tamanho:</div>
 <div class="ProductSizeBox"></div>
 <div class="PickersTitle">Cor:</div>
@@ -404,5 +405,3 @@
 <script src="{{ 'print.js' | asset_url }}"></script>
 <script src="{{ 'jscolor.js' | asset_url }}"></script>
 <script src="{{ 'Bootleg.js' | asset_url }}"></script>
-<script>
-</script>

@@ -274,14 +274,6 @@ InputText_1.addEventListener('input', function() {
     textScaleX();
 });
 
-const InputText_2 = document.querySelector('.InputText_2');
-const dateText = document.querySelector('.dateText');
-InputText_2.addEventListener('input', function() {
-    var Max = 4;
-    InputText_2.value = InputText_2.value.slice(0, Max);
-    dateText.textContent = InputText_2.value;
-});
-
 window.addEventListener('resize', resize, textScaleX);
 
 document.querySelector('.Bg_Tshirt').style.top = document.querySelector('.header__icon').offsetHeight + 'px';

@@ -7,7 +7,6 @@ const ImgOptions = document.querySelector('.ImgOptions');
 const ImgSelector = document.querySelector('.ImgSelector');
 const ImgDragMove = document.querySelector('.ImgDragMove');
 const ImgSizeControl = document.querySelector('.ImgSizeControl');
-const loadContainer = document.querySelector('.loadContainer');
 let dataPositon = null;
 let IconContainer = null;
 let IconInput = null;
@@ -215,7 +214,7 @@ function loadNewImage() {
 }
 
 function potrace(target) {
-    loadContainer.classList.add('on');
+    loadingContainer.classList.remove('hidden');
     Potrace.loadImageFromUrl(target);
     Potrace.process(function() {
         displaySVG(1);
@@ -230,7 +229,7 @@ function displaySVG(size, type) {
     if (Drag === true) {
         DragOn();
     }
-    loadContainer.classList.remove('on');
+    loadingContainer.classList.add('hidden');
 }
 
 function newSVG(svg) {

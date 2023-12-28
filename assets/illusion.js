@@ -22,15 +22,6 @@ Zoom_Btn.forEach(button => {
     })
 })
 
-const Pr_Border = document.querySelector('.Pr_Border');
-Pr_Border.addEventListener('click', function() {
-    if (Preview.classList.contains('border')) {
-        Preview.classList.remove('border');
-    } else {
-        Preview.classList.add('border');
-    }
-});
-
 const BtnCustomAll = document.querySelectorAll('.BtnCustom');
 const CustomContainerAll = document.querySelectorAll('.CustomContainer');
 BtnCustomAll.forEach((element, index) => {

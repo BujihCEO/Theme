@@ -5,14 +5,14 @@
       "settings": {
         "custom_liquid": "{% render 'banner-main' %}",
         "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 24,
+        "padding_bottom": 0
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "",
         "heading_size": "h2",
         "description": "",
         "show_description": false,

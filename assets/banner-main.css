@@ -41,7 +41,7 @@
 @keyframes sliderBanner {
     0%, 20%, 25%, 45%, 50%, 70%, 75%, 95%, 100% {
         transform: translateX(0%);
-        filter: drop-shadow(10px 0px 5px black);
+        filter: drop-shadow(5px 0px 5px black);
     }
     22.5%, 47.5%, 72.5%, 97.5% {
         transform: translateX(-100%);

@@ -19,21 +19,22 @@
     background-position: center;
     background-repeat: no-repeat;
     --time: 10s;
-    animation: changeBackground var(--time) infinite steps(1), sliderBanner var(--time) infinite;
+    animation: changeBackground var(--time) infinite steps(1), 
+    sliderBanner var(--time) infinite;
 }
 
 @keyframes changeBackground {
     0%, 97.5% {
-        background-image: url(assets/Bootleg\ Branca.png);
+        background-image: url(Bootleg-Branca-cut.png);
     }
     22.5% {
-        background-image: url(assets/Illusion\ Branca.png);
+        background-image: url(Illusion-Branca-cut.png);
     }
     47.5% {
-        background-image: url(assets/Moments\ Branca.png);
+        background-image: url(Moments-Branca-cut.png);
     }
     72.5% {
-        background-image: url(assets/Sometimes\ Branca.png);
+        background-image: url(Sometimes-Branca-cut.png);
     }
 }
 

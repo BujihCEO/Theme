@@ -364,7 +364,7 @@ InputText_2.addEventListener('input', () => {
 const Personalization = document.querySelector('.Personalization');
 
 function resize() {
-    var value = Tshirt.offsetWidth / window.offsetWidth;
+    var value = Tshirt.offsetWidth / window.innerWidth;
     Tshirt.style.setProperty('--resize', value);
 }
 resize();

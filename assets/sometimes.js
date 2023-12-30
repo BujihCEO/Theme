@@ -369,7 +369,7 @@ function resize() {
     console.log(value);
 }
 resize();
-
+console.log('tomar no cu');
 window.addEventListener('resize', resize);
 
 document.querySelector('.Bg_Tshirt').style.top = document.querySelector('.header__icon').offsetHeight + 'px';

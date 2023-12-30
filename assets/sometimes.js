@@ -364,12 +364,11 @@ InputText_2.addEventListener('input', () => {
 const Personalization = document.querySelector('.Personalization');
 
 function resize() {
-    var value = Tshirt.offsetWidth / window.innerWidth;
+    var value = Tshirt.offsetWidth / window.offsetWidth;
     Tshirt.style.setProperty('--resize', value);
-    console.log(value);
 }
 resize();
-console.log('tomar no cu');
+
 window.addEventListener('resize', resize);
 
 document.querySelector('.Bg_Tshirt').style.top = document.querySelector('.header__icon').offsetHeight + 'px';

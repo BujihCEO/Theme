@@ -75,7 +75,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 50vh;
+    max-width: 360px;
     aspect-ratio: 1/1;
     background-image: url(Branco.png);
     background-size: cover;

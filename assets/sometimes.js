@@ -366,7 +366,6 @@ const Personalization = document.querySelector('.Personalization');
 function resize() {
     var value = Tshirt.offsetWidth / window.innerWidth;
     Tshirt.style.setProperty('--resize', value);
-    console.log(value);
 }
 resize();
 

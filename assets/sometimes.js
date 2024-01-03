@@ -336,31 +336,6 @@ ImgSizeControl.addEventListener('touchstart', function (event) {
     }
 });
 
-const TextPreview = document.querySelector('.TextPreview');
-const TextPreview_2 = document.querySelector('.TextPreview_2');
-const Tshirt = document.querySelector('.Tshirt');
-const Pr_Wrap = document.querySelector('.Pr_Wrap');
-const barCode = document.querySelector('.barCode');
-const InputText_1 = document.querySelector('.InputText_1');
-const InputText_2 = document.querySelector('.InputText_2');
-const defaultText = TextPreview_2.textContent;
-
-InputText_1.addEventListener('input', function (event) {
-    TextPreview.textContent = event.target.value;
-});
-
-InputText_2.addEventListener('input', () => {
-    if (InputText_2.value.length > 0) {
-        TextPreview_2.textContent = InputText_2.value;
-        if (Pr_Drag.offsetWidth < (barCode.offsetWidth + TextPreview_2.offsetWidth)) {
-            InputText_2.value = InputText_2.value.slice(0, -1);
-            TextPreview_2.textContent = InputText_2.value;
-        }
-    } else {
-        TextPreview_2.textContent = defaultText;
-    }
-});
-
 document.querySelector('.Bg_Tshirt').style.top = document.querySelector('.header__icon').offsetHeight + 'px';
 const PrintTarget = document.querySelector('.PrintTarget');
 const InputPrint = document.querySelector('.InputPrint');

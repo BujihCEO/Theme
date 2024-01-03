@@ -361,16 +361,6 @@ InputText_2.addEventListener('input', () => {
     }
 });
 
-const Personalization = document.querySelector('.Personalization');
-
-function resize() {
-    var value = Tshirt.offsetWidth / window.innerWidth;
-    Tshirt.style.setProperty('--resize', value);
-}
-resize();
-
-window.addEventListener('resize', resize);
-
 document.querySelector('.Bg_Tshirt').style.top = document.querySelector('.header__icon').offsetHeight + 'px';
 const PrintTarget = document.querySelector('.PrintTarget');
 const InputPrint = document.querySelector('.InputPrint');

@@ -99,7 +99,6 @@
     aspect-ratio: 29/42;
     border: 2px solid transparent;
     box-sizing: content-box;
-    transition: .5s;
 }
 
 .Preview.border {

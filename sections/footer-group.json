@@ -4,6 +4,19 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "c88be629-55af-4dce-b368-20385cfaa8cd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Logo-White.svg",
+            "image_width": 120,
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "c88be629-55af-4dce-b368-20385cfaa8cd"
+      ],
       "settings": {
         "color_scheme": "accent-1",
         "newsletter_enable": true,

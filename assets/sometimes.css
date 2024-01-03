@@ -82,10 +82,10 @@
     max-width: 360px;
     aspect-ratio: 1/1;
     background-image: url(Branco.png);
-    background-size: cover;
+    background-size: 100% auto;
     background-position: center;
     margin: auto;
-    transition: 0.5s;
+    transition: .5s;
     overflow: hidden;
 }
 
@@ -99,7 +99,7 @@
     aspect-ratio: 29/42;
     border: 2px solid transparent;
     box-sizing: content-box;
-    transition: 0.5s;
+    transition: .5s;
 }
 
 .Preview.border {

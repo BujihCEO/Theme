@@ -85,7 +85,7 @@
     background-size: cover;
     background-position: center;
     margin: auto;
-    transition: .5s;
+    transition: 0.5s;
     overflow: hidden;
 }
 
@@ -99,6 +99,7 @@
     aspect-ratio: 29/42;
     border: 2px solid transparent;
     box-sizing: content-box;
+    transition: 0.5s;
 }
 
 .Preview.border {

@@ -85,6 +85,7 @@
     background-size: cover;
     background-position: center;
     margin: auto;
+    transition: .5s;
     overflow: hidden;
 }
 

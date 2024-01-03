@@ -20,7 +20,7 @@
         ".announcement-bar__message {display: flex; align-items: center; padding: 0px; min-height: 2.6rem;}"
       ],
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "accent-1",
         "show_line_separator": true,
         "show_social": true,
         "auto_rotate": false,

@@ -3,6 +3,7 @@ let dst;
 let ctx;
 let Drag = false;
 let threshold = 1;
+const Tshirt = document.querySelector('.Tshirt');
 const Preview = document.querySelector('.Preview');
 const Pr_ImgWrap = document.querySelector('.Pr_ImgWrap');
 const imgInput = document.querySelector('.imgInput');

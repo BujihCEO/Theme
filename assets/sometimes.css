@@ -117,6 +117,13 @@
     align-items: center;
     height: 100%;
     width: 100%;
+    overflow: hidden;
+}
+
+.Pr_BG {
+    position: absolute;
+    height: 100%;
+    width: 100%;
     -webkit-mask-image: url(fundo-sometimes.webp);
     -webkit-mask-size: 100%;
     -webkit-mask-position: center;
@@ -124,8 +131,7 @@
     mask-size: 100%;
     mask-position: center;
     background-color: var(--color);
-    overflow: hidden;
-}
+} 
 
 .Pr_ImgWrap {
     position: absolute;

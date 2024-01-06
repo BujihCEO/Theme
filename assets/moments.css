@@ -82,9 +82,10 @@
     align-items: center;
     width: 100%;
     aspect-ratio: 1/1;
-    background-size: cover;
+    background-size: 100% auto;
     background-position: center;
     margin: auto;
+    transition: .5s;
     overflow: hidden;
 }
 
@@ -95,9 +96,10 @@
 .Preview {
     position: absolute;
     width: 35%;
-    aspect-ratio: 29/42;
-    border: 1px solid transparent;
+    aspect-ratio: 3508/4961;
+    border: 1px dashed transparent;
     box-sizing: content-box;
+    transition: .5s;
 }
 
 .Preview.Zoom {

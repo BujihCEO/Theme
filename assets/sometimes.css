@@ -96,8 +96,8 @@
 .Preview {
     position: absolute;
     width: 35%;
-    aspect-ratio: 29/42;
-    border: 2px solid transparent;
+    aspect-ratio: 3508/4961;
+    border: 1px dashed transparent;
     box-sizing: content-box;
     transition: .5s;
 }

@@ -55,6 +55,7 @@
     border-radius: 50%;
     transition: .5s;
     margin: 0px 10px;
+    cursor: pointer;
 }
 
 .ColorPicker.selected {

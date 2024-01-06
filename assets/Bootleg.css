@@ -39,7 +39,7 @@
     justify-content: center;
 }
 
-.SizePicker.selected {
+.ModelPicker.selected, .SizePicker.selected {
     height: 100%;
     background-color: black;
     color: white;

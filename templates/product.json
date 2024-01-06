@@ -50,7 +50,7 @@
         "9a0527ef-08ee-4cd0-840c-66ecc67bebe7"
       ],
       "custom_css": [
-        ".product-media-container,.product__modal-opener {overflow: hidden;}"
+
       ],
       "settings": {
         "enable_sticky_info": true,

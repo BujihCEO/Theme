@@ -13,7 +13,7 @@
     font-size: 25px;
 }
 
-.ProductSizeBox {
+.ProductModelBox, .ProductSizeBox {
     position: relative;
     display: flex;
     align-items: center;
@@ -23,7 +23,7 @@
     overflow-x: auto;
 }
 
-.SizePicker {
+.ModelPicker, .SizePicker {
     display: flex;
     height: 85%;
     font-size: 25px;

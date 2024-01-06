@@ -164,7 +164,7 @@
                               <div class="product-option">
                                 {%- if property.first contains 'Preview' -%}
                                   <div class="ProductSize">Tamanho: {{ property.first | split: 'Size:' | last }}</div>
-                                  <div class="ProductPreview" style="background-image: url(https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/{{ property.first | split: 'Color:' | last | split: '/Size:' | first }}.png);">
+                                  <div class="ProductPreview" style="background-image: url(https://raw.githubusercontent.com/BujihCEO/Theme/main/assets/{{ property.first | split: 'Model:' | last | split: '/Color:' | first }}-{{ property.first | split: 'Color:' | last | split: '/Size:' | first }}.png);">
                                       <div class="ResultPreview" style="background-image: url({{ property.last }});"></div>
                                   </div>
                                 {%- endif -%}

@@ -1426,8 +1426,6 @@ function PrintResult(configurations) {
 }
 
 const LinkProduct = 'https://bujih.com/cdn/shop/t/2/assets/';
-
-
 const ProductModelBox = document.querySelector('.ProductModelBox');
 const ModelPickers = [
     'Masculino',

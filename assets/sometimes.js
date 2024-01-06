@@ -360,9 +360,39 @@ function PrintResult(configurations) {
     }));
 }
 
-const LinkProduct = 'https://361875-4.myshopify.com/cdn/shop/t/12/assets/';
+const LinkProduct = 'https://bujih.com/cdn/shop/t/2/assets/';
+const ProductModelBox = document.querySelector('.ProductModelBox');
+const ModelPickers = [
+    'Masculino',
+    'Feminino',
+];
+var ProductModel = ModelPickers[0];
+ModelPickers.forEach((Model, index) => {
+    var div = document.createElement('div');
+    div.className = 'ModelPicker ';
+    if (index === 0) {
+        div.classList.add('selected');
+    }
+    div.innerText = Model;
+    div.setAttribute('model', Model);
+    ProductModelBox.appendChild(div);
+});
+const ModelPickerAll = document.querySelectorAll('.ModelPicker');
+ModelPickerAll.forEach((button) => {
+    button.addEventListener('click', () => {
+        ModelPickerAll.forEach((button) => {
+            button.classList.remove('selected');
+        });
+        button.classList.add('selected');
+        ProductModel = button.getAttribute('model');
+        Tshirt.style.backgroundImage = 'url('+LinkProduct+ProductModel+'-'+ProductColor+'.png)';
+        InputPreview.setAttribute('name', `properties[Preview Model:${ProductModel}/Color:${ProductColor}/Size:${ProductSize}]`);
+    });
+});
+
 const ProductColorsBox = document.querySelector('.ProductColorsBox');
 const ColorPickers = [
+    'Preto',
     'Branco',
 ];
 var ProductColor = ColorPickers[0];
@@ -376,7 +406,8 @@ ColorPickers.forEach((Color, index) => {
     ProductColorsBox.appendChild(div);
 });
 const ColorPickerAll = document.querySelectorAll('.ColorPicker');
-ColorPickerAll[0].style.backgroundColor = 'white';
+ColorPickerAll[0].style.backgroundColor = 'black';
+ColorPickerAll[1].style.backgroundColor = 'white';
 ColorPickerAll.forEach((button) => {
     button.addEventListener('click', () => {
         ColorPickerAll.forEach((button) => {
@@ -384,8 +415,8 @@ ColorPickerAll.forEach((button) => {
         });
         button.classList.add('selected');
         ProductColor = button.getAttribute('color');
-        Tshirt.style.backgroundImage = 'url('+LinkProduct+ProductColor+'.png)';
-        InputPreview.setAttribute('name', `properties[Preview Color:${ProductColor}/Size:${ProductSize}]`);
+        Tshirt.style.backgroundImage = 'url('+LinkProduct+ProductModel+'-'+ProductColor+'.png)';
+        InputPreview.setAttribute('name', `properties[Preview Model:${ProductModel}/Color:${ProductColor}/Size:${ProductSize}]`);
     });
 });
 
@@ -416,8 +447,9 @@ SizePickerAll.forEach((button) => {
         });
         button.classList.add('selected');
         ProductSize = button.getAttribute('size');
-        InputPreview.setAttribute('name', `properties[Preview Color:${ProductColor}/Size:${ProductSize}]`);
+        InputPreview.setAttribute('name', `properties[Preview Model:${ProductModel}/Color:${ProductColor}/Size:${ProductSize}]`);
     });
 });
 
-InputPreview.setAttribute('name', `properties[Preview Color:${ProductColor}/Size:${ProductSize}]`);
+Tshirt.style.backgroundImage = 'url('+LinkProduct+ProductModel+'-'+ProductColor+'.png)';
+InputPreview.setAttribute('name', `properties[Preview Model:${ProductModel}/Color:${ProductColor}/Size:${ProductSize}]`);

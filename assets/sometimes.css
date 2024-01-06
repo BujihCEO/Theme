@@ -80,7 +80,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 360px;
     aspect-ratio: 1/1;
     background-image: url(Branco.png);
     background-size: 100% auto;
@@ -89,6 +88,12 @@
     transition: .5s;
     overflow: hidden;
 }
+
+@media screen and (max-width: 749px) {
+    .Tshirt {
+        max-width: 360px;
+    } 
+} 
 
 .Tshirt.Zoom {
     background-size: 190%;

@@ -6,7 +6,7 @@
     font-size: 25px;
 }
 
-.ProductSizeBox {
+.ProductModelBox, .ProductSizeBox {
     position: relative;
     display: flex;
     align-items: center;
@@ -16,8 +16,10 @@
     overflow-x: auto;
 }
 
-.SizePicker {
+.ModelPicker, .SizePicker {
     display: flex;
+    align-items: center;
+    justify-content: center;
     height: 85%;
     font-size: 25px;
     background-color: #fff;
@@ -28,11 +30,10 @@
     padding: 0px 10px;
     margin: 0px 10px;
     transition: .5s;
-    align-items: center;
-    justify-content: center;
+    cursor: pointer;
 }
 
-.SizePicker.selected {
+.ModelPicker.selected, .SizePicker.selected {
     height: 100%;
     background-color: black;
     color: white;
@@ -54,6 +55,7 @@
     border-radius: 50%;
     transition: .5s;
     margin: 0px 10px;
+    cursor: pointer;
 }
 
 .ColorPicker.selected {
@@ -75,7 +77,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 360px;
     aspect-ratio: 1/1;
     background-image: url(Branco.png);
     background-size: cover;
@@ -292,7 +293,6 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 430px;
     margin: 0 auto;
     font-size: .7rem;
     background-color: #0ff;
@@ -522,4 +522,13 @@
 @font-face {
     font-family: font_2;
     src: url(Lovelo_Black.otf) format('truetype');
+}
+
+@media screen and (max-width: 749px) {
+    .Tshirt {
+        max-width: 360px;
+    }
+    .Personalization {
+        max-width: 430px;
+    }
 }

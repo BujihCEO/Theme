@@ -1,89 +1,248 @@
+<div class="PickersTitle">Modelo:</div>
+<div class="ProductModelBox"></div>
+<div class="PickersTitle">Tamanho:</div>
+<div class="ProductSizeBox"></div>
+<div class="SizeInfoBox">
+  <div class="SizeWidthBox">Largura:</div>
+  <div class="SizeHeightBox">Comprimento:</div>
+</div>
+<div class="PickersTitle">Cor:</div>
+<div class="ProductColorsBox"></div>
+{% if product.title contains 'Moments' %}
+  {% render 'Moments' %}
+{% endif%}
+{% if product.title contains 'Sometimes' %}
+  {% render 'Sometimes' %}
+{% endif%}
+{% if product.title contains 'Bootleg' %}
+  {% render 'Bootleg' %}
+{% endif%}
+{% if product.title contains 'Illusion' %}
+  {% render 'illusion' %}
+{% endif%}
+
+<style>
+.PickersTitle {
+    width: 100%;
+    text-align: left;
+    margin: 0px;
+    line-height: 1;
+    font-size: 25px;
+}
+
+.ProductModelBox, .ProductSizeBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin: 15px 0px;
+    overflow-x: auto;
+}
+
+.ModelPicker, .SizePicker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85%;
+    font-size: 25px;
+    background-color: #fff;
+    font-weight: 600;
+    color: #000;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0px 10px;
+    margin: 0px 10px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.ModelPicker.selected, .SizePicker.selected {
+    height: 100%;
+    background-color: black;
+    color: white;
+}
+
+.SizeInfoBox {
+    display: flex;
+    margin: 0px 0px 20px;
+}
+
+.SizeInfoBox >* {
+    display: flex;
+    margin: 0px 10px;
+    font-size: 20px;
+}
+
+.SizeWidth, .SizeHeight {
+    margin: 0px 0px 0px 10px
+}
+
+.ProductColorsBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.ColorPicker {
+    height: 90%;
+    aspect-ratio: 1/1;
+    border: 2px solid black;
+    border-radius: 50%;
+    transition: .5s;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+.ColorPicker.selected {
+    height: 100%;
+    border: 2px solid red;
+}
+</style>
+
 <script>
-    document.querySelector('.Bg_Tshirt').style.top = document.querySelector('.header__icon').offsetHeight + 'px';
-    const PrintTarget = document.querySelector('.PrintTarget');
-    const InputPrint = document.querySelector('.InputPrint');
-    const InputPreview = document.querySelector('.InputPreview');
-    
-    function PrintResult(configurations) {
-        return Promise.all(configurations.map(config => {
-            return domtoimage.toBlob(PrintTarget, {
-                width: PrintTarget.clientWidth * config.scale,
-                height: PrintTarget.clientHeight * config.scale,
-                style: {
-                    transform: 'scale(' + config.scale + ')',
-                transformOrigin: 'top left',
-                },
-            })
-            .then((blob) => {
-                var fileList = new DataTransfer();
-                fileList.items.add(new File([blob], config.fileName));
-                config.inputElement.files = fileList.files;
-            });
-        }));
+const LinkProduct = 'https://bujih.com/cdn/shop/t/2/assets/';
+const ProductModelBox = document.querySelector('.ProductModelBox');
+const ModelPickers = [
+    'Masculino',
+    'Feminino',
+];
+var ProductModel = ModelPickers[0];
+ModelPickers.forEach((Model, index) => {
+    var div = document.createElement('div');
+    div.className = 'ModelPicker ';
+    if (index === 0) {
+        div.classList.add('selected');
     }
-    
-    const LinkProduct = 'https://361875-4.myshopify.com/cdn/shop/t/12/assets/';
-    const productViewer = document.querySelector('.productViewer');
-    const ProductColorsBox = document.querySelector('.ProductColorsBox');
-    const ColorPickers = [
-        'Preto',
-        'Branco',
-    ];
-    var ProductColor = ColorPickers[0];
-    ColorPickers.forEach((Color, index) => {
-        var div = document.createElement('div');
-        div.className = 'ColorPicker ';
-        if (index === 0) {
-            div.classList.add('selected');
-        }
-        div.setAttribute('color', Color)
-        ProductColorsBox.appendChild(div);
-    });
-    const ColorPickerAll = document.querySelectorAll('.ColorPicker');
-    ColorPickerAll[0].style.backgroundColor = 'black';
-    ColorPickerAll[1].style.backgroundColor = 'white';
-    ColorPickerAll.forEach((button) => {
-        button.addEventListener('click', () => {
-            ColorPickerAll.forEach((button) => {
-                button.classList.remove('selected');
-            });
-            button.classList.add('selected');
-            ProductColor = button.getAttribute('color');
-            productViewer.style.backgroundImage = 'url('+LinkProduct+ProductColor+'.png)';
-            InputPreview.setAttribute('name', `properties[Preview Color:${ProductColor}/Size:${ProductSize}]`);
+    div.innerText = Model;
+    div.setAttribute('model', Model);
+    ProductModelBox.appendChild(div);
+});
+const ModelPickerAll = document.querySelectorAll('.ModelPicker');
+ModelPickerAll.forEach((button) => {
+    button.addEventListener('click', () => {
+        ModelPickerAll.forEach((button) => {
+            button.classList.remove('selected');
         });
-    });
-    
-    const ProductSizeBox = document.querySelector('.ProductSizeBox');
-    const SizePickers = [
-        'P',
-        'M',
-        'G',
-        'GG',
-        'XGG',
-    ];
-    var ProductSize = SizePickers[0];
-    SizePickers.forEach((Size, index) => {
-        var div = document.createElement('div');
-        div.className = 'SizePicker ';
-        if (index === 0) {
-            div.classList.add('selected');
-        }
-        div.innerText = Size;
-        div.setAttribute('size', Size);
-        ProductSizeBox.appendChild(div);
-    });
-    const SizePickerAll = document.querySelectorAll('.SizePicker');
-    SizePickerAll.forEach((button) => {
-        button.addEventListener('click', () => {
-            SizePickerAll.forEach((button) => {
-                button.classList.remove('selected');
-            });
-            button.classList.add('selected');
-            ProductSize = button.getAttribute('size');
-            InputPreview.setAttribute('name', `properties[Preview Color:${ProductColor}/Size:${ProductSize}]`);
+        SizePickerAll.forEach((button) => {
+            button.classList.remove('selected');
         });
+        SizePickerAll[0].classList.add('selected');
+        ProductSize = SizePickerAll[0].getAttribute('size');
+        button.classList.add('selected');
+        ProductModel = button.getAttribute('model');
+        SizeInfo();
+        if (ProductModel === 'Feminino') {
+            SizePickerAll[4].style.display = 'none';
+        } else {
+            SizePickerAll[4].style.display = '';
+        }
+        Tshirt.style.backgroundImage = 'url('+LinkProduct+ProductModel+'-'+ProductColor+'.png)';
+        InputPreview.setAttribute('name', `properties[Preview Model:${ProductModel}/Color:${ProductColor}/Size:${ProductSize}]`);
     });
-    
-    InputPreview.setAttribute('name', `properties[Preview Color:${ProductColor}/Size:${ProductSize}]`);
+});
+
+const ProductColorsBox = document.querySelector('.ProductColorsBox');
+const ColorPickers = [
+    'Preto',
+    'Branco',
+];
+var ProductColor = ColorPickers[0];
+ColorPickers.forEach((Color, index) => {
+    var div = document.createElement('div');
+    div.className = 'ColorPicker ';
+    if (index === 0) {
+        div.classList.add('selected');
+    }
+    div.setAttribute('color', Color)
+    ProductColorsBox.appendChild(div);
+});
+const ColorPickerAll = document.querySelectorAll('.ColorPicker');
+ColorPickerAll[0].style.backgroundColor = 'black';
+ColorPickerAll[1].style.backgroundColor = 'white';
+ColorPickerAll.forEach((button) => {
+    button.addEventListener('click', () => {
+        ColorPickerAll.forEach((button) => {
+            button.classList.remove('selected');
+        });
+        button.classList.add('selected');
+        ProductColor = button.getAttribute('color');
+        Tshirt.style.backgroundImage = 'url('+LinkProduct+ProductModel+'-'+ProductColor+'.png)';
+        InputPreview.setAttribute('name', `properties[Preview Model:${ProductModel}/Color:${ProductColor}/Size:${ProductSize}]`);
+    });
+});
+
+const ProductSizeBox = document.querySelector('.ProductSizeBox');
+const SizePickers = [
+    'P',
+    'M',
+    'G',
+    'GG',
+    'XGG',
+];
+var ProductSize = SizePickers[0];
+SizePickers.forEach((Size, index) => {
+    var div = document.createElement('div');
+    div.className = 'SizePicker ';
+    if (index === 0) {
+        div.classList.add('selected');
+    }
+    div.innerText = Size;
+    div.setAttribute('size', Size);
+    ProductSizeBox.appendChild(div);
+});
+
+var SizeWidth = document.createElement('div');
+SizeWidth.className = 'SizeWidth';
+var SizeHeight = document.createElement('div');
+SizeHeight.className = 'SizeHeight';
+document.querySelector('.SizeWidthBox').appendChild(SizeWidth);
+document.querySelector('.SizeHeightBox').appendChild(SizeHeight);
+
+function SizeInfo() {
+  const sizeMap = {
+    'Masculino': {
+      'P': { width: '50', height: '70' },
+      'M': { width: '52', height: '72' },
+      'G': { width: '54', height: '74' },
+      'GG': { width: '57', height: '77' },
+      'XGG': { width: '60', height: '80' }
+    },
+    'Feminino': {
+      'P': { width: '40', height: '66' },
+      'M': { width: '42', height: '67' },
+      'G': { width: '44', height: '69' },
+      'GG': { width: '46', height: '70' }
+    }
+  };
+
+  if (ProductModel && ProductSize) {
+    const dimensions = sizeMap[ProductModel]?.[ProductSize];
+    if (dimensions) {
+      SizeWidth.innerText = dimensions.width + 'cm';
+      SizeHeight.innerText = dimensions.height + 'cm';
+    }
+  }
+}
+
+SizeInfo();
+
+const SizePickerAll = document.querySelectorAll('.SizePicker');
+SizePickerAll.forEach((button) => {
+    button.addEventListener('click', () => {
+        SizePickerAll.forEach((button) => {
+            button.classList.remove('selected');
+        });
+        button.classList.add('selected');
+        ProductSize = button.getAttribute('size');
+        SizeInfo();
+        InputPreview.setAttribute('name', `properties[Preview Model:${ProductModel}/Color:${ProductColor}/Size:${ProductSize}]`);
+    });
+});
+
+Tshirt.style.backgroundImage = 'url('+LinkProduct+ProductModel+'-'+ProductColor+'.png)';
+InputPreview.setAttribute('name', `properties[Preview Model:${ProductModel}/Color:${ProductColor}/Size:${ProductSize}]`);
 </script>

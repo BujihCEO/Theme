@@ -11,7 +11,7 @@ const imageUpload = document.querySelector('.imageUpload');
 const UploadImageLabel = document.querySelector('.UploadImageLabel');
 const UploadImageLabelP = document.querySelector('.UploadImageLabel p');
 const FullUploaded = document.querySelector('.FullUploaded');
-const TshirtContainer = document.querySelector('.TshirtContainer');
+const Tshirt = document.querySelector('.Tshirt');
 const ZoomBtn = document.querySelectorAll('.ZoomBtn');
 const ImgSelector = document.querySelector('.ImgSelector');
 const ImgDragMove = document.querySelector('.ImgDragMove');
@@ -30,7 +30,7 @@ var StyleCss = document.createElement('style');
 document.head.appendChild(StyleCss);
 
 function ZoomInLayout(button) {
-    TshirtContainer.classList.add('Zoom');
+    Tshirt.classList.add('Zoom');
     previewContainer.classList.add('Zoom');
     ZoomBtn.forEach((icon) => {
         icon.classList.remove('selected');
@@ -40,7 +40,7 @@ function ZoomInLayout(button) {
 }
 
 function ZoomOutLayout(button) {
-    TshirtContainer.classList.remove('Zoom');
+    Tshirt.classList.remove('Zoom');
     previewContainer.classList.remove('Zoom');
     ZoomBtn.forEach((icon) => {
         icon.classList.remove('selected');
@@ -1395,8 +1395,8 @@ BgOptionTexture.forEach((button, index) => {
 
 const ContainerCustomization = document.querySelector('.ContainerCustomization');
 function resize() {
-    var value1 = TshirtContainer.offsetWidth / window.innerWidth;
-    TshirtContainer.style.setProperty('--resize', value1);
+    var value1 = Tshirt.offsetWidth / window.innerWidth;
+    Tshirt.style.setProperty('--resize', value1);
 }
 resize();
 
@@ -1424,97 +1424,3 @@ function PrintResult(configurations) {
         });
     }));
 }
-
-const LinkProduct = 'https://bujih.com/cdn/shop/t/2/assets/';
-const ProductModelBox = document.querySelector('.ProductModelBox');
-const ModelPickers = [
-    'Masculino',
-    'Feminino',
-];
-var ProductModel = ModelPickers[0];
-ModelPickers.forEach((Model, index) => {
-    var div = document.createElement('div');
-    div.className = 'ModelPicker ';
-    if (index === 0) {
-        div.classList.add('selected');
-    }
-    div.innerText = Model;
-    div.setAttribute('model', Model);
-    ProductModelBox.appendChild(div);
-});
-const ModelPickerAll = document.querySelectorAll('.ModelPicker');
-ModelPickerAll.forEach((button) => {
-    button.addEventListener('click', () => {
-        ModelPickerAll.forEach((button) => {
-            button.classList.remove('selected');
-        });
-        button.classList.add('selected');
-        ProductModel = button.getAttribute('model');
-        TshirtContainer.style.backgroundImage = 'url('+LinkProduct+ProductModel+'-'+ProductColor+'.png)';
-        InputPreview.setAttribute('name', `properties[Preview Model:${ProductModel}/Color:${ProductColor}/Size:${ProductSize}]`);
-    });
-});
-
-const ProductColorsBox = document.querySelector('.ProductColorsBox');
-const ColorPickers = [
-    'Preto',
-    'Branco',
-];
-var ProductColor = ColorPickers[0];
-ColorPickers.forEach((Color, index) => {
-    var div = document.createElement('div');
-    div.className = 'ColorPicker ';
-    if (index === 0) {
-        div.classList.add('selected');
-    }
-    div.setAttribute('color', Color)
-    ProductColorsBox.appendChild(div);
-});
-const ColorPickerAll = document.querySelectorAll('.ColorPicker');
-ColorPickerAll[0].style.backgroundColor = 'black';
-ColorPickerAll[1].style.backgroundColor = 'white';
-ColorPickerAll.forEach((button) => {
-    button.addEventListener('click', () => {
-        ColorPickerAll.forEach((button) => {
-            button.classList.remove('selected');
-        });
-        button.classList.add('selected');
-        ProductColor = button.getAttribute('color');
-        TshirtContainer.style.backgroundImage = 'url('+LinkProduct+ProductModel+'-'+ProductColor+'.png)';
-        InputPreview.setAttribute('name', `properties[Preview Model:${ProductModel}/Color:${ProductColor}/Size:${ProductSize}]`);
-    });
-});
-
-const ProductSizeBox = document.querySelector('.ProductSizeBox');
-const SizePickers = [
-    'P',
-    'M',
-    'G',
-    'GG',
-    'XGG',
-];
-var ProductSize = SizePickers[0];
-SizePickers.forEach((Size, index) => {
-    var div = document.createElement('div');
-    div.className = 'SizePicker ';
-    if (index === 0) {
-        div.classList.add('selected');
-    }
-    div.innerText = Size;
-    div.setAttribute('size', Size);
-    ProductSizeBox.appendChild(div);
-});
-const SizePickerAll = document.querySelectorAll('.SizePicker');
-SizePickerAll.forEach((button) => {
-    button.addEventListener('click', () => {
-        SizePickerAll.forEach((button) => {
-            button.classList.remove('selected');
-        });
-        button.classList.add('selected');
-        ProductSize = button.getAttribute('size');
-        InputPreview.setAttribute('name', `properties[Preview Model:${ProductModel}/Color:${ProductColor}/Size:${ProductSize}]`);
-    });
-});
-
-TshirtContainer.style.backgroundImage = 'url('+LinkProduct+ProductModel+'-'+ProductColor+'.png)';
-InputPreview.setAttribute('name', `properties[Preview Model:${ProductModel}/Color:${ProductColor}/Size:${ProductSize}]`);

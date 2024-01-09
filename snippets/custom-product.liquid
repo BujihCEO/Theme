@@ -2,9 +2,11 @@
 <div class="ProductModelBox"></div>
 <div class="PickersTitle">Tamanho:</div>
 <div class="ProductSizeBox"></div>
-<div class="SizeInfoBox">
-  <div class="SizeWidthBox">Largura:</div>
-  <div class="SizeHeightBox">Comprimento:</div>
+<div style="overflow: hidden; margin: 0px;">
+  <div class="SizeInfoBox">
+    <div class="SizeWidthBox">Largura:</div>
+    <div class="SizeHeightBox">Comprimento:</div>
+  </div>
 </div>
 <div class="PickersTitle">Cor:</div>
 <div class="ProductColorsBox"></div>
@@ -66,13 +68,19 @@
 .SizeInfoBox {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    background-color: black;
+    color: white;
     margin: 0px 0px 20px;
+    border-radius: 2rem;
+    transform: translateY(0%);
+    transition: .5s;
 }
 
 .SizeInfoBox >* {
     display: flex;
     margin: 0px 10px;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .SizeWidth, .SizeHeight {
@@ -196,6 +204,7 @@ SizePickers.forEach((Size, index) => {
     ProductSizeBox.appendChild(div);
 });
 
+var SizeInfoBox = document.querySelector('.SizeInfoBox');
 var SizeWidth = document.createElement('div');
 SizeWidth.className = 'SizeWidth';
 var SizeHeight = document.createElement('div');
@@ -222,6 +231,7 @@ function SizeInfo() {
 
   if (ProductModel && ProductSize) {
     const dimensions = sizeMap[ProductModel]?.[ProductSize];
+    SizeInfoBox.style.transform = 'translateY(110%)'; 
     if (dimensions) {
       SizeWidth.innerText = dimensions.width + 'cm';
       SizeHeight.innerText = dimensions.height + 'cm';

@@ -1,6 +1,9 @@
 <div class="PickersTitle">Modelo:</div>
 <div class="ProductModelBox"></div>
-<div class="PickersTitle">Tamanho:</div>
+<div class="PickersTitle">
+  Tamanho:
+  <div class="SizeShowTable"></div
+</div>
 <div class="ProductSizeBox"></div>
 <div style="overflow: hidden; margin: 0px;">
   <div class="SizeInfoBox">
@@ -25,6 +28,8 @@
 
 <style>
 .PickersTitle {
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
     text-align: left;
     margin: 0px;
@@ -83,6 +88,15 @@
     font-size: 17px;
 }
 
+.SizeShowTable {
+    width: max-content;
+    font-size: 15px;
+    border: 1px solid;
+    padding: 5px 10px;
+    border-radius: 2em;
+    margin-left: 10px;
+}
+  
 .SizeWidth, .SizeHeight {
     margin: 0px 0px 0px 10px
 }

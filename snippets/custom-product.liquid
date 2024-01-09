@@ -232,7 +232,7 @@ function SizeInfo() {
   if (ProductModel && ProductSize) {
     const dimensions = sizeMap[ProductModel]?.[ProductSize];
     SizeInfoBox.style.transform = 'translateY(-110%)';
-    setTimeOut(() => {
+    setTimeout(() => {
       if (dimensions) {
         SizeWidth.innerText = dimensions.width + 'cm';
         SizeHeight.innerText = dimensions.height + 'cm';

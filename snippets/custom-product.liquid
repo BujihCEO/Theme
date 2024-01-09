@@ -231,12 +231,14 @@ function SizeInfo() {
 
   if (ProductModel && ProductSize) {
     const dimensions = sizeMap[ProductModel]?.[ProductSize];
-    SizeInfoBox.style.transform = 'translateY(-110%)'; 
-    if (dimensions) {
-      SizeWidth.innerText = dimensions.width + 'cm';
-      SizeHeight.innerText = dimensions.height + 'cm';
-    }
-    SizeInfoBox.style.transform = 'translateY(0%)';
+    SizeInfoBox.style.transform = 'translateY(-110%)';
+    setTimeOut(() => {
+      if (dimensions) {
+        SizeWidth.innerText = dimensions.width + 'cm';
+        SizeHeight.innerText = dimensions.height + 'cm';
+      }
+      SizeInfoBox.style.transform = 'translateY(0%)';
+    }, 500);
   }
 }
 

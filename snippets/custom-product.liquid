@@ -161,7 +161,7 @@ ModelPickerAll.forEach((button) => {
         button.classList.add('selected');
         ProductModel = button.getAttribute('model');
         SizeInfo();
-        if (ProductModel === 'Feminino') {
+        if (ProductModel === 'Baby-Long') {
             SizePickerAll[4].style.display = 'none';
         } else {
             SizePickerAll[4].style.display = '';
@@ -231,14 +231,14 @@ document.querySelector('.SizeHeightBox').appendChild(SizeHeight);
 
 function SizeInfo() {
   const sizeMap = {
-    'Masculino': {
+    'Camiseta': {
       'P': { width: '50', height: '70' },
       'M': { width: '52', height: '72' },
       'G': { width: '54', height: '74' },
       'GG': { width: '57', height: '77' },
       'XGG': { width: '60', height: '80' }
     },
-    'Feminino': {
+    'Baby-Long': {
       'P': { width: '40', height: '66' },
       'M': { width: '42', height: '67' },
       'G': { width: '44', height: '69' },

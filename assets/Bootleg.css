@@ -603,7 +603,7 @@
 }
 
 .SizeType svg {
-  
+    height: 100%;
 }
 
 .ImgEffect {
@@ -814,10 +814,6 @@
     color: black;
     -webkit-user-select: none;
     user-select: none;
-}
-
-.TextSettings svg {
-    height: 100%;
 }
 
 .PositionTextBtns {

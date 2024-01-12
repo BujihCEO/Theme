@@ -598,6 +598,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 1.8em;
+    margin-left: .4em;
+}
+
+.SizeType svg {
+  
 }
 
 .ImgEffect {
